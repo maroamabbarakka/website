@@ -11,7 +11,9 @@ export const metadata = {
 };
 
 export default function WorkPage() {
-  const publishedProjects = initialProjects.filter((p) => p.isPublished);
+  const publishedProjects = initialProjects
+    .filter((p) => p.isPublished)
+    .sort((a, b) => (b.publishedAt || "").localeCompare(a.publishedAt || ""));
 
   return (
     <div className="w-full bg-maroa-white">

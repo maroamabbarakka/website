@@ -26,10 +26,10 @@ export function getAllProjects(): Project[] {
     initialProjects.forEach((p) => map.set(p.id, p));
     customList.forEach((p) => map.set(p.id, p));
 
-    return Array.from(map.values());
+    return Array.from(map.values()).sort((a, b) => (b.publishedAt || "").localeCompare(a.publishedAt || ""));
   } catch (err) {
     console.warn("Gagal membaca penyimpanan proyek lokal:", err);
-    return initialProjects;
+    return [...initialProjects].sort((a, b) => (b.publishedAt || "").localeCompare(a.publishedAt || ""));
   }
 }
 
