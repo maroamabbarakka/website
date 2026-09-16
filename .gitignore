@@ -39,3 +39,6 @@ next-env.d.ts
 firebase-debug.log*
 firestore-debug.log*
 ui-debug.log*
+
+# work assets extraction
+MAROA_WORK_B3_ASSETS_SOURCES_ANTIGRAVITY_2026-09-16/
