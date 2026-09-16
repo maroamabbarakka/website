@@ -15,7 +15,9 @@ export const metadata = {
 
 export default function MultimediaPage() {
   const service = initialServices.find((s) => s.slug === "multimedia")!;
-  const relatedProjects = initialProjects.filter((p) => p.category === "multimedia" || p.category === "integrated");
+  const relatedProjects = initialProjects.filter(
+    (p) => (p.category === "multimedia" || p.category === "integrated") && p.isPublished
+  );
 
   return (
     <div className="w-full bg-maroa-white">

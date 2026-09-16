@@ -115,6 +115,16 @@ describe("System Integrity & Asset Availability Tests", () => {
     const sitemapFile = fs.readFileSync(path.join(rootDir, "src", "app", "sitemap.ts"), "utf-8");
     assert.ok(sitemapFile.includes("initialProjects\n    .filter((p) => p.isPublished)") || sitemapFile.includes("filter((p) => p.isPublished)"), "sitemap harus memfilter proyek published");
     assert.ok(sitemapFile.includes('filter((i) => i.status === "published")'), "sitemap harus memfilter wawasan published");
+
+    const digitalPage = fs.readFileSync(path.join(rootDir, "src", "app", "expertise", "digital", "page.tsx"), "utf-8");
+    assert.ok(digitalPage.includes("p.isPublished"), "expertise/digital harus memfilter proyek published");
+
+    const eventsPage = fs.readFileSync(path.join(rootDir, "src", "app", "expertise", "events", "page.tsx"), "utf-8");
+    assert.ok(eventsPage.includes("p.isPublished"), "expertise/events harus memfilter proyek published");
+
+    const multimediaPage = fs.readFileSync(path.join(rootDir, "src", "app", "expertise", "multimedia", "page.tsx"), "utf-8");
+    assert.ok(multimediaPage.includes("p.isPublished"), "expertise/multimedia harus memfilter proyek published");
   });
 });
+
 

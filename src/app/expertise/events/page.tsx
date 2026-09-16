@@ -14,7 +14,9 @@ export const metadata = {
 
 export default function EventsPage() {
   const service = initialServices.find((s) => s.slug === "events")!;
-  const relatedProjects = initialProjects.filter((p) => p.category === "events" || p.category === "integrated");
+  const relatedProjects = initialProjects.filter(
+    (p) => (p.category === "events" || p.category === "integrated") && p.isPublished
+  );
 
   return (
     <div className="w-full bg-maroa-white">

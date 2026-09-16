@@ -14,7 +14,9 @@ export const metadata = {
 
 export default function DigitalPage() {
   const service = initialServices.find((s) => s.slug === "digital")!;
-  const relatedProjects = initialProjects.filter((p) => p.category === "digital" || p.category === "integrated");
+  const relatedProjects = initialProjects.filter(
+    (p) => (p.category === "digital" || p.category === "integrated") && p.isPublished
+  );
 
   return (
     <div className="w-full bg-maroa-white">
