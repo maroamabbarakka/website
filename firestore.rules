@@ -1,0 +1,91 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function adminDoc() {
+      return get(/databases/$(database)/documents/adminUsers/$(request.auth.uid));
+    }
+
+    function activeAdmin() {
+      return signedIn() && adminDoc().data.active == true;
+    }
+
+    function hasRole(role) {
+      return activeAdmin() && adminDoc().data.role == role;
+    }
+
+    function canEditContent() {
+      return activeAdmin() && adminDoc().data.role in ['superadmin', 'editor'];
+    }
+
+    function canHandleLeads() {
+      return activeAdmin() && adminDoc().data.role in ['superadmin', 'sales'];
+    }
+
+    function isSuperadmin() {
+      return activeAdmin() && adminDoc().data.role == 'superadmin';
+    }
+
+    // Site Settings: Publik membaca profil publik perusahaan, hanya superadmin/editor yang dapat mengedit
+    match /siteSettings/{id} {
+      allow read: if true;
+      allow write: if isSuperadmin();
+    }
+
+    // Projects: Publik hanya membaca proyek yang berstatus isPublished == true
+    match /projects/{id} {
+      allow read: if resource.data.isPublished == true || canEditContent();
+      allow create, update: if canEditContent();
+      allow delete: if isSuperadmin();
+    }
+
+    // Services: Publik hanya membaca layanan yang berstatus isPublished == true
+    match /services/{id} {
+      allow read: if resource.data.isPublished == true || canEditContent();
+      allow write: if canEditContent();
+    }
+
+    // Insights/Articles: Publik hanya membaca status == 'published'
+    match /insights/{id} {
+      allow read: if resource.data.status == 'published' || canEditContent();
+      allow write: if canEditContent();
+    }
+
+    // Leads: Tidak ada public read/list/delete. 
+    // Sales dan Superadmin dapat membaca dan memperbarui status.
+    // Public submit diperbolehkan hanya dengan validasi skema ketat & whitelist field
+    match /leads/{id} {
+      allow read, update: if canHandleLeads();
+      allow delete: if isSuperadmin();
+      allow create: if request.resource.data.keys().hasAll(['fullName', 'email', 'serviceType', 'message', 'consent'])
+        && request.resource.data.fullName is string && request.resource.data.fullName.size() >= 2 && request.resource.data.fullName.size() <= 100
+        && request.resource.data.email is string && request.resource.data.email.matches('^[^@]+@[^@]+\\.[^@]+$') && request.resource.data.email.size() <= 254
+        && request.resource.data.serviceType in ['events', 'multimedia', 'digital', 'integrated', 'other']
+        && request.resource.data.message is string && request.resource.data.message.size() >= 10 && request.resource.data.message.size() <= 3000
+        && request.resource.data.consent == true
+        && (!request.resource.data.keys().hasAny(['status']) || request.resource.data.status == 'new');
+    }
+
+    // Admin Users: Hanya superadmin atau diri sendiri yang membaca data profil admin sendiri
+    match /adminUsers/{uid} {
+      allow read: if signedIn() && (request.auth.uid == uid || isSuperadmin());
+      allow write: if isSuperadmin();
+    }
+
+    // Audit Logs: Hanya superadmin yang dapat membaca, hanya server / superadmin yang mencatat
+    match /auditLogs/{id} {
+      allow read: if isSuperadmin();
+      allow create: if activeAdmin();
+      allow update, delete: if false;
+    }
+
+    // Deny by default untuk seluruh koleksi lain
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="none">
+  <g transform="translate(6, 4)">
+    <circle cx="21" cy="21" r="19" fill="#b91c1c" stroke="#f59e0b" stroke-width="1.5"/>
+    <circle cx="21" cy="21" r="14" fill="#ffffff"/>
+    <path d="M21 10 L24 19 L18 19 Z" fill="#b91c1c"/>
+    <path d="M21 8 Q24 5 22 2 Q18 5 21 8 Z" fill="#f59e0b"/>
+    <rect x="19" y="19" width="4" height="11" fill="#1e293b"/>
+    <path d="M14 30 L28 30 L26 33 L16 33 Z" fill="#b91c1c"/>
+  </g>
+  <text x="52" y="24" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="900" font-size="16" fill="#1f2937" letter-spacing="1">PGRI</text>
+  <text x="52" y="38" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="600" font-size="9" fill="#4b5563" letter-spacing="0.3">PERSATUAN GURU REPUBLIK INDONESIA</text>
+</svg>

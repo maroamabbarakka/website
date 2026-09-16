@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 50" fill="none">
+  <g transform="translate(6, 4)">
+    <!-- Lambang Perisai Bintang Tiga POLRI -->
+    <path d="M21 2 L39 9 L39 26 C39 35 21 41 21 41 C21 41 3 35 3 26 L3 9 Z" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+    <!-- Bintang Tiga Keemasan -->
+    <polygon points="21,8 23,12 27,12 24,15 25,19 21,17 17,19 18,15 15,12 19,12" fill="#fbbf24"/>
+    <polygon points="13,16 14,19 17,19 15,21 16,24 13,22 10,24 11,21 9,19 12,19" fill="#fbbf24"/>
+    <polygon points="29,16 30,19 33,19 31,21 32,24 29,22 26,24 27,21 25,19 28,19" fill="#fbbf24"/>
+    <!-- Obor dan Padi Kapas -->
+    <path d="M12 28 C16 32 26 32 30 28" stroke="#fbbf24" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <line x1="21" y1="21" x2="21" y2="33" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <text x="56" y="24" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="900" font-size="16" fill="#1f2937" letter-spacing="1">POLRI</text>
+  <text x="56" y="38" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="600" font-size="9" fill="#4b5563" letter-spacing="0.2">KEPOLISIAN NEGARA REPUBLIK INDONESIA</text>
+</svg>

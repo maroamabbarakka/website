@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 50" fill="none">
+  <g transform="translate(6, 6)">
+    <circle cx="19" cy="19" r="17" fill="#15803d"/>
+    <path d="M12 22 C12 14 19 10 26 12 C26 20 21 26 12 22 Z" fill="#86efac"/>
+    <path d="M15 21 L22 14" stroke="#15803d" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+  <text x="50" y="24" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="900" font-size="15" fill="#15803d" letter-spacing="0.5">PEDULI PINRANG</text>
+  <text x="50" y="38" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="600" font-size="9" fill="#4b5563" letter-spacing="0.3">GERAKAN LINGKUNGAN WARGA</text>
+</svg>

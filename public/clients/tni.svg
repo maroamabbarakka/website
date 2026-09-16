@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 50" fill="none">
+  <g transform="translate(6, 4)">
+    <!-- Perisai Merah Putih & Garuda Bintang TNI -->
+    <path d="M21 2 L38 9 L38 27 C38 35 21 41 21 41 C21 41 4 35 4 27 L4 9 Z" fill="#b91c1c" stroke="#d97706" stroke-width="1.5"/>
+    <path d="M21 7 L34 12 L34 26 C34 32 21 37 21 37 C21 37 8 32 8 26 L8 12 Z" fill="#ffffff"/>
+    <polygon points="21,12 23,17 29,17 24,20 26,25 21,22 16,25 18,20 13,17 19,17" fill="#d97706"/>
+    <path d="M12 28 C16 26 26 26 30 28 L28 32 C24 30 18 30 14 32 Z" fill="#d97706"/>
+  </g>
+  <text x="56" y="24" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="900" font-size="16" fill="#1f2937" letter-spacing="1">TNI</text>
+  <text x="56" y="38" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="600" font-size="9.5" fill="#4b5563" letter-spacing="0.3">TENTARA NASIONAL INDONESIA</text>
+</svg>

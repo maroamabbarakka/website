@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 50" fill="none">
+  <g transform="translate(6, 4)">
+    <path d="M21 2 L38 9 L38 27 C38 35 21 41 21 41 C21 41 4 35 4 27 L4 9 Z" fill="#15803d" stroke="#eab308" stroke-width="1.5"/>
+    <polygon points="21,11 23,16 29,16 24,19 26,24 21,21 16,24 18,19 13,16 19,16" fill="#fde047"/>
+    <rect x="15" y="26" width="12" height="4" rx="1" fill="#ffffff"/>
+  </g>
+  <text x="54" y="24" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="900" font-size="15" fill="#1f2937" letter-spacing="0.5">PEMKAB PINRANG</text>
+  <text x="54" y="38" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="600" font-size="9.5" fill="#4b5563" letter-spacing="0.3">PEMERINTAH KABUPATEN PINRANG</text>
+</svg>

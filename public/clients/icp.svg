@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 50" fill="none">
+  <g transform="translate(6, 4)">
+    <circle cx="21" cy="21" r="19" fill="#15803d" stroke="#eab308" stroke-width="1.5"/>
+    <circle cx="21" cy="21" r="15" fill="#14532d"/>
+    <path d="M12 21 C12 26 17 30 23 30 C27 30 30 26 30 23 C26 25 22 25 19 22 C16 19 16 16 17 12 C13 14 12 17 12 21 Z" fill="#fde047"/>
+    <polygon points="21,12 23,16 27,16 24,18 25,22 21,20 17,22 18,18 15,16 19,16" fill="#ffffff"/>
+  </g>
+  <text x="54" y="24" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="900" font-size="15" fill="#15803d" letter-spacing="0.5">INSTITUT ICP</text>
+  <text x="54" y="38" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="600" font-size="9" fill="#4b5563" letter-spacing="0.3">INSTITUT COKROAMINOTO PINRANG</text>
+</svg>

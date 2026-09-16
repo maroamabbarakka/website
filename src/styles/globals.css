@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --maroa-red: #ff171f;
+    --maroa-red-dark: #d90d16;
+    --maroa-black: #090909;
+    --maroa-charcoal: #171717;
+    --maroa-ink: #202124;
+    --maroa-gray-700: #4b4f55;
+    --maroa-gray-500: #7a7f87;
+    --maroa-gray-300: #d9dce1;
+    --maroa-gray-100: #f4f5f7;
+    --maroa-white: #ffffff;
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --shadow-card: 0 12px 36px rgba(0, 0, 0, 0.08);
+    --container: 1280px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--maroa-ink);
+    background-color: var(--maroa-white);
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Accessible focus rings */
+  :focus-visible {
+    outline: 2px solid var(--maroa-red);
+    outline-offset: 2px;
+  }
+
+  /* Fluid typography */
+  .hero-title {
+    font-size: clamp(2.25rem, 5vw + 1rem, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+  }
+
+  .section-title {
+    font-size: clamp(1.85rem, 3vw + 0.5rem, 3rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+
+  .card-title {
+    font-size: clamp(1.25rem, 1.5vw + 0.5rem, 1.65rem);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+  }
+}
+
+@layer utilities {
+  .container-maroa {
+    width: 100%;
+    max-width: var(--container);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-maroa {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container-maroa {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+  }
+
+  /* Subtle card hover lift without layout shift */
+  .hover-lift {
+    transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 260ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Infinite Smooth Continuous Marquee Keyframes */
+  @keyframes maroaMarqueeScroll {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+
+  .animate-marquee-scroll {
+    animation: maroaMarqueeScroll 35s linear infinite !important;
+    will-change: transform;
+  }
+
+  .animate-marquee-scroll:hover {
+    animation-play-state: paused !important;
+  }
+}
+
+/* Reduced motion accessibility standard (dikecualikan untuk marquee agar tetap berputar tenang) */
+@media (prefers-reduced-motion: reduce) {
+  *:not(.animate-marquee-scroll),
+  *:not(.animate-marquee-scroll)::before,
+  *:not(.animate-marquee-scroll)::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
