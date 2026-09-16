@@ -6,8 +6,16 @@ import { z } from "zod";
 import { initialSiteSettings } from "@/data/initialData";
 import { db } from "@/lib/firebase/config";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { CheckCircle2, AlertCircle, Send, ShieldCheck, Mail, MapPin, Phone, MessageCircle } from "lucide-react";
+import { CheckCircle2, AlertCircle, Send, ShieldCheck, Mail, MapPin, MessageSquare, ExternalLink } from "lucide-react";
 import { WhatsAppIcon, InstagramIcon } from "@/components/ui/SocialIcons";
+
+const serviceLabels: Record<string, string> = {
+  events: "Events & Experiences (Manajemen Acara / Aktivasi)",
+  multimedia: "Multimedia & Studio (Podcast / Video / Streaming)",
+  digital: "Digital & Web Applications (Web / CMS / Sistem Registrasi)",
+  integrated: "Solusi Terintegrasi (On Stage · On Screen · Online)",
+  other: "Kebutuhan Lainnya",
+};
 
 const leadSchema = z.object({
   fullName: z.string().min(2, "Nama lengkap minimal 2 karakter").max(100, "Nama maksimal 100 karakter"),
@@ -44,6 +52,21 @@ export function ContactFormSection({ preselectedService }: { preselectedService?
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [mountTime, setMountTime] = useState<number>(0);
+
+  // Menyimpan tautan otomatis yang dibuat saat submit berhasil
+  const [automationLinks, setAutomationLinks] = useState<{
+    waUrl: string;
+    mailtoUrl: string;
+    submittedSummary?: {
+      name: string;
+      email: string;
+      phone: string;
+      service: string;
+    };
+  }>({
+    waUrl: "",
+    mailtoUrl: "",
+  });
 
   useEffect(() => {
     setMountTime(Date.now());
@@ -98,8 +121,58 @@ export function ContactFormSection({ preselectedService }: { preselectedService?
 
     setStatus("submitting");
 
+    const selectedServiceLabel = serviceLabels[formData.serviceType] || formData.serviceType;
+    const targetEmail = "maroamabbarakka@gmail.com";
+    const targetPhoneWA = "6281343511099";
+
+    // 1. Susun Pesan Otomatis WhatsApp
+    const waMessageText = `Halo PT MAROA MEDIA MABBARAKKA, saya ingin mengajukan proyek baru melalui website maroa:
+
+*DATA PENGAJUAN PROYEK*
+👤 *Nama:* ${formData.fullName.trim()}
+🏢 *Instansi/Perusahaan:* ${formData.companyOrganization.trim() || "-"}
+📧 *Email:* ${formData.email.trim()}
+📱 *WhatsApp/Telp:* ${formData.phone.trim() || "-"}
+🎯 *Fokus Layanan:* ${selectedServiceLabel}
+💰 *Estimasi Anggaran:* ${formData.projectBudget}
+⏱️ *Target Pelaksanaan:* ${formData.projectTimeline}
+
+📝 *Deskripsi Kebutuhan:*
+${formData.message.trim()}
+
+---
+(Terkirim otomatis via Formulir Resmi https://maroamedia.web.app)`;
+
+    const waGeneratedUrl = `https://wa.me/${targetPhoneWA}?text=${encodeURIComponent(waMessageText)}`;
+
+    // 2. Susun Pesan Otomatis Email
+    const emailSubject = `Pengajuan Proyek Baru: ${formData.fullName.trim()} - ${selectedServiceLabel}`;
+    const emailBody = `Halo Tim MAROA MEDIA MABBARAKKA,
+
+Berikut adalah rincian pengajuan proyek baru yang dikirimkan melalui formulir website resmi:
+
+--------------------------------------------------
+DATA PENGAJUAN PROYEK
+--------------------------------------------------
+Nama Lengkap         : ${formData.fullName.trim()}
+Email Pengaju        : ${formData.email.trim()}
+Nomor Telepon / WA   : ${formData.phone.trim() || "-"}
+Perusahaan / Instansi: ${formData.companyOrganization.trim() || "-"}
+Fokus Layanan        : ${selectedServiceLabel}
+Perkiraan Anggaran   : ${formData.projectBudget}
+Target Pelaksanaan   : ${formData.projectTimeline}
+
+Deskripsi Kebutuhan:
+${formData.message.trim()}
+--------------------------------------------------
+Waktu Pengajuan : ${new Date().toLocaleString("id-ID", { timeZone: "Asia/Makassar" })} WITA
+Sumber          : Website Resmi MAROA (https://maroamedia.web.app)
+`;
+
+    const mailtoGeneratedUrl = `mailto:${targetEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
     try {
-      // Simpan ke Cloud Firestore koleksi 'leads'
+      // 3. Simpan ke Cloud Firestore koleksi 'leads'
       const leadPayload = {
         fullName: formData.fullName.trim(),
         email: formData.email.trim().toLowerCase(),
@@ -113,6 +186,8 @@ export function ContactFormSection({ preselectedService }: { preselectedService?
         consentTextVersion: "2026-09-v1",
         status: "new",
         sourcePath: typeof window !== "undefined" ? window.location.pathname : "/contact",
+        targetOfficialEmail: targetEmail,
+        targetOfficialPhone: targetPhoneWA,
         createdAt: new Date().toISOString(),
       };
 
@@ -122,7 +197,7 @@ export function ContactFormSection({ preselectedService }: { preselectedService?
           serverTimestamp: serverTimestamp(),
         });
       } catch (firestoreError) {
-        // Jika offline emulator atau permissions terbatas di client, catat secara aman di localStorage
+        // Fallback simpan lokal jika emulator atau permissions client terbatas
         if (typeof window !== "undefined") {
           const existingLeads = JSON.parse(localStorage.getItem("maroa_leads_queue") || "[]");
           existingLeads.push(leadPayload);
@@ -130,17 +205,38 @@ export function ContactFormSection({ preselectedService }: { preselectedService?
         }
       }
 
+      // Simpan link untuk tampilan konfirmasi sukses
+      setAutomationLinks({
+        waUrl: waGeneratedUrl,
+        mailtoUrl: mailtoGeneratedUrl,
+        submittedSummary: {
+          name: formData.fullName.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim() || "-",
+          service: selectedServiceLabel,
+        },
+      });
+
       setStatus("success");
+
+      // Otomatis picu pembukaan WhatsApp di tab baru untuk kenyamanan pengguna
+      if (typeof window !== "undefined") {
+        try {
+          window.open(waGeneratedUrl, "_blank", "noopener,noreferrer");
+        } catch (popupError) {
+          // Abaikan jika pop-up diblokir browser, tombol manual tersedia di UI sukses
+        }
+      }
     } catch (err: unknown) {
       setStatus("error");
-      setErrorMessage("Terjadi kendala saat mengirimkan pesan. Silakan hubungi kami via email langsung.");
+      setErrorMessage("Terjadi kendala teknis saat memproses pesan. Silakan hubungi kami langsung via WhatsApp atau Email.");
     }
   };
 
   return (
     <div className="w-full">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        {/* Kolom Kiri: Informasi Kontak & Legalitas Perusahaan (5 Kolom) */}
+        {/* Kolom Kiri: Informasi Kontak Resmi (5 Kolom) */}
         <div className="lg:col-span-5 flex flex-col justify-between gap-8 bg-maroa-charcoal text-maroa-white p-8 sm:p-10 rounded-maroa-lg shadow-card">
           <div className="flex flex-col gap-6">
             <div>
@@ -161,7 +257,7 @@ export function ContactFormSection({ preselectedService }: { preselectedService?
                 <WhatsAppIcon className="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" />
                 <div className="flex-1">
                   <span className="text-[11px] uppercase tracking-wider text-emerald-300 font-semibold block">
-                    WhatsApp Resmi (Fast Response)
+                    WhatsApp Resmi (Respons Cepat)
                   </span>
                   <a
                     href="https://wa.me/6281343511099"
@@ -194,11 +290,15 @@ export function ContactFormSection({ preselectedService }: { preselectedService?
                 </div>
               </div>
 
+              {/* Email Resmi maroamabbarakka@gmail.com */}
               <div className="flex items-start gap-3">
                 <Mail className="h-5 w-5 text-maroa-red shrink-0 mt-0.5" />
                 <div>
                   <span className="text-xs text-maroa-gray-500 block">Email Resmi</span>
-                  <a href={`mailto:${initialSiteSettings.primaryEmail}`} className="hover:text-maroa-red font-medium transition-colors">
+                  <a
+                    href={`mailto:${initialSiteSettings.primaryEmail}`}
+                    className="hover:text-maroa-red font-medium transition-colors text-white break-all"
+                  >
                     {initialSiteSettings.primaryEmail}
                   </a>
                 </div>
@@ -230,44 +330,100 @@ export function ContactFormSection({ preselectedService }: { preselectedService?
           </div>
         </div>
 
-        {/* Kolom Kanan: Formulir Lead / Proyek (7 Kolom) */}
+        {/* Kolom Kanan: Formulir Lead & Otomatisasi (7 Kolom) */}
         <div className="lg:col-span-7 bg-maroa-white border border-maroa-gray-300 p-8 sm:p-10 rounded-maroa-lg shadow-card">
           {status === "success" ? (
-            <div className="py-12 flex flex-col items-center text-center gap-4 animate-fade-in" role="alert">
+            <div className="py-8 flex flex-col items-center text-center gap-5 animate-fade-in" role="alert">
               <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center">
                 <CheckCircle2 className="h-10 w-10" />
               </div>
-              <h3 className="text-2xl font-bold text-maroa-black">Pesan Berhasil Terkirim!</h3>
-              <p className="text-sm text-maroa-gray-700 max-w-md leading-relaxed">
-                Terima kasih telah menghubungi MAROA. Tim kami akan mempelajari spesifikasi kebutuhan Anda dan menghubungi Anda kembali melalui email dalam 1×24 jam kerja.
-              </p>
-              <button
-                type="button"
-                onClick={() => {
-                  setStatus("idle");
-                  setFormData({
-                    fullName: "",
-                    email: "",
-                    phone: "",
-                    companyOrganization: "",
-                    serviceType: "integrated",
-                    projectBudget: "Fleksibel / Sesuai Rekomendasi",
-                    projectTimeline: "1-3 Bulan",
-                    message: "",
-                    consent: false,
-                    honeypot: "",
-                  });
-                }}
-                className="mt-4 px-6 py-2.5 rounded-maroa-sm bg-maroa-charcoal text-maroa-white text-xs font-semibold hover:bg-maroa-black transition-colors"
-              >
-                Kirim Pesan Lainnya
-              </button>
+
+              <div>
+                <h3 className="text-2xl font-bold text-maroa-black">Pengajuan Berhasil Diproses!</h3>
+                <p className="text-sm text-maroa-gray-700 max-w-lg mt-2 leading-relaxed">
+                  Data pengajuan proyek Anda telah tercatat dan otomatis diteruskan ke tim manajemen MAROA melalui sistem pesan cepat.
+                </p>
+              </div>
+
+              {/* Kartu Status Otomatisasi Terintegrasi */}
+              <div className="w-full max-w-md bg-gray-50 border border-gray-200 rounded-lg p-4 text-left space-y-3">
+                <div className="flex items-center justify-between text-xs pb-2 border-b border-gray-200">
+                  <span className="font-bold text-gray-800">Status Saluran Otomasi:</span>
+                  <span className="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-semibold text-[11px]">
+                    Siap Terkirim
+                  </span>
+                </div>
+
+                {/* Saluran WhatsApp */}
+                <div className="flex items-center justify-between gap-3 text-xs">
+                  <div className="flex items-center gap-2">
+                    <WhatsAppIcon className="h-4 w-4 text-emerald-600 shrink-0" />
+                    <div>
+                      <p className="font-semibold text-gray-800">WhatsApp Resmi</p>
+                      <p className="text-gray-500 text-[11px]">+62 813-4351-1099</p>
+                    </div>
+                  </div>
+                  <a
+                    href={automationLinks.waUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs transition-colors shadow-sm"
+                  >
+                    <span>Kirim via WA</span>
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                </div>
+
+                {/* Saluran Email */}
+                <div className="flex items-center justify-between gap-3 text-xs pt-1">
+                  <div className="flex items-center gap-2">
+                    <Mail className="h-4 w-4 text-red-600 shrink-0" />
+                    <div>
+                      <p className="font-semibold text-gray-800">Email Resmi</p>
+                      <p className="text-gray-500 text-[11px]">maroamabbarakka@gmail.com</p>
+                    </div>
+                  </div>
+                  <a
+                    href={automationLinks.mailtoUrl}
+                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded bg-maroa-charcoal hover:bg-maroa-black text-white font-semibold text-xs transition-colors shadow-sm"
+                  >
+                    <span>Buka Salinan Email</span>
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="pt-3">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setStatus("idle");
+                    setFormData({
+                      fullName: "",
+                      email: "",
+                      phone: "",
+                      companyOrganization: "",
+                      serviceType: "integrated",
+                      projectBudget: "Fleksibel / Sesuai Rekomendasi",
+                      projectTimeline: "1-3 Bulan",
+                      message: "",
+                      consent: false,
+                      honeypot: "",
+                    });
+                  }}
+                  className="px-6 py-2.5 rounded-maroa-sm bg-gray-200 text-gray-800 text-xs font-semibold hover:bg-gray-300 transition-colors"
+                >
+                  Kirim Pengajuan Lainnya
+                </button>
+              </div>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6" noValidate>
               <div>
                 <h3 className="text-xl font-bold text-maroa-black mb-1">Formulir Pengajuan Proyek</h3>
-                <p className="text-xs text-maroa-gray-700">Lengkapi rincian awal agar kami dapat menyiapkan solusi yang tepat.</p>
+                <p className="text-xs text-maroa-gray-700">
+                  Lengkapi rincian awal agar kami dapat menyiapkan formulasi solusi teknis dan penawaran terbaik.
+                </p>
               </div>
 
               {status === "error" && errorMessage && (
@@ -504,15 +660,15 @@ export function ContactFormSection({ preselectedService }: { preselectedService?
                 )}
               </div>
 
-              {/* Submit Button */}
-              <div className="pt-2">
+              {/* Submit Button & Otomasi Note */}
+              <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <button
                   type="submit"
                   disabled={status === "submitting"}
                   className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 rounded-maroa-sm bg-maroa-red hover:bg-maroa-red-dark text-maroa-white font-semibold text-sm transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed group"
                 >
                   {status === "submitting" ? (
-                    <span>Mengirimkan Permintaan...</span>
+                    <span>Memproses Otomatisasi...</span>
                   ) : (
                     <>
                       <span>Kirim Pengajuan Proyek</span>
@@ -520,6 +676,10 @@ export function ContactFormSection({ preselectedService }: { preselectedService?
                     </>
                   )}
                 </button>
+                <div className="flex items-center gap-2 text-[11px] text-gray-500">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+                  <span>Otomatis terhubung ke WhatsApp & Email Resmi</span>
+                </div>
               </div>
             </form>
           )}

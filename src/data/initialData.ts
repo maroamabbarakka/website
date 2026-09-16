@@ -4,7 +4,7 @@ export const initialSiteSettings: SiteSettings = {
   companyName: "PT MAROA MEDIA MABBARAKKA",
   brandName: "MAROA",
   tagline: "Creative Technology & Experience Company",
-  primaryEmail: "contact@maroa.co.id",
+  primaryEmail: "maroamabbarakka@gmail.com",
   phonePublic: "+62 813-4351-1099",
   addressPublic: "Pinrang, Sulawesi Selatan, Indonesia",
   nibNumber: "NIB terdaftar di OSS RBA", // Placeholder resmi
@@ -95,13 +95,13 @@ export const initialServices: Service[] = [
     seoDescription: "Pengembangan website korporat, sistem aplikasi berbasis web, registrasi QR event, dan platform digital terkustomisasi.",
   },
   {
-    id: "maroa-cafe",
+    id: "exotico-cafe",
     slug: "cafe",
-    title: "MAROA Café & Spaces",
-    shortTitle: "Ventures / Café",
+    title: "exótico Café & Spaces",
+    shortTitle: "Ventures / exótico Café",
     category: "venture",
     summary: "Ruang temu kreatif dan hospitality pendukung kolaborasi komunitas dan pelaku industri.",
-    description: "Sebagai unit usaha sekunder kami, MAROA Café menyediakan suasana berkumpul yang hangat untuk diskusi proyek, sesi kerja mandiri, atau sekadar menikmati sajian kopi bermutu di sela-sela aktivitas kreatif.",
+    description: "Sebagai unit usaha sekunder kami, exótico Café menyediakan suasana berkumpul yang hangat untuk diskusi proyek, sesi kerja mandiri, atau sekadar menikmati sajian kopi bermutu di sela-sela aktivitas kreatif.",
     iconName: "Coffee",
     capabilities: [
       "Creative Meeting & Co-working Space",
@@ -111,8 +111,8 @@ export const initialServices: Service[] = [
     order: 4,
     isFeatured: false,
     isPublished: true,
-    seoTitle: "MAROA Café — Creative Hospitality & Meeting Spaces",
-    seoDescription: "Ruang kolaborasi dan kafe kreatif MAROA untuk pertemuan profesional dan komunitas.",
+    seoTitle: "exótico Café — Creative Hospitality & Meeting Spaces",
+    seoDescription: "Ruang kolaborasi dan kafe kreatif exótico Café untuk pertemuan profesional dan komunitas.",
   }
 ];
 

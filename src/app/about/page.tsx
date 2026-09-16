@@ -145,12 +145,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Secondary Venture: MAROA Café (Secara subtil di bagian bawah) */}
+      {/* Secondary Venture: exótico Café (Secara subtil di bagian bawah) */}
       <section id="ventures" className="w-full py-14 bg-maroa-gray-100/30 border-b border-maroa-gray-200">
         <div className="container-maroa">
           <div className="max-w-xl mx-auto text-center mb-8">
             <Badge variant="gray" className="mb-2">Ventures & Hospitality</Badge>
-            <h3 className="text-xl font-bold text-maroa-black">MAROA Café & Spaces</h3>
+            <h3 className="text-xl font-bold text-maroa-black">exótico Café & Spaces</h3>
             <p className="text-xs text-maroa-gray-700 mt-2">
               Unit pendukung hospitality dan ruang interaksi kreatif komunitas.
             </p>

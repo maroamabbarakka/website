@@ -74,8 +74,8 @@ export default function AccessibilityPage() {
             <h2 className="text-xl font-bold text-maroa-black">Umpan Balik & Bantuan Aksesibilitas</h2>
             <p>
               Jika Anda menemui kendala dalam mengakses konten apa pun pada situs ini, silakan hubungi kami via email di:{" "}
-              <a href="mailto:contact@maroa.co.id" className="text-maroa-red font-semibold hover:underline">
-                contact@maroa.co.id
+              <a href="mailto:maroamabbarakka@gmail.com" className="text-maroa-red font-semibold hover:underline">
+                maroamabbarakka@gmail.com
               </a>
               . Kami akan dengan senang hati membantu Anda mendapatkan informasi yang dibutuhkan.
             </p>

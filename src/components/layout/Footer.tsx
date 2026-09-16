@@ -79,7 +79,7 @@ export function Footer() {
               </FooterMenuLink>
               <div className="pt-2 mt-1 border-t border-maroa-charcoal/60">
                 <FooterMenuLink href="/about#ventures">
-                  Ventures: MAROA Café
+                  Ventures: exótico Café
                 </FooterMenuLink>
               </div>
             </ul>
