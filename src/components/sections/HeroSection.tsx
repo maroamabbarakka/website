@@ -1,14 +1,31 @@
 "use client";
 
-import React, { useRef, useState } from "react";
-import Image from "next/image";
+import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
-import { CalendarDays, Camera, Laptop, Sparkles, ArrowRight, Play, Pause } from "lucide-react";
+import {
+  CalendarDays,
+  Camera,
+  Laptop,
+  Sparkles,
+  ArrowRight,
+  Play,
+  Pause,
+} from "lucide-react";
 
 export function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
+  const [isVideoLoaded, setIsVideoLoaded] = useState<boolean>(false);
+
+  useEffect(() => {
+    // Periksa apakah pengguna mengaktifkan preferensi reduced motion
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion && videoRef.current) {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
+  }, []);
 
   const toggleVideoPlay = () => {
     if (videoRef.current) {
@@ -23,130 +40,169 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-maroa-gray-100/60 via-maroa-white to-maroa-white py-14 lg:py-24">
-      {/* Background Accent Subtle Glow */}
-      <div className="absolute top-0 right-1/4 -z-10 h-96 w-96 rounded-full bg-maroa-red/5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 left-10 -z-10 h-80 w-80 rounded-full bg-maroa-charcoal/5 blur-3xl pointer-events-none" />
+    <section className="relative w-full min-h-[92vh] lg:min-h-screen flex flex-col justify-between overflow-hidden bg-[#080808] text-white">
+      {/* 1. Latar Belakang Panggung Sinematik (Video Ambient + Stage Poster) */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        {/* Poster Panggung Faktual Resolusi Tinggi Sebagai Fondasi */}
+        <div
+          className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 scale-105 filter brightness-90"
+          style={{
+            backgroundImage: "url('/portfolio/covers/grand-doorprize-stage-system-cover-1600x900.webp')",
+          }}
+          aria-hidden="true"
+        />
 
-      <div className="container-maroa">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Kolom Teks (7 Kolom Desktop) */}
-          <div className="lg:col-span-7 flex flex-col gap-6 lg:pr-6">
-            {/* Microeyebrow */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-maroa-red/10 border border-maroa-red/20 w-fit">
-              <Sparkles className="h-3.5 w-3.5 text-maroa-red shrink-0" />
-              <span className="text-xs font-bold tracking-widest text-maroa-red uppercase">
-                CREATIVE TECHNOLOGY & EXPERIENCE COMPANY
-              </span>
-            </div>
+        {/* Video Loop Motion Ambient Panggung */}
+        <video
+          ref={videoRef}
+          src="/video/MAROA_BRAND_MOTION_CONCEPT.mp4"
+          poster="/portfolio/covers/grand-doorprize-stage-system-cover-1600x900.webp"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          onLoadedData={() => setIsVideoLoaded(true)}
+          className={`absolute inset-0 w-full h-full object-cover mix-blend-screen opacity-65 transition-opacity duration-1000 ${
+            isVideoLoaded ? "opacity-65" : "opacity-0"
+          }`}
+          aria-label="Latar Panggung Sinematik MAROA"
+        />
 
-            {/* H1 Headline */}
-            <div>
-              <h1 className="hero-title text-maroa-black font-extrabold tracking-tight">
-                WE CREATE WHAT&apos;S NEXT.
-              </h1>
-              <p className="text-base sm:text-lg font-semibold text-maroa-red mt-2 tracking-wide uppercase">
-                Events. Multimedia. Digital Technology.
-              </p>
-            </div>
+        {/* Overlay Gradien Panggung Dramatis (Dark Stage Vignette) */}
+        {/* Gradien Gelap Area Teks (Kiri ke Kanan 80% -> 40%) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#080808]/95 via-[#080808]/75 to-[#080808]/40 pointer-events-none" />
 
-            {/* Narasi Pendukung Resmi */}
-            <p className="text-lg text-maroa-gray-700 leading-relaxed max-w-2xl font-normal">
-              Mengubah ide menjadi pengalaman, konten, dan solusi digital yang berdampak nyata bagi brand, institusi, dan audiens Anda.
-            </p>
+        {/* Gradien Vertikal (Atas untuk Navbar & Bawah untuk Transisi Halus) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/90 via-transparent to-[#080808] pointer-events-none" />
 
-            {/* Brand Essence 3 Pilar */}
-            <div className="text-xs sm:text-sm font-bold tracking-wider text-maroa-charcoal uppercase flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-maroa-red animate-pulse" />
-              <span>ON STAGE · ON SCREEN · ONLINE</span>
-            </div>
+        {/* Pencahayaan Panggung Khas MAROA (Stage Accent Glow: Magenta & Red) */}
+        <div className="absolute top-1/4 right-1/4 -z-0 h-[500px] w-[500px] rounded-full bg-maroa-red/20 blur-[130px] pointer-events-none animate-pulse" />
+        <div className="absolute bottom-1/3 right-10 -z-0 h-[400px] w-[400px] rounded-full bg-[#57111e]/30 blur-[110px] pointer-events-none" />
+      </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-              <Button href="/work" variant="primary" size="lg" withArrow>
-                Jelajahi Karya
-              </Button>
-              <Button href="/contact" variant="secondary" size="lg">
-                Mulai Proyek
-              </Button>
-            </div>
-
-            {/* 3 Disiplin Ringkas */}
-            <div className="pt-6 border-t border-maroa-gray-300/80 grid grid-cols-3 gap-4 text-xs text-maroa-gray-700">
-              <div className="flex flex-col">
-                <span className="font-bold text-maroa-black text-sm">Events & Stage</span>
-                <span>Tata panggung, LED, & konvensi</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-maroa-black text-sm">Multimedia Studio</span>
-                <span>Motion, video mapping, & streaming</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-maroa-black text-sm">Digital Platforms</span>
-                <span>Web apps, portal publik, & sistem</span>
-              </div>
-            </div>
+      {/* 2. Konten Editorial Utama (Hero Main Content) */}
+      <div className="container-maroa relative z-10 pt-28 pb-16 lg:pt-36 lg:pb-20 my-auto flex flex-col justify-center">
+        <div className="max-w-4xl space-y-6">
+          {/* Microeyebrow Editorial */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 w-fit">
+            <Sparkles className="h-3.5 w-3.5 text-maroa-red shrink-0" />
+            <span className="text-[11px] sm:text-xs font-bold tracking-widest text-gray-200 uppercase">
+              CREATIVE TECHNOLOGY & EXPERIENCE COMPANY
+            </span>
           </div>
 
-          {/* Kolom Visual Showcase (5 Kolom Desktop) */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative mx-auto w-full max-w-md lg:max-w-none aspect-[16/10] sm:aspect-[16/10] rounded-maroa-lg overflow-hidden border border-maroa-gray-300 shadow-2xl bg-black group">
-              {/* Showreel Video Player Resmi */}
-              <video
-                ref={videoRef}
-                src="/video/MAROA_BRAND_MOTION_CONCEPT.mp4"
-                poster="/video/MAROA_BRAND_MOTION_POSTER.png"
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-full object-cover"
-                aria-label="Cuplikan Motion Identitas Resmi MAROA Media"
-              />
+          {/* H1 Headline Editorial Panggung Raksasa */}
+          <div className="space-y-3">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight text-white leading-[0.95] drop-shadow-2xl">
+              WE CREATE <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-400">
+                WHAT&apos;S NEXT.
+              </span>
+            </h1>
+            <p className="text-base sm:text-xl lg:text-2xl font-extrabold text-maroa-red tracking-wider uppercase drop-shadow-md">
+              Events. Multimedia. Digital Technology.
+            </p>
+          </div>
 
-              {/* Overlay Halus */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 pointer-events-none" />
+          {/* Narasi Resmi Bernilai Tinggi */}
+          <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-2xl font-normal drop-shadow">
+            Mengubah ide menjadi pengalaman panggung spektakuler, konten visual imersif, dan solusi teknologi digital yang berdampak nyata bagi brand, institusi, dan audiens Anda.
+          </p>
 
-              {/* Kontrol Toggle Pause/Play */}
-              <button
-                type="button"
-                onClick={toggleVideoPlay}
-                aria-label={isPlaying ? "Jeda video showreel" : "Putar video showreel"}
-                className="absolute top-3 right-3 p-2 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md transition-colors border border-white/20 z-20 cursor-pointer"
-              >
-                {isPlaying ? <Pause className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5" />}
-              </button>
-
-              {/* Badge Tiga Pilar Mengambang di Bawah Video */}
-              <div className="absolute bottom-3 left-3 right-3 bg-black/85 backdrop-blur-md rounded-maroa-md p-3.5 border border-white/10 text-white flex flex-col gap-2 z-20">
-                <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-maroa-red">
-                    Core Capabilities
-                  </span>
-                  <Link href="/expertise" className="text-[11px] text-gray-300 hover:text-white flex items-center gap-1 group/link">
-                    <span>Lihat Rincian</span>
-                    <ArrowRight className="h-3 w-3 transition-transform group-hover/link:translate-x-0.5" />
-                  </Link>
-                </div>
-                <div className="grid grid-cols-3 gap-2 text-center text-xs">
-                  <div className="bg-white/5 rounded-maroa-sm p-1.5 flex flex-col items-center gap-1">
-                    <CalendarDays className="h-3.5 w-3.5 text-maroa-red" />
-                    <span className="font-semibold text-[10px] truncate w-full">Events</span>
-                  </div>
-                  <div className="bg-white/5 rounded-maroa-sm p-1.5 flex flex-col items-center gap-1">
-                    <Camera className="h-3.5 w-3.5 text-maroa-red" />
-                    <span className="font-semibold text-[10px] truncate w-full">Multimedia</span>
-                  </div>
-                  <div className="bg-white/5 rounded-maroa-sm p-1.5 flex flex-col items-center gap-1">
-                    <Laptop className="h-3.5 w-3.5 text-maroa-red" />
-                    <span className="font-semibold text-[10px] truncate w-full">Digital</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          {/* Tombol CTA Ganda Berdaya Tarik Tinggi */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+            <Button
+              href="/work"
+              variant="primary"
+              size="lg"
+              withArrow
+              className="shadow-xl shadow-maroa-red/25 text-sm sm:text-base px-8 py-4 font-bold"
+            >
+              Jelajahi Karya
+            </Button>
+            <Button
+              href="/contact"
+              variant="outline-light"
+              size="lg"
+              className="text-sm sm:text-base px-8 py-4 font-bold"
+            >
+              Mulai Proyek
+            </Button>
           </div>
         </div>
       </div>
+
+      {/* 3. Strip 3 Pilar Panggung di Bagian Dasar (Bottom Brand Stage Strip) */}
+      <div className="relative z-10 border-t border-white/10 bg-black/60 backdrop-blur-xl py-4 sm:py-5">
+        <div className="container-maroa">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+            {/* Indikator Pilar Aktif */}
+            <div className="flex items-center gap-3 shrink-0">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-maroa-red opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-maroa-red" />
+              </span>
+              <span className="text-xs sm:text-sm font-black tracking-widest text-white uppercase">
+                ON STAGE · ON SCREEN · ONLINE
+              </span>
+            </div>
+
+            {/* Rincian 3 Disiplin Panggung Faktual */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-xs w-full lg:w-auto">
+              <div className="flex items-center gap-2.5 text-gray-300">
+                <div className="p-1.5 rounded bg-white/5 border border-white/10 shrink-0 text-maroa-red">
+                  <CalendarDays className="h-4 w-4" />
+                </div>
+                <div>
+                  <span className="font-bold text-white block">Events & Stage</span>
+                  <span className="text-[11px] text-gray-400">LED wall, tata panggung & rigging</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2.5 text-gray-300">
+                <div className="p-1.5 rounded bg-white/5 border border-white/10 shrink-0 text-maroa-red">
+                  <Camera className="h-4 w-4" />
+                </div>
+                <div>
+                  <span className="font-bold text-white block">Multimedia Studio</span>
+                  <span className="text-[11px] text-gray-400">Video mapping, multicam & motion</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2.5 text-gray-300">
+                <div className="p-1.5 rounded bg-white/5 border border-white/10 shrink-0 text-maroa-red">
+                  <Laptop className="h-4 w-4" />
+                </div>
+                <div>
+                  <span className="font-bold text-white block">Digital Technology</span>
+                  <span className="text-[11px] text-gray-400">Web apps, registrasi QR & portal</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Tautan Rincian Kapabilitas */}
+            <Link
+              href="/expertise"
+              className="hidden xl:inline-flex items-center gap-1.5 text-xs font-semibold text-gray-300 hover:text-maroa-red transition-colors shrink-0 group"
+            >
+              <span>Selengkapnya</span>
+              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* 4. Kontrol Aksesibilitas Pemutar Video Latar (Pojok Kanan Atas) */}
+      <button
+        type="button"
+        onClick={toggleVideoPlay}
+        aria-label={isPlaying ? "Jeda video latar panggung" : "Putar video latar panggung"}
+        className="absolute top-24 right-4 sm:right-8 z-20 p-2.5 rounded-full bg-black/60 hover:bg-black/85 text-white/80 hover:text-white backdrop-blur-md transition-all border border-white/20 shadow-lg cursor-pointer focus-visible:outline-2 focus-visible:outline-white"
+        title={isPlaying ? "Jeda video latar" : "Putar video latar"}
+      >
+        {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+      </button>
     </section>
   );
 }

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "ghost";
+  variant?: "primary" | "secondary" | "ghost" | "outline-light";
   size?: "sm" | "md" | "lg";
   href?: string;
   withArrow?: boolean;
@@ -40,6 +40,8 @@ export function Button({
       "bg-maroa-white hover:bg-maroa-gray-100 text-maroa-charcoal border border-maroa-charcoal/30 hover:border-maroa-charcoal focus-visible:outline-maroa-charcoal",
     ghost:
       "bg-transparent hover:bg-maroa-gray-100 text-maroa-charcoal focus-visible:outline-maroa-charcoal",
+    "outline-light":
+      "bg-white/10 hover:bg-white/20 text-white border border-white/25 hover:border-white/50 backdrop-blur-md focus-visible:outline-white",
   };
 
   const combinedStyles = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${
