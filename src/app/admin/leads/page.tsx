@@ -132,10 +132,12 @@ export default function AdminLeadsPage() {
           ) : (
             <div className="divide-y divide-maroa-gray-100">
               {filteredLeads.map((lead, idx) => {
-                const isSelected = selectedLead?.email === lead.email;
+                const isSelected =
+                  (selectedLead?.id && lead.id && selectedLead.id === lead.id) ||
+                  (selectedLead?.email === lead.email && selectedLead?.createdAt === lead.createdAt);
                 return (
                   <div
-                    key={idx}
+                    key={lead.id || idx}
                     onClick={() => setSelectedLead(lead)}
                     className={`p-4 transition-colors cursor-pointer hover:bg-maroa-gray-100/60 ${
                       isSelected ? "bg-maroa-gray-100 border-l-4 border-maroa-red" : ""
