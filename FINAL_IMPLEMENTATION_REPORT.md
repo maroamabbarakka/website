@@ -20,12 +20,12 @@
 
 ### B. Halaman Publik Responsif Penuh (Phase 1)
 1. **Beranda (`/`):**
-   - Hero split 7/5 desktop dengan H1 "We Create Experiences, Content & Digital Solutions", eyebrow berwibawa, tombol aksi ganda, dan showcase tiga pilar visual.
-   - Core Pillars Section: Tiga kartu keahlian bisnis (Events, Multimedia, Digital) dengan ikon outline seragam dan daftar kapabilitas.
-   - Selected Work Section: Kartu portofolio faktual dengan rasio aspek 16:10 terkontrol bebas layout shift (zero CLS).
-   - Integrated Approach Section: Narasi terpadu *"On Stage · On Screen · Online"*.
-   - Metodologi 4 Tahap: *Discover, Plan, Produce, Measure*.
-   - CTA Banner Penutup: Navigasi cepat konsultasi proyek.
+   - **Dark Stage Cinematic Hero Full-Viewport**: Viewport editorial panggung penuh (`min-height: min(900px, 100svh)`), tipografi editorial raksasa `WE CREATE WHAT'S NEXT.` dengan drop-shadow sinematik, video ambient loop panggung berpadu dengan poster panggung faktual (`grand-doorprize-stage-system-cover-1600x900.webp`), pendaran cahaya panggung merah maroa (`#ff1830` & `#2c0910`), dan floating navbar transparan adaptif dengan logo kontras aman (`LOGO_MAROA_PLAY_DARK_SAFE.png`).
+   - **Strip 3 Pilar Panggung**: Indikator aktif berdenyut `ON STAGE · ON SCREEN · ONLINE` yang mengalirkan identitas panggung MAROA ke seluruh halaman.
+   - **Seksi Layanan 3 Panel Editorial Autentik**: Menggantikan ikon teks biasa dengan 3 panel visual beresolusi tinggi untuk Events (panggung kolosal), Multimedia Studio (3D video mapping arsitektural), dan Digital Technology (tangkapan layar aplikasi web fungsional).
+   - **Selected Work Section**: Kartu portofolio faktual lintas pilar dengan fitur acak karya interaktif, pembeda jelas antara karya riil dan konsep, serta kartu multi-device mockup.
+   - **Integrated Approach & Metodologi 4 Tahap**: *Discovery, Design, Production & Development, Delivery & Evaluation*.
+   - **CTA Banner Penutup Sinematik**: *LET'S CREATE SOMETHING REMARKABLE.* dengan tombol `Mulai Proyek` dan tautan WhatsApp resmi.
 2. **Tentang Perusahaan (`/about`):**
    - Profil resmi PT MAROA MEDIA MABBARAKKA, filosofi integrasi kreatif-teknologi, nilai operasional (fokus hasil, kepatuhan, teknologi mutakhir).
    - Blok ventura sekunder: *MAROA Café & Spaces* ditampilkan secara subtil di bagian bawah tanpa menyaingi bobot tiga pilar utama.
