@@ -115,10 +115,13 @@ const officialLogos: OfficialPartnerLogo[] = [
 export function ClientLogoCarouselSection() {
   return (
     <section className="w-full py-10 sm:py-12 bg-white border-b border-gray-100 overflow-hidden relative select-none">
-      {/* Teks Judul Minimalis 1 Baris Responsif */}
-      <div className="container-maroa mb-8 text-center px-4">
-        <p className="text-xs sm:text-sm md:text-base font-semibold text-gray-800 tracking-tight leading-none whitespace-nowrap overflow-hidden text-ellipsis">
-          Telah dipercaya oleh berbagai Institusi Pemerintah, Perusahaan dan Organisasi
+      {/* Teks Judul Resmi Jejak Proyek & Kolaborasi */}
+      <div className="container-maroa mb-8 text-center px-4 space-y-1.5">
+        <h2 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 tracking-tight">
+          Jejak Proyek & Kolaborasi
+        </h2>
+        <p className="text-xs sm:text-sm text-gray-600 font-normal max-w-xl mx-auto">
+          Institusi dan organisasi yang terlibat dalam portofolio karya MAROA.
         </p>
       </div>
 

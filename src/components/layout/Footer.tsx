@@ -41,13 +41,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pb-12">
           {/* Kolom 1 (Kiri): Identitas Brand & Info Perusahaan (Lebar 5/12 di Desktop) */}
           <div className="flex flex-col gap-4 lg:col-span-5 lg:pr-8">
-            <div className="relative h-9 w-36">
+            <div className="relative h-9 w-40">
               <Image
-                src="/logos/maroa-main-signal.png"
+                src="/brand/LOGO_MAROA_PLAY_DARK_SAFE.png"
                 alt="PT MAROA MEDIA MABBARAKKA"
                 fill
-                className="object-contain object-left brightness-0 invert"
-                sizes="144px"
+                className="object-contain object-left"
+                sizes="160px"
               />
             </div>
             <p className="text-maroa-red font-semibold text-xs tracking-wider uppercase">

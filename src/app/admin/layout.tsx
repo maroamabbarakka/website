@@ -119,10 +119,10 @@ function AdminLayoutContent({ children }: { children: React.ReactNode }) {
           <div className="flex items-center gap-3">
             <div className="relative h-8 w-28">
               <Image
-                src="/logos/maroa-main-signal.png"
+                src="/brand/LOGO_MAROA_PLAY_DARK_SAFE.png"
                 alt="MAROA Admin"
                 fill
-                className="object-contain object-left brightness-0 invert"
+                className="object-contain object-left"
                 sizes="112px"
               />
             </div>

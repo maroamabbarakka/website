@@ -71,14 +71,14 @@ export function Header() {
           className="flex items-center gap-3 focus-visible:outline-2 focus-visible:outline-offset-2 rounded-maroa-sm"
           aria-label="Beranda MAROA"
         >
-          <div className="relative h-10 w-36 sm:h-11 sm:w-40">
+          <div className="relative h-10 w-36 sm:h-11 sm:w-44">
             <Image
-              src="/logos/maroa-main-signal.png"
+              src="/brand/LOGO_MAROA_PLAY_ORIGINAL.png"
               alt="PT MAROA MEDIA MABBARAKKA"
               fill
               priority
               className="object-contain object-left"
-              sizes="(max-width: 640px) 144px, 160px"
+              sizes="(max-width: 640px) 144px, 176px"
             />
           </div>
         </Link>

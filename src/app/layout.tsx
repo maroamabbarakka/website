@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/logos/maroa-main-signal.png",
+        url: "/brand/LOGO_MAROA_PLAY_ORIGINAL.png",
         width: 1200,
         height: 630,
         alt: "PT MAROA MEDIA MABBARAKKA — Creative Technology & Experience Company",
@@ -73,11 +73,11 @@ export const metadata: Metadata = {
     title: "MAROA — Creative Technology & Experience Company",
     description:
       "Penyelenggaraan event terpadu, produksi konten multimedia & videotron, dan sistem aplikasi web korporat.",
-    images: ["/logos/maroa-main-signal.png"],
+    images: ["/brand/LOGO_MAROA_PLAY_ORIGINAL.png"],
   },
   icons: {
-    icon: "/logos/maroa-app-icon.png",
-    apple: "/logos/maroa-monogram.png",
+    icon: "/brand/ICON_MAROA_ORIGINAL.png",
+    apple: "/brand/ICON_MAROA_ORIGINAL.png",
   },
   manifest: "/site.webmanifest",
   verification: {

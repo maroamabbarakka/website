@@ -27,8 +27,8 @@ export default function HomePage() {
         legalName: "PT MAROA MEDIA MABBARAKKA",
         alternateName: "MAROA",
         url: "https://maroamedia.web.app",
-        logo: "https://maroamedia.web.app/logos/maroa-main-signal.png",
-        image: "https://maroamedia.web.app/logos/maroa-main-signal.png",
+        logo: "https://maroamedia.web.app/brand/LOGO_MAROA_PLAY_ORIGINAL.png",
+        image: "https://maroamedia.web.app/brand/LOGO_MAROA_PLAY_ORIGINAL.png",
         description:
           "Perusahaan teknologi kreatif dan pengalaman terintegrasi di Pinrang, Sulawesi Selatan. Menyelenggarakan event kolosal profesional, produksi multimedia studio & videotron panggung, serta rekayasa aplikasi web korporat.",
         telephone: "+6281343511099",

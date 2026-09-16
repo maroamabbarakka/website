@@ -35,13 +35,13 @@ export default function AdminLoginPage() {
       <div className="w-full max-w-md bg-maroa-charcoal border border-white/10 rounded-maroa-lg p-8 sm:p-10 shadow-2xl text-white space-y-8">
         {/* Brand Header */}
         <div className="text-center space-y-3">
-          <div className="relative h-10 w-40 mx-auto">
+          <div className="relative h-10 w-44 mx-auto">
             <Image
-              src="/logos/maroa-main-signal.png"
+              src="/brand/LOGO_MAROA_PLAY_DARK_SAFE.png"
               alt="PT MAROA MEDIA MABBARAKKA"
               fill
-              className="object-contain brightness-0 invert"
-              sizes="160px"
+              className="object-contain"
+              sizes="176px"
             />
           </div>
           <span className="inline-block text-[11px] font-bold uppercase tracking-widest text-maroa-red bg-maroa-red/10 px-3 py-1 rounded-full border border-maroa-red/20">

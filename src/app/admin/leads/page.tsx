@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+"use client";
+
+import React, { useState, useEffect, useCallback } from "react";
 import { Lead, LeadStatus } from "@/lib/types";
 import { db } from "@/lib/firebase/config";
 import { collection, getDocs, query, orderBy, doc, updateDoc } from "firebase/firestore";
@@ -11,7 +13,7 @@ export default function AdminLeadsPage() {
   const [activeFilter, setActiveFilter] = useState<string>("all");
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
 
-  const fetchLeads = async () => {
+  const fetchLeads = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
@@ -22,8 +24,8 @@ export default function AdminLeadsPage() {
         items.push({ id: d.id, ...d.data() } as Lead);
       });
       setLeads(items);
-      if (items.length > 0 && !selectedLead) {
-        setSelectedLead(items[0]);
+      if (items.length > 0) {
+        setSelectedLead((prev) => prev ?? items[0]);
       }
     } catch (err: any) {
       console.error("Gagal memuat data leads dari Firestore:", err);
@@ -32,11 +34,11 @@ export default function AdminLeadsPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     fetchLeads();
-  }, []);
+  }, [fetchLeads]);
 
   const updateLeadStatus = async (leadId: string, newStatus: LeadStatus) => {
     if (!leadId) return;

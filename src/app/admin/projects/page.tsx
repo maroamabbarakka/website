@@ -1,20 +1,34 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { Project } from "@/lib/types";
-import { getAllProjects, saveProject, validateProjectPublishability, exportProjectsToJson } from "@/lib/projectStorage";
-import { Plus, Eye, CheckCircle2, XCircle, Download, AlertTriangle } from "lucide-react";
+import { getAllAdminProjects, saveProjectToFirestore } from "@/lib/firebase/projectRepository";
+import { validateProjectPublishability, exportProjectsToJson } from "@/lib/projectStorage";
+import { Plus, Eye, CheckCircle2, XCircle, Download, AlertTriangle, RefreshCw } from "lucide-react";
 
 export default function AdminProjectsPage() {
   const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
   const [validationAlert, setValidationAlert] = useState<{ id: string; missing: string[] } | null>(null);
 
-  useEffect(() => {
-    setProjects(getAllProjects());
+  const loadProjects = useCallback(async () => {
+    setLoading(true);
+    try {
+      const data = await getAllAdminProjects();
+      setProjects(data);
+    } catch (err) {
+      console.error("Gagal memuat proyek:", err);
+    } finally {
+      setLoading(false);
+    }
   }, []);
 
-  const togglePublish = (id: string) => {
+  useEffect(() => {
+    loadProjects();
+  }, [loadProjects]);
+
+  const togglePublish = async (id: string) => {
     const target = projects.find((p) => p.id === id);
     if (!target) return;
 
@@ -29,10 +43,10 @@ export default function AdminProjectsPage() {
 
     setValidationAlert(null);
     const updated = { ...target, isPublished: !target.isPublished };
-    const res = saveProject(updated);
+    const res = await saveProjectToFirestore(updated);
 
     if (res.success) {
-      setProjects(getAllProjects());
+      await loadProjects();
     } else {
       alert(res.message);
     }
