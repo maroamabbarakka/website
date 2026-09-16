@@ -3,7 +3,10 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { initialProjects, initialSiteSettings } from "@/data/initialData";
-import { Lead } from "@/lib/types";
+import { getAllAdminProjects } from "@/lib/firebase/projectRepository";
+import { db } from "@/lib/firebase/config";
+import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
+import { Lead, Project } from "@/lib/types";
 import {
   Briefcase,
   Inbox,
@@ -13,27 +16,62 @@ import {
   ShieldCheck,
   CheckCircle2,
   Clock,
+  RefreshCw,
 } from "lucide-react";
 
 export default function AdminDashboardPage() {
   const [leads, setLeads] = useState<Lead[]>([]);
+  const [projects, setProjects] = useState<Project[]>(initialProjects);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    // Ambil antrean leads dari localStorage atau initial queue
-    if (typeof window !== "undefined") {
-      const stored = localStorage.getItem("maroa_leads_queue");
-      if (stored) {
-        try {
-          setLeads(JSON.parse(stored));
-        } catch {
+    let isMounted = true;
+
+    async function loadDashboardData() {
+      setLoading(true);
+      try {
+        // Ambil data proyek dari Firestore dengan fallback lokal
+        const projs = await getAllAdminProjects();
+        if (isMounted) {
+          setProjects(projs);
+        }
+      } catch (err) {
+        console.error("Gagal memuat proyek admin:", err);
+      }
+
+      try {
+        // Ambil data leads riil dari Cloud Firestore
+        const q = query(collection(db, "leads"), orderBy("createdAt", "desc"), limit(10));
+        const snap = await getDocs(q);
+        const items: Lead[] = [];
+        snap.forEach((d) => {
+          items.push({ id: d.id, ...d.data() } as Lead);
+        });
+        if (isMounted) {
+          setLeads(items);
+        }
+      } catch (err) {
+        console.warn("Gagal memuat leads dari Firestore (kemungkinan izin/offline):", err);
+        // Fallback aman tanpa crash
+        if (isMounted) {
           setLeads([]);
+        }
+      } finally {
+        if (isMounted) {
+          setLoading(false);
         }
       }
     }
+
+    loadDashboardData();
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
-  const publishedCount = initialProjects.filter((p) => p.isPublished).length;
-  const newLeadsCount = leads.filter((l) => l.status === "new").length;
+  const publishedCount = projects.filter((p) => p.isPublished).length;
+  const newLeadsCount = leads.filter((l) => (l.status || "new") === "new").length;
 
   return (
     <div className="space-y-8 max-w-6xl">
@@ -126,12 +164,12 @@ export default function AdminDashboardPage() {
           ) : (
             <div className="divide-y divide-maroa-gray-100">
               {leads.slice(0, 4).map((lead, i) => (
-                <div key={i} className="py-3 flex items-start justify-between gap-4 text-xs">
+                <div key={lead.id || i} className="py-3 flex items-start justify-between gap-4 text-xs">
                   <div>
                     <span className="font-bold text-maroa-black block">{lead.fullName}</span>
                     <span className="text-maroa-gray-500">{lead.companyOrganization || lead.email}</span>
                     <span className="inline-block mt-1 text-[11px] px-2 py-0.5 rounded bg-maroa-gray-100 text-maroa-charcoal font-medium">
-                      {lead.serviceType.toUpperCase()}
+                      {(lead.serviceType || "proyek").toUpperCase()}
                     </span>
                   </div>
                   <span className="text-[11px] px-2 py-0.5 rounded font-semibold bg-blue-50 text-blue-700 capitalize">
@@ -154,14 +192,16 @@ export default function AdminDashboardPage() {
           </div>
 
           <div className="divide-y divide-maroa-gray-100 text-xs">
-            {initialProjects.map((p) => (
+            {projects.slice(0, 6).map((p) => (
               <div key={p.id} className="py-3 flex items-center justify-between">
                 <div>
                   <span className="font-bold text-maroa-black block truncate max-w-[200px]">{p.title}</span>
                   <span className="text-maroa-gray-500">{p.clientDisplayName} · {p.year}</span>
                 </div>
-                <span className="text-[11px] px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-semibold">
-                  Published
+                <span className={`text-[11px] px-2 py-0.5 rounded font-semibold ${
+                  p.isPublished ? "bg-emerald-50 text-emerald-700" : "bg-amber-50 text-amber-700"
+                }`}>
+                  {p.isPublished ? "Published" : "Draft"}
                 </span>
               </div>
             ))}
