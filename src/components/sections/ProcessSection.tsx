@@ -5,26 +5,26 @@ export function ProcessSection() {
   const steps = [
     {
       number: "01",
-      title: "Discover & Strategy",
-      desc: "Menyelami tujuan bisnis, profil audiens, serta tantangan operasional untuk merumuskan arah solusi yang tepat sasaran.",
+      title: "Discovery & Strategy",
+      desc: "Menyelami tujuan proyek, profil audiens, serta tantangan operasional untuk merumuskan arah solusi kreatif dan teknis yang presisi.",
       icon: <Compass className="h-6 w-6 text-maroa-red" />,
     },
     {
       number: "02",
-      title: "Plan & Create",
-      desc: "Merancang konsep visual, tata ruang event, rancangan tata suara siaran, hingga wireframe dan arsitektur platform web.",
+      title: "Design & Concept",
+      desc: "Merancang konsep visual, tata panggung tematik, materi multimedia broadcast, hingga arsitektur sistem dan antarmuka web modern.",
       icon: <PenTool className="h-6 w-6 text-maroa-red" />,
     },
     {
       number: "03",
-      title: "Produce & Deliver",
-      desc: "Eksekusi lapangan dengan standar disiplin tinggi: koordinasi panggung presisi, produksi multimedia siar, dan kompilasi sistem web aman.",
+      title: "Production & Development",
+      desc: "Eksekusi lapangan dengan standar disiplin tinggi: koordinasi panggung presisi, siaran multimedia multikamera, dan rekayasa perangkat lunak.",
       icon: <Play className="h-6 w-6 text-maroa-red" />,
     },
     {
       number: "04",
-      title: "Measure & Deliver",
-      desc: "Penyerahan seluruh aset dokumentasi, pelaporan metrik partisipasi, dan evaluasi berkelanjutan untuk pengembangan masa depan.",
+      title: "Delivery & Evaluation",
+      desc: "Serah terima seluruh aset karya dan dokumentasi, verifikasi keandalan operasional, serta pelaporan metrik keberhasilan proyek.",
       icon: <BarChart3 className="h-6 w-6 text-maroa-red" />,
     },
   ];

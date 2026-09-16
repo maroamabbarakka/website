@@ -125,7 +125,7 @@ export function SelectedWorkSection() {
               href="/work"
               className="inline-flex items-center text-sm font-semibold text-maroa-red hover:text-maroa-red-dark transition-colors group"
             >
-              <span>Lihat Semua (18)</span>
+              <span>Seluruh Karya ({initialProjects.filter((p) => p.isPublished).length})</span>
               <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
@@ -248,10 +248,15 @@ export function SelectedWorkSection() {
                   )}
 
                   {/* Category Badge Berwarna Khas Pilar */}
-                  <div className="absolute top-4 left-4 z-20">
+                  <div className="absolute top-4 left-4 z-20 flex items-center gap-1.5">
                     <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-semibold border backdrop-blur-md shadow-sm ${badgeInfo.bg}`}>
                       {badgeInfo.label}
                     </span>
+                    {project.isConceptOnly && (
+                      <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-black/80 text-amber-300 border border-amber-400/40 backdrop-blur-md">
+                        Konsep
+                      </span>
+                    )}
                   </div>
                 </div>
 
