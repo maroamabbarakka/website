@@ -7,7 +7,7 @@ export const initialSiteSettings: SiteSettings = {
   primaryEmail: "maroamabbarakka@gmail.com",
   phonePublic: "+62 813-4351-1099",
   addressPublic: "Pinrang, Sulawesi Selatan, Indonesia",
-  nibNumber: "NIB terdaftar di OSS RBA", // Placeholder resmi
+  nibNumber: "1509260001449",
   socialLinks: {
     instagram: "https://www.instagram.com/maroaproject/",
     whatsapp: "https://wa.me/6281343511099",

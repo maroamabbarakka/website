@@ -176,7 +176,7 @@ export function Footer() {
                   Badan Hukum AHU Terdaftar
                 </span>
                 <span className="text-[9px] text-emerald-400 font-mono">
-                  Terverifikasi Sah
+                  AHU-A122202.AH.01.30.Tahun 2026
                 </span>
               </div>
             </a>
@@ -209,7 +209,7 @@ export function Footer() {
                   NIB Berbasis Risiko
                 </span>
                 <span className="text-[9px] text-emerald-400 font-mono">
-                  Izin Usaha Aktif
+                  1509260001449
                 </span>
               </div>
             </a>
@@ -236,7 +236,7 @@ export function Footer() {
                   Wajib Pajak Terdaftar
                 </span>
                 <span className="text-[9px] text-emerald-400 font-mono">
-                  NPWP Perusahaan Sah
+                  1000000011150077
                 </span>
               </div>
             </div>

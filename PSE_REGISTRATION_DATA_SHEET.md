@@ -14,10 +14,12 @@
 2. **Bentuk Hukum:** Perseroan Terbatas (PT)
 3. **Merek Dagang:** MAROA
 4. **Klasifikasi Bisnis:** Creative Technology & Experience Company
-5. **Nomor Induk Berusaha (NIB):** Terdaftar melalui sistem OSS-RBA [TODO: Masukkan 13 Digit NIB Resmi]
-6. **Alamat Domisili Resmi:** Pinrang, Sulawesi Selatan, Indonesia
-7. **Email Korespondensi Resmi:** contact@maroa.co.id
-8. **Nomor Kontak Resmi:** +62 811-0000-0000 [TODO: Masukkan Nomor Telepon Resmi]
+5. **Nomor Induk Berusaha (NIB):** 1509260001449 (Sistem OSS-RBA BKPM RI)
+6. **SK Pengesahan AHU Kemenkumham:** AHU-A122202.AH.01.30.Tahun 2026
+7. **NPWP Perusahaan:** 1000000011150077 (DJP Kemenkeu RI)
+8. **Alamat Domisili Resmi:** Pinrang, Sulawesi Selatan, Indonesia
+9. **Email Korespondensi Resmi:** maroamabbarakka@gmail.com
+10. **Nomor Kontak Resmi:** +62 813-4351-1099
 
 ---
 
