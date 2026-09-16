@@ -80,6 +80,12 @@ export const metadata: Metadata = {
     apple: "/logos/maroa-monogram.png",
   },
   manifest: "/site.webmanifest",
+  verification: {
+    google: "577a13a8411c14b6",
+    other: {
+      "msvalidate.01": "BD44AE50DCEA695064F1C86C6C6D1794",
+    },
+  },
   robots: {
     index: true,
     follow: true,
