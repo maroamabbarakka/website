@@ -1,56 +1,59 @@
-"use client";
-
 import React, { useState, useEffect } from "react";
 import { Lead, LeadStatus } from "@/lib/types";
-import { Mail, Phone, Building, Calendar, Filter, Clock, Check } from "lucide-react";
+import { db } from "@/lib/firebase/config";
+import { collection, getDocs, query, orderBy, doc, updateDoc } from "firebase/firestore";
+import { Mail, Phone, Building, Calendar, Filter, Clock, Check, RefreshCw, AlertCircle, Hash } from "lucide-react";
 
 export default function AdminLeadsPage() {
   const [leads, setLeads] = useState<Lead[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
   const [activeFilter, setActiveFilter] = useState<string>("all");
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const stored = localStorage.getItem("maroa_leads_queue");
-      if (stored) {
-        try {
-          setLeads(JSON.parse(stored));
-        } catch {
-          setLeads([]);
-        }
-      } else {
-        // Contoh awal prospek sampel profesional
-        const sampleLeads: Lead[] = [
-          {
-            fullName: "Ahmad Fauzi",
-            email: "fauzi@regionalforum.id",
-            phone: "+62 812-3456-7890",
-            companyOrganization: "Regional Innovation Network",
-            serviceType: "integrated",
-            projectBudget: "Rp 50 - 100 Juta",
-            projectTimeline: "1-3 Bulan",
-            message: "Membutuhkan koordinasi panggung untuk seminar 500 peserta beserta sistem registrasi QR dan live streaming 3 kamera.",
-            consent: true,
-            consentTextVersion: "2026-09-v1",
-            status: "new",
-            createdAt: new Date().toISOString(),
-          },
-        ];
-        setLeads(sampleLeads);
-        localStorage.setItem("maroa_leads_queue", JSON.stringify(sampleLeads));
+  const fetchLeads = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const q = query(collection(db, "leads"), orderBy("createdAt", "desc"));
+      const snap = await getDocs(q);
+      const items: Lead[] = [];
+      snap.forEach((d) => {
+        items.push({ id: d.id, ...d.data() } as Lead);
+      });
+      setLeads(items);
+      if (items.length > 0 && !selectedLead) {
+        setSelectedLead(items[0]);
       }
+    } catch (err: any) {
+      console.error("Gagal memuat data leads dari Firestore:", err);
+      setError("Tidak dapat memuat data prospek langsung dari Firestore: " + (err?.message || "Izin akses ditolak atau server offline"));
+      setLeads([]);
+    } finally {
+      setLoading(false);
     }
+  };
+
+  useEffect(() => {
+    fetchLeads();
   }, []);
 
-  const updateLeadStatus = (index: number, newStatus: LeadStatus) => {
-    const updated = [...leads];
-    updated[index].status = newStatus;
-    setLeads(updated);
-    if (typeof window !== "undefined") {
-      localStorage.setItem("maroa_leads_queue", JSON.stringify(updated));
-    }
-    if (selectedLead && selectedLead.email === updated[index].email) {
-      setSelectedLead(updated[index]);
+  const updateLeadStatus = async (leadId: string, newStatus: LeadStatus) => {
+    if (!leadId) return;
+    try {
+      await updateDoc(doc(db, "leads", leadId), {
+        status: newStatus,
+        updatedAt: new Date().toISOString(),
+      });
+      setLeads((prev) =>
+        prev.map((l) => (l.id === leadId ? { ...l, status: newStatus } : l))
+      );
+      if (selectedLead?.id === leadId) {
+        setSelectedLead((prev) => (prev ? { ...prev, status: newStatus } : null));
+      }
+    } catch (err: any) {
+      console.error("Gagal memperbarui status lead:", err);
+      alert("Gagal memperbarui status di Firestore: " + (err?.message || "Kesalahan otorisasi"));
     }
   };
 
@@ -70,12 +73,34 @@ export default function AdminLeadsPage() {
 
   return (
     <div className="space-y-6 max-w-6xl">
-      <div>
-        <h1 className="text-2xl font-bold text-maroa-black">Kotak Masuk Leads & Prospek</h1>
-        <p className="text-xs text-maroa-gray-700 mt-1">
-          Kelola permintaan informasi dan pengajuan proyek dari calon klien secara tertata.
-        </p>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-bold text-maroa-black">Kotak Masuk Leads & Prospek</h1>
+          <p className="text-xs text-maroa-gray-700 mt-1">
+            Data prospek langsung tersimpan pada koleksi Cloud Firestore <code className="bg-gray-100 px-1 py-0.5 rounded text-[11px]">leads</code>.
+          </p>
+        </div>
+
+        <button
+          type="button"
+          onClick={fetchLeads}
+          disabled={loading}
+          className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-maroa-sm bg-maroa-white border border-maroa-gray-300 text-maroa-charcoal text-xs font-semibold hover:bg-maroa-gray-100 transition-colors shadow-sm disabled:opacity-50 cursor-pointer"
+        >
+          <RefreshCw className={`h-3.5 w-3.5 ${loading ? "animate-spin text-maroa-red" : ""}`} />
+          <span>Segarkan Data</span>
+        </button>
       </div>
+
+      {error && (
+        <div className="p-4 rounded-maroa-md bg-amber-50 border border-amber-300 text-amber-900 text-xs flex items-start gap-3">
+          <AlertCircle className="h-4 w-4 text-amber-600 shrink-0 mt-0.5" />
+          <div className="space-y-1">
+            <span className="font-bold">Pemberitahuan Status Server:</span>
+            <p>{error}</p>
+          </div>
+        </div>
+      )}
 
       {/* Filter Tabs */}
       <div className="flex flex-wrap items-center gap-2 pb-2 border-b border-maroa-gray-200">
@@ -185,7 +210,7 @@ export default function AdminLeadsPage() {
 
               <div className="space-y-2 pt-2 border-t border-maroa-gray-100">
                 <span className="text-xs font-semibold text-maroa-charcoal block">
-                  Perbarui Status Penanganan:
+                  Perbarui Status Penanganan (Cloud Firestore):
                 </span>
                 <div className="grid grid-cols-3 gap-2">
                   {(["new", "contacted", "qualified", "won", "lost", "spam"] as LeadStatus[]).map(
@@ -194,12 +219,13 @@ export default function AdminLeadsPage() {
                         key={st}
                         type="button"
                         onClick={() => {
-                          const idx = leads.findIndex((l) => l.email === selectedLead.email);
-                          if (idx !== -1) updateLeadStatus(idx, st);
+                          if (selectedLead?.id) {
+                            updateLeadStatus(selectedLead.id, st);
+                          }
                         }}
-                        className={`py-1.5 px-2 rounded text-[11px] font-semibold capitalize border transition-colors ${
+                        className={`py-1.5 px-2 rounded text-[11px] font-semibold capitalize border transition-colors cursor-pointer ${
                           selectedLead.status === st
-                            ? "bg-maroa-black text-white border-maroa-black"
+                            ? "bg-maroa-black text-white border-maroa-black shadow-xs"
                             : "bg-white border-maroa-gray-300 text-maroa-charcoal hover:bg-maroa-gray-100"
                         }`}
                       >

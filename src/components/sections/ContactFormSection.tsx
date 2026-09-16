@@ -51,6 +51,7 @@ export function ContactFormSection({ preselectedService }: { preselectedService?
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [submittedRefId, setSubmittedRefId] = useState<string>("");
   const [mountTime, setMountTime] = useState<number>(0);
 
   // Menyimpan tautan otomatis yang dibuat saat submit berhasil
@@ -191,21 +192,14 @@ Sumber          : Website Resmi MAROA (https://maroamedia.web.app)
         createdAt: new Date().toISOString(),
       };
 
-      try {
-        await addDoc(collection(db, "leads"), {
-          ...leadPayload,
-          serverTimestamp: serverTimestamp(),
-        });
-      } catch (firestoreError) {
-        // Fallback simpan lokal jika emulator atau permissions client terbatas
-        if (typeof window !== "undefined") {
-          const existingLeads = JSON.parse(localStorage.getItem("maroa_leads_queue") || "[]");
-          existingLeads.push(leadPayload);
-          localStorage.setItem("maroa_leads_queue", JSON.stringify(existingLeads));
-        }
-      }
+      const docRef = await addDoc(collection(db, "leads"), {
+        ...leadPayload,
+        serverTimestamp: serverTimestamp(),
+      });
 
-      // Simpan link untuk tampilan konfirmasi sukses
+      setSubmittedRefId(docRef.id);
+
+      // Simpan link untuk tindakan opsional lanjutan pengguna
       setAutomationLinks({
         waUrl: waGeneratedUrl,
         mailtoUrl: mailtoGeneratedUrl,
@@ -218,18 +212,12 @@ Sumber          : Website Resmi MAROA (https://maroamedia.web.app)
       });
 
       setStatus("success");
-
-      // Otomatis picu pembukaan WhatsApp di tab baru untuk kenyamanan pengguna
-      if (typeof window !== "undefined") {
-        try {
-          window.open(waGeneratedUrl, "_blank", "noopener,noreferrer");
-        } catch (popupError) {
-          // Abaikan jika pop-up diblokir browser, tombol manual tersedia di UI sukses
-        }
-      }
     } catch (err: unknown) {
+      console.error("Gagal mengirim pengajuan ke Firestore:", err);
       setStatus("error");
-      setErrorMessage("Terjadi kendala teknis saat memproses pesan. Silakan hubungi kami langsung via WhatsApp atau Email.");
+      setErrorMessage(
+        "Permintaan belum berhasil tersimpan ke sistem server kami. Silakan periksa koneksi internet Anda atau hubungi kami langsung via WhatsApp/Email resmi."
+      );
     }
   };
 
@@ -339,20 +327,29 @@ Sumber          : Website Resmi MAROA (https://maroamedia.web.app)
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold text-maroa-black">Pengajuan Berhasil Diproses!</h3>
+                <h3 className="text-2xl font-bold text-maroa-black">Pengajuan Berhasil Tercatat!</h3>
                 <p className="text-sm text-maroa-gray-700 max-w-lg mt-2 leading-relaxed">
-                  Data pengajuan proyek Anda telah tercatat dan otomatis diteruskan ke tim manajemen MAROA melalui sistem pesan cepat.
+                  Data pengajuan proyek Anda telah tersimpan secara resmi pada basis data sistem kami. Tim MAROA akan segera meninjau dan merumuskan penawaran teknis terbaik.
                 </p>
+                {submittedRefId && (
+                  <div className="mt-3 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-xs text-emerald-800">
+                    <span className="text-gray-500">ID Referensi:</span>
+                    <span className="font-mono font-bold select-all">{submittedRefId}</span>
+                  </div>
+                )}
               </div>
 
-              {/* Kartu Status Otomatisasi Terintegrasi */}
+              {/* Kartu Status Saluran Lanjutan Opsional */}
               <div className="w-full max-w-md bg-gray-50 border border-gray-200 rounded-lg p-4 text-left space-y-3">
                 <div className="flex items-center justify-between text-xs pb-2 border-b border-gray-200">
-                  <span className="font-bold text-gray-800">Status Saluran Otomasi:</span>
+                  <span className="font-bold text-gray-800">Tindakan Lanjutan (Opsional):</span>
                   <span className="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-semibold text-[11px]">
-                    Siap Terkirim
+                    Tersimpan di Cloud
                   </span>
                 </div>
+                <p className="text-[11px] text-gray-600">
+                  Anda juga dapat melanjutkan percakapan langsung atau mengirimkan salinan formulir ini melalui saluran resmi berikut:
+                </p>
 
                 {/* Saluran WhatsApp */}
                 <div className="flex items-center justify-between gap-3 text-xs">

@@ -34,26 +34,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         try {
           const userDoc = await getDoc(doc(db, "adminUsers", currentUser.uid));
           if (userDoc.exists()) {
-            setAdminProfile(userDoc.data() as AdminUser);
+            const data = userDoc.data() as AdminUser;
+            if (data.active) {
+              setAdminProfile(data);
+            } else {
+              // Akun admin dinonaktifkan
+              setAdminProfile(null);
+            }
           } else {
-            // Default profile jika dokumen belum di-seed
-            setAdminProfile({
-              uid: currentUser.uid,
-              email: currentUser.email || "",
-              displayName: currentUser.displayName || "Admin",
-              role: "superadmin",
-              active: true,
-            });
+            // Fail-closed: Akun terotentikasi belum didaftarkan di adminUsers
+            setAdminProfile(null);
           }
-        } catch {
-          // Fallback lokal
-          setAdminProfile({
-            uid: currentUser.uid,
-            email: currentUser.email || "",
-            displayName: "Administrator",
-            role: "superadmin",
-            active: true,
-          });
+        } catch (err) {
+          // Fail-closed: Jika gagal membaca Firestore, jangan beri hak akses istimewa
+          console.error("Gagal memuat profil otorisasi admin:", err);
+          setAdminProfile(null);
         }
       } else {
         setAdminProfile(null);

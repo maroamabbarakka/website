@@ -55,19 +55,32 @@ service cloud.firestore {
       allow write: if canEditContent();
     }
 
-    // Leads: Tidak ada public read/list/delete. 
-    // Sales dan Superadmin dapat membaca dan memperbarui status.
-    // Public submit diperbolehkan hanya dengan validasi skema ketat & whitelist field
+    // Leads: Tidak ada public read/list/delete.
+    // Sales dan Superadmin dapat membaca dan memperbarui status/catatan tindak lanjut.
+    // Public create hanya diizinkan dengan whitelist kunci eksplisit (hasOnly) & validasi tipe/ukuran ketat.
     match /leads/{id} {
       allow read, update: if canHandleLeads();
       allow delete: if isSuperadmin();
       allow create: if request.resource.data.keys().hasAll(['fullName', 'email', 'serviceType', 'message', 'consent'])
+        && request.resource.data.keys().hasOnly([
+          'fullName', 'email', 'phone', 'companyOrganization', 'serviceType',
+          'projectBudget', 'projectTimeline', 'message', 'consent', 'consentTextVersion',
+          'status', 'sourcePath', 'targetOfficialEmail', 'targetOfficialPhone',
+          'createdAt', 'serverTimestamp'
+        ])
         && request.resource.data.fullName is string && request.resource.data.fullName.size() >= 2 && request.resource.data.fullName.size() <= 100
         && request.resource.data.email is string && request.resource.data.email.matches('^[^@]+@[^@]+\\.[^@]+$') && request.resource.data.email.size() <= 254
         && request.resource.data.serviceType in ['events', 'multimedia', 'digital', 'integrated', 'other']
         && request.resource.data.message is string && request.resource.data.message.size() >= 10 && request.resource.data.message.size() <= 3000
         && request.resource.data.consent == true
-        && (!request.resource.data.keys().hasAny(['status']) || request.resource.data.status == 'new');
+        && (!('status' in request.resource.data) || request.resource.data.status == 'new')
+        && (!('phone' in request.resource.data) || request.resource.data.phone == null || (request.resource.data.phone is string && request.resource.data.phone.size() <= 35))
+        && (!('companyOrganization' in request.resource.data) || request.resource.data.companyOrganization == null || (request.resource.data.companyOrganization is string && request.resource.data.companyOrganization.size() <= 150))
+        && (!('projectBudget' in request.resource.data) || request.resource.data.projectBudget == null || (request.resource.data.projectBudget is string && request.resource.data.projectBudget.size() <= 100))
+        && (!('projectTimeline' in request.resource.data) || request.resource.data.projectTimeline == null || (request.resource.data.projectTimeline is string && request.resource.data.projectTimeline.size() <= 100))
+        && (!('consentTextVersion' in request.resource.data) || (request.resource.data.consentTextVersion is string && request.resource.data.consentTextVersion.size() <= 50))
+        && (!('sourcePath' in request.resource.data) || (request.resource.data.sourcePath is string && request.resource.data.sourcePath.size() <= 100))
+        && (!('createdAt' in request.resource.data) || request.resource.data.createdAt is string);
     }
 
     // Admin Users: Hanya superadmin atau diri sendiri yang membaca data profil admin sendiri

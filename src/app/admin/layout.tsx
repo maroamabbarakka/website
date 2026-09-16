@@ -41,7 +41,7 @@ function AdminLayoutContent({ children }: { children: React.ReactNode }) {
     );
   }
 
-  // Jika belum login, redirect ke halaman login
+  // Jika belum login, tampilkan pemberitahuan harus login
   if (!user) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-maroa-gray-100 p-4">
@@ -57,6 +57,38 @@ function AdminLayoutContent({ children }: { children: React.ReactNode }) {
           >
             Masuk ke Panel Admin
           </Link>
+        </div>
+      </div>
+    );
+  }
+
+  // Jika login namun akun tidak terdaftar di adminUsers atau dinonaktifkan (Fail-Closed)
+  if (!adminProfile || !adminProfile.active) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-maroa-gray-100 p-4">
+        <div className="bg-maroa-white p-8 rounded-maroa-md border border-red-200 max-w-md w-full text-center space-y-4 shadow-card">
+          <ShieldAlert className="h-12 w-12 text-maroa-red mx-auto" />
+          <h2 className="text-lg font-bold text-maroa-black">Otorisasi Ditolak (403)</h2>
+          <p className="text-xs text-maroa-gray-700 leading-relaxed">
+            Akun Google/Email Anda (<span className="font-semibold text-maroa-black">{user.email}</span>) telah terotentikasi, namun belum memiliki penetapan peran staf aktif di direktori resmi <code className="bg-gray-100 px-1 py-0.5 rounded text-[11px]">adminUsers</code> MAROA.
+          </p>
+          <div className="pt-2 flex flex-col gap-2">
+            <button
+              onClick={async () => {
+                await logout();
+                router.push("/admin/login");
+              }}
+              className="w-full py-2.5 rounded-maroa-sm bg-maroa-black text-white text-xs font-semibold hover:bg-maroa-charcoal transition-colors cursor-pointer"
+            >
+              Keluar & Gunakan Akun Lain
+            </button>
+            <Link
+              href="/"
+              className="text-xs text-maroa-gray-600 hover:text-maroa-red font-medium py-1"
+            >
+              Kembali ke Beranda Utama
+            </Link>
+          </div>
         </div>
       </div>
     );
