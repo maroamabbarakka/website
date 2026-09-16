@@ -88,7 +88,7 @@ export function ClientLogoCarouselSection() {
       {/* Teks Judul Minimalis 1 Baris Responsif Sesuai Referensi Pengguna */}
       <div className="container-maroa mb-8 text-center px-4">
         <p className="text-xs sm:text-sm md:text-base font-semibold text-gray-800 tracking-tight leading-none whitespace-nowrap overflow-hidden text-ellipsis">
-          Telah dipercaya oleh berbagai institusi pemerintah, TNI, POLRI, lembaga, dan organisasi
+          Telah dipercaya oleh berbagai Institusi Pemerintah, Perusahaan dan Organisasi
         </p>
       </div>
 
