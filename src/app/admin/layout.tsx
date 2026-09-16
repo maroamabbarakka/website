@@ -253,6 +253,9 @@ function AdminLayoutContent({ children }: { children: React.ReactNode }) {
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   return (
     <AuthProvider>
+      <head>
+        <meta name="robots" content="noindex, nofollow" />
+      </head>
       <AdminLayoutContent>{children}</AdminLayoutContent>
     </AuthProvider>
   );
