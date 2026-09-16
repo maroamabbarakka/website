@@ -4,16 +4,18 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Project, ProjectCategory } from "@/lib/types";
-import { ArrowLeft, Save, Eye, CheckCircle2, AlertCircle } from "lucide-react";
+import { ArrowLeft, Save, Eye, CheckCircle2, AlertCircle, RefreshCw } from "lucide-react";
 import { saveProject, validateProjectPublishability } from "@/lib/projectStorage";
+import { saveProjectToFirestore } from "@/lib/firebase/projectRepository";
 
 export function EditProjectClient({ initialProject }: { initialProject: Project }) {
   const router = useRouter();
   const [project, setProject] = useState<Project>(initialProject);
   const [isSaved, setIsSaved] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage(null);
 
@@ -28,17 +30,29 @@ export function EditProjectClient({ initialProject }: { initialProject: Project 
       }
     }
 
-    // Simpan secara permanen di browser storage
-    const result = saveProject(project);
-    if (!result.success) {
-      setErrorMessage(result.message);
-      return;
-    }
+    setIsSaving(true);
+    try {
+      // 1. Simpan ke Cloud Firestore (Single Source of Truth)
+      const firestoreResult = await saveProjectToFirestore(project);
 
-    setIsSaved(true);
-    setTimeout(() => {
-      setIsSaved(false);
-    }, 4000);
+      // 2. Simpan juga ke local fallback storage
+      saveProject(project);
+
+      if (!firestoreResult.success) {
+        setErrorMessage(firestoreResult.message);
+        setIsSaving(false);
+        return;
+      }
+
+      setIsSaved(true);
+      setTimeout(() => {
+        setIsSaved(false);
+      }, 4000);
+    } catch (err: any) {
+      setErrorMessage(err?.message || "Gagal menyimpan perubahan ke database.");
+    } finally {
+      setIsSaving(false);
+    }
   };
 
   return (
@@ -292,10 +306,20 @@ export function EditProjectClient({ initialProject }: { initialProject: Project 
           </button>
           <button
             type="submit"
-            className="inline-flex items-center gap-2 px-5 py-2 rounded-maroa-sm bg-maroa-red text-white text-xs font-semibold hover:bg-maroa-red-dark transition-colors shadow-sm"
+            disabled={isSaving}
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-maroa-sm bg-maroa-red text-white text-xs font-semibold hover:bg-maroa-red-dark transition-colors shadow-sm disabled:opacity-50"
           >
-            <Save className="h-4 w-4" />
-            <span>Simpan Perubahan Permanen</span>
+            {isSaving ? (
+              <>
+                <RefreshCw className="h-4 w-4 animate-spin" />
+                <span>Menyimpan ke Cloud Firestore...</span>
+              </>
+            ) : (
+              <>
+                <Save className="h-4 w-4" />
+                <span>Simpan Perubahan Permanen</span>
+              </>
+            )}
           </button>
         </div>
       </form>

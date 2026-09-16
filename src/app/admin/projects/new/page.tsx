@@ -3,13 +3,15 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ArrowLeft, Save, Check, AlertCircle } from "lucide-react";
+import { ArrowLeft, Save, Check, AlertCircle, RefreshCw } from "lucide-react";
 import { saveProject, validateProjectPublishability } from "@/lib/projectStorage";
+import { saveProjectToFirestore } from "@/lib/firebase/projectRepository";
 import { Project, ProjectCategory } from "@/lib/types";
 
 export default function NewProjectPage() {
   const router = useRouter();
   const [saved, setSaved] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     title: "",
@@ -49,7 +51,7 @@ export default function NewProjectPage() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage(null);
 
@@ -90,17 +92,29 @@ export default function NewProjectPage() {
       }
     }
 
-    // Simpan secara permanen di storage
-    const result = saveProject(projectData);
-    if (!result.success) {
-      setErrorMessage(result.message);
-      return;
-    }
+    setIsSaving(true);
+    try {
+      // 1. Simpan ke Cloud Firestore (Single Source of Truth)
+      const firestoreResult = await saveProjectToFirestore(projectData);
+      
+      // 2. Simpan juga ke local fallback storage untuk persistensi offline
+      saveProject(projectData);
 
-    setSaved(true);
-    setTimeout(() => {
-      router.push("/admin/projects");
-    }, 1200);
+      if (!firestoreResult.success) {
+        setErrorMessage(firestoreResult.message);
+        setIsSaving(false);
+        return;
+      }
+
+      setSaved(true);
+      setTimeout(() => {
+        router.push("/admin/projects");
+      }, 1200);
+    } catch (err: any) {
+      setErrorMessage(err?.message || "Gagal menyimpan proyek ke database.");
+    } finally {
+      setIsSaving(false);
+    }
   };
 
   return (
@@ -422,9 +436,15 @@ export default function NewProjectPage() {
 
           <button
             type="submit"
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-maroa-sm bg-maroa-red hover:bg-maroa-red-dark text-white font-semibold text-xs transition-colors shadow-sm"
+            disabled={isSaving}
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-maroa-sm bg-maroa-red hover:bg-maroa-red-dark text-white font-semibold text-xs transition-colors shadow-sm disabled:opacity-50"
           >
-            {saved ? (
+            {isSaving ? (
+              <>
+                <RefreshCw className="h-4 w-4 animate-spin" />
+                <span>Menyimpan ke Cloud Firestore...</span>
+              </>
+            ) : saved ? (
               <>
                 <Check className="h-4 w-4" />
                 <span>Berhasil Disimpan Permanen!</span>
