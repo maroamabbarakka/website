@@ -11,81 +11,111 @@ interface OfficialPartnerLogo {
 
 const officialLogos: OfficialPartnerLogo[] = [
   {
-    name: "Tentara Nasional Indonesia (TNI)",
-    category: "Pertahanan & Forkopimda",
-    logoUrl: "/clients/tni.svg",
-  },
-  {
-    name: "Kepolisian Negara Republik Indonesia (POLRI)",
-    category: "Keamanan & Forkopimda",
-    logoUrl: "/clients/polri.svg",
-  },
-  {
     name: "Pemerintah Kabupaten Pinrang",
     category: "Pemerintah Daerah",
-    logoUrl: "/clients/pemkab-pinrang.svg",
+    logoUrl: "/clients/01_Kabupaten_Pinrang.svg",
   },
   {
     name: "Pemerintah Kabupaten Majene",
     category: "Pemerintah Daerah",
-    logoUrl: "/clients/pemkab-majene.svg",
+    logoUrl: "/clients/02_Kabupaten_Majene.svg",
   },
   {
-    name: "Badan Kependudukan & Keluarga Berencana Nasional (BKKBN)",
-    category: "Lembaga Pemerintah",
-    logoUrl: "/clients/bkkbn.svg",
+    name: "Pemerintah Kabupaten Sidenreng Rappang (Sidrap)",
+    category: "Pemerintah Daerah",
+    logoUrl: "/clients/03_Kabupaten_Sidrap.svg",
   },
   {
-    name: "Kementerian Komunikasi dan Informatika",
+    name: "Pemerintah Kabupaten Polewali Mandar",
+    category: "Pemerintah Daerah",
+    logoUrl: "/clients/04_Kabupaten_Polewali_Mandar.svg",
+  },
+  {
+    name: "Pemerintah Kabupaten Mamuju",
+    category: "Pemerintah Daerah",
+    logoUrl: "/clients/05_Kabupaten_Mamuju.svg",
+  },
+  {
+    name: "Pemerintah Provinsi Sulawesi Selatan",
+    category: "Pemerintah Provinsi",
+    logoUrl: "/clients/06_Provinsi_Sulawesi_Selatan.svg",
+  },
+  {
+    name: "Pemerintah Provinsi Sulawesi Barat",
+    category: "Pemerintah Provinsi",
+    logoUrl: "/clients/07_Provinsi_Sulawesi_Barat.svg",
+  },
+  {
+    name: "Perpustakaan Nasional Republik Indonesia",
+    category: "Lembaga Pemerintah Nonkementerian",
+    logoUrl: "/clients/08_Perpustakaan_Nasional.svg",
+  },
+  {
+    name: "BKKBN / Kemendukbangga RI",
+    category: "Kementerian / Lembaga RI",
+    logoUrl: "/clients/09_BKKBN_Kemendukbangga.svg",
+  },
+  {
+    name: "Tentara Nasional Indonesia (TNI)",
+    category: "Pertahanan & Keamanan",
+    logoUrl: "/clients/10_TNI.svg",
+  },
+  {
+    name: "Kepolisian Negara Republik Indonesia (POLRI)",
+    category: "Keamanan & Ketertiban",
+    logoUrl: "/clients/11_POLRI.svg",
+  },
+  {
+    name: "Kejaksaan Republik Indonesia",
+    category: "Aparatur Penegak Hukum",
+    logoUrl: "/clients/12_Kejaksaan.svg",
+  },
+  {
+    name: "Kementerian Kebudayaan Republik Indonesia",
     category: "Kementerian RI",
-    logoUrl: "/clients/kominfo.svg",
+    logoUrl: "/clients/13_Kementerian_Kebudayaan.svg",
   },
   {
     name: "Kementerian Agama Republik Indonesia",
     category: "Kementerian RI",
-    logoUrl: "/clients/kemenag.svg",
-  },
-  {
-    name: "Badan Amil Zakat Nasional (BAZNAS)",
-    category: "Lembaga Pemerintah",
-    logoUrl: "/clients/baznas.svg",
-  },
-  {
-    name: "Persatuan Guru Republik Indonesia (PGRI)",
-    category: "Organisasi Pendidik",
-    logoUrl: "/clients/pgri.svg",
+    logoUrl: "/clients/14_Kementerian_Agama.svg",
   },
   {
     name: "Institut Cokroaminoto Pinrang (ICP)",
     category: "Perguruan Tinggi",
-    logoUrl: "/clients/icp.svg",
-  },
-  {
-    name: "Ikatan Guru Indonesia (IGI)",
-    category: "Organisasi Pendidik",
-    logoUrl: "/clients/igi.svg",
-  },
-  {
-    name: "Komunitas Guru Belajar Nusantara (KGBN)",
-    category: "Komunitas Edukasi",
-    logoUrl: "/clients/kgbn.svg",
+    logoUrl: "/clients/15_Institut_Cokroaminoto_Pinrang.svg",
   },
   {
     name: "LPPL Radio Suara Bumi Lasinrang 92.4 FM",
-    category: "Media Penyiaran Daerah",
-    logoUrl: "/clients/radio-sbl.svg",
+    category: "Lembaga Penyiaran Publik Daerah",
+    logoUrl: "/clients/16_Radio_Suara_Bumi_Lasinrang.svg",
   },
   {
-    name: "Yayasan Peduli Pinrang",
-    category: "Organisasi Lingkungan",
-    logoUrl: "/clients/peduli-pinrang.svg",
+    name: "Yayasan Masyarakat Peduli Pinrang",
+    category: "Organisasi Sosial Kemasyarakatan",
+    logoUrl: "/clients/17_Yayasan_Masyarakat_Peduli_Pinrang.svg",
+  },
+  {
+    name: "PT Bank Rakyat Indonesia (Persero) Tbk (BRI)",
+    category: "BUMN Perbankan",
+    logoUrl: "/clients/18_BRI.svg",
+  },
+  {
+    name: "PT PLN (Persero)",
+    category: "BUMN Ketenagalistrikan",
+    logoUrl: "/clients/19_PLN.svg",
+  },
+  {
+    name: "Kementerian Kesehatan Republik Indonesia",
+    category: "Kementerian RI",
+    logoUrl: "/clients/20_Kementerian_Kesehatan.svg",
   },
 ];
 
 export function ClientLogoCarouselSection() {
   return (
     <section className="w-full py-10 sm:py-12 bg-white border-b border-gray-100 overflow-hidden relative select-none">
-      {/* Teks Judul Minimalis 1 Baris Responsif Sesuai Referensi Pengguna */}
+      {/* Teks Judul Minimalis 1 Baris Responsif */}
       <div className="container-maroa mb-8 text-center px-4">
         <p className="text-xs sm:text-sm md:text-base font-semibold text-gray-800 tracking-tight leading-none whitespace-nowrap overflow-hidden text-ellipsis">
           Telah dipercaya oleh berbagai Institusi Pemerintah, Perusahaan dan Organisasi
@@ -117,7 +147,7 @@ export function ClientLogoCarouselSection() {
                     height={56}
                     width={56}
                     className="h-full w-full object-contain object-center drop-shadow-sm"
-                    priority={idx < 6}
+                    priority={idx < 8}
                   />
                 </div>
               </div>
