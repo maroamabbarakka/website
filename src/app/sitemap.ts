@@ -4,7 +4,7 @@ import { initialProjects, initialInsights } from "@/data/initialData";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = "https://maroamedia.web.app";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://maroamedia.web.app";
   const now = new Date();
 
   // Rute Publik Statis Utama (dengan trailing slash sesuai konfigurasi next.config.mjs)
