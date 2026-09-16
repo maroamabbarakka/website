@@ -128,7 +128,9 @@ export default function AdminDashboardPage() {
             <span className="text-sm font-bold text-emerald-700 bg-emerald-50 px-2 py-1 rounded inline-block">
               {initialSiteSettings.pseRegistered ? "Terdaftar Resmi" : "Dokumen Siap (Draft)"}
             </span>
-            <span className="text-xs text-maroa-gray-500 block mt-1">Lembar data 17_PSE terisi</span>
+            <span className="text-xs text-maroa-gray-500 block mt-1 font-mono">
+              {initialSiteSettings.pseRegistrationNumber || "029903.01/DJAI.PSE/09/2026"}
+            </span>
           </div>
         </div>
 

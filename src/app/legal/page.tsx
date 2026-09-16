@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { initialSiteSettings } from "@/data/initialData";
-import { Scale, Building2, ShieldCheck, Mail, MapPin, FileCheck2 } from "lucide-react";
+import { Scale, Building2, ShieldCheck, Mail, MapPin, FileCheck2, ExternalLink } from "lucide-react";
 
 export const metadata = {
   title: "Informasi Legalitas & Kepatuhan — PT MAROA MEDIA MABBARAKKA",
@@ -74,21 +75,41 @@ export default function LegalPage() {
             <p className="text-sm">
               Sesuai amanat Peraturan Pemerintah Nomor 71 Tahun 2019 tentang Penyelenggaraan Sistem dan Transaksi Elektronik serta Peraturan Menteri Komunikasi dan Informatika Nomor 5 Tahun 2020:
             </p>
-            <div className="p-5 rounded-maroa-md border border-maroa-gray-300 bg-maroa-white text-xs sm:text-sm space-y-2">
-              <div className="flex items-center justify-between">
+            <div className="p-5 rounded-maroa-md border border-maroa-gray-300 bg-maroa-white text-xs sm:text-sm space-y-3">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <span className="font-semibold text-maroa-black">Status Pendaftaran PSE:</span>
-                {initialSiteSettings.pseRegistered ? (
-                  <span className="px-2.5 py-0.5 rounded bg-emerald-100 text-emerald-700 font-semibold text-xs">
-                    Terdaftar ({initialSiteSettings.pseRegistrationNumber})
-                  </span>
-                ) : (
-                  <span className="px-2.5 py-0.5 rounded bg-amber-100 text-amber-800 font-semibold text-xs">
-                    Dalam Proses Kesiapan Registrasi Resmi
-                  </span>
-                )}
+                <span className="px-2.5 py-1 rounded bg-emerald-100 text-emerald-800 font-bold text-xs flex items-center gap-1.5 w-fit">
+                  <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
+                  Terdaftar Resmi ({initialSiteSettings.pseRegistrationNumber})
+                </span>
+              </div>
+              <div className="flex items-center gap-4 pt-2 border-t border-maroa-gray-100">
+                <a
+                  href="/compliance/qr-pse-komdigi.png"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative h-16 w-16 shrink-0 bg-white p-1 rounded border border-gray-300 hover:border-maroa-red shadow-sm transition-all group"
+                  title="Klik untuk melihat Sertifikat QR Resmi Komdigi RI"
+                >
+                  <Image
+                    src="/compliance/qr-pse-komdigi.png"
+                    alt="Sertifikat PSE Komdigi RI"
+                    width={64}
+                    height={64}
+                    className="object-contain w-full h-full"
+                  />
+                </a>
+                <div className="space-y-1 text-xs">
+                  <p className="font-semibold text-maroa-black">Tanda Daftar Penyelenggara Sistem Elektronik (TDPSE)</p>
+                  <p className="text-maroa-gray-600">Nomor Registrasi: <code className="bg-gray-100 px-1 py-0.5 rounded font-mono font-bold text-emerald-700">{initialSiteSettings.pseRegistrationNumber}</code></p>
+                  <a href="/compliance/qr-pse-komdigi.png" target="_blank" rel="noopener noreferrer" className="text-maroa-red hover:underline inline-flex items-center gap-1 font-semibold text-[11px]">
+                    <span>Buka Sertifikat QR Resolusi Penuh</span>
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                </div>
               </div>
               <p className="text-xs text-maroa-gray-600 leading-relaxed pt-2 border-t border-maroa-gray-100">
-                Sistem web korporat MAROA beroperasi sebagai portal informasi korporat dan platform penerimaan permohonan kerja sama. Seluruh lembar inventaris sistem, data mapping pemrosesan, dan kelayakan teknis telah disusun sesuai standar Kementerian Komunikasi dan Digital (Komdigi).
+                Sistem web korporat MAROA beroperasi sebagai portal informasi korporat dan platform penerimaan permohonan kerja sama. Seluruh lembar inventaris sistem, data mapping pemrosesan, dan kelayakan teknis telah diverifikasi dan disetujui sesuai standar Kementerian Komunikasi dan Digital (Komdigi).
               </p>
             </div>
           </section>

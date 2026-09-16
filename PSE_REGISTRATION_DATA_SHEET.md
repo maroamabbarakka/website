@@ -1,8 +1,10 @@
 # LEMBAR DATA PENDAFTARAN PSE LINGKUP PRIVAT
 ## Sistem Elektronik: Website Korporat & Platform Layanan PT MAROA MEDIA MABBARAKKA
 
-**Status Dokumen:** Siap Verifikasi Final (Pre-Registration Technical Baseline)  
-**Tanggal Penyusunan:** 16 September 2026  
+**Status Dokumen:** Terdaftar Resmi (TDPSE Aktif)  
+**Nomor Tanda Daftar PSE (TDPSE):** 029903.01/DJAI.PSE/09/2026  
+**Lembaga Penerbit:** Kementerian Komunikasi dan Digital Republik Indonesia (KOMDIGI RI)  
+**Tanggal Penerbitan:** September 2026  
 **Entitas Hukum:** PT MAROA MEDIA MABBARAKKA  
 
 ---
@@ -69,4 +71,5 @@
 ---
 
 ### G. PERNYATAAN STATUS TANDA DAFTAR PSE
-Sesuai kepatuhan regulasi Kementerian Komdigi, label dan nomor registrasi "TDPSE" tidak dipublikasikan pada footer situs web hingga tanda daftar resmi telah diterbitkan oleh pihak regulator.
+Tanda Daftar Penyelenggara Sistem Elektronik (TDPSE) telah resmi diterbitkan oleh Kementerian Komunikasi dan Digital Republik Indonesia dengan Nomor Registrasi: **029903.01/DJAI.PSE/09/2026**.
+Sertifikat Tanda Daftar dilengkapi QR Code resmi verifikasi Komdigi yang dipublikasikan secara transparan pada footer website dan halaman Legalitas (`/legal`) untuk validasi publik.

@@ -14,8 +14,8 @@ export const initialSiteSettings: SiteSettings = {
     linkedin: "https://linkedin.com/company/maroa",
     youtube: "https://youtube.com/@maroa",
   },
-  pseRegistrationNumber: null, // Sesuai aturan: null hingga tanda daftar resmi terbit
-  pseRegistered: false,
+  pseRegistrationNumber: "029903.01/DJAI.PSE/09/2026",
+  pseRegistered: true,
 };
 
 export const initialServices: Service[] = [

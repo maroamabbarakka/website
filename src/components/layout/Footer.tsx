@@ -231,27 +231,38 @@ export function Footer() {
               </div>
             </div>
 
-            {/* 4. Status PSE Komdigi (Keterangan Baru: Dalam Proses Registrasi Resmi) */}
-            <div
-              className="flex items-center gap-2.5 p-2 rounded-lg bg-maroa-charcoal/60 border border-maroa-charcoal"
-              title="Kesiapan & Kepatuhan Pendaftaran Penyelenggara Sistem Elektronik (PSE) Komdigi RI"
+            {/* 4. Status PSE Komdigi (Tanda Daftar Resmi TDPSE) */}
+            <a
+              href="/compliance/qr-pse-komdigi.png"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2.5 p-2 rounded-lg bg-maroa-charcoal/60 hover:bg-maroa-charcoal border border-maroa-charcoal hover:border-gray-600 transition-all group"
+              title="Klik untuk melihat Sertifikat QR Tanda Daftar Penyelenggara Sistem Elektronik (PSE) Komdigi RI: 029903.01/DJAI.PSE/09/2026"
             >
-              <div className="h-10 w-10 shrink-0 rounded bg-maroa-charcoal flex items-center justify-center border border-gray-700/60">
-                <Clock className="h-4 w-4 text-amber-400" />
+              <div className="relative h-10 w-10 shrink-0 bg-white p-0.5 rounded border border-gray-300 overflow-hidden">
+                <Image
+                  src="/compliance/qr-pse-komdigi.png"
+                  alt="QR Code Sertifikat PSE Komdigi RI PT MAROA MEDIA MABBARAKKA"
+                  width={40}
+                  height={40}
+                  className="object-contain w-full h-full"
+                />
               </div>
               <div className="flex flex-col text-left">
-                <span className="text-[11px] font-bold text-white">
-                  PSE KOMDIGI RI
-                </span>
+                <div className="flex items-center gap-1">
+                  <span className="text-[11px] font-bold text-white group-hover:text-maroa-red transition-colors">
+                    PSE KOMDIGI RI
+                  </span>
+                  <ExternalLink className="h-2.5 w-2.5 text-maroa-gray-500 group-hover:text-white" />
+                </div>
                 <span className="text-[10px] text-maroa-gray-400">
-                  Sistem Elektronik
+                  Tanda Daftar Resmi
                 </span>
-                <span className="text-[9px] text-amber-400 font-mono flex items-center gap-1">
-                  <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse"></span>
-                  Dalam Proses Registrasi
+                <span className="text-[9px] text-emerald-400 font-mono">
+                  029903.01/DJAI.PSE/09/2026
                 </span>
               </div>
-            </div>
+            </a>
           </div>
 
           {/* Sisi Kanan: Connect With Us & Social Icons */}
