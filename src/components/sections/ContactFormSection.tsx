@@ -665,7 +665,7 @@ Sumber          : Website Resmi MAROA (https://maroamedia.web.app)
                   className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 rounded-maroa-sm bg-maroa-red hover:bg-maroa-red-dark text-maroa-white font-semibold text-sm transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed group"
                 >
                   {status === "submitting" ? (
-                    <span>Memproses Otomatisasi...</span>
+                    <span>Mengirimkan Pengajuan...</span>
                   ) : (
                     <>
                       <span>Kirim Pengajuan Proyek</span>
@@ -675,7 +675,7 @@ Sumber          : Website Resmi MAROA (https://maroamedia.web.app)
                 </button>
                 <div className="flex items-center gap-2 text-[11px] text-gray-500">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
-                  <span>Otomatis terhubung ke WhatsApp & Email Resmi</span>
+                  <span>Enkripsi HTTPS &amp; Tersimpan Aman di Cloud Firestore</span>
                 </div>
               </div>
             </form>

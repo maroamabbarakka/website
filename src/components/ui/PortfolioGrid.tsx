@@ -274,11 +274,16 @@ export function PortfolioGrid({ projects }: PortfolioGridProps) {
                   </div>
                 )}
 
-                {/* Category Badge */}
-                <div className="absolute top-4 left-4 z-20">
+                {/* Category Badge & Concept Label */}
+                <div className="absolute top-4 left-4 z-20 flex items-center gap-1.5">
                   <Badge variant="dark" className="bg-black/75 backdrop-blur-md text-white border border-white/10 text-[10px]">
                     {getCategoryLabel(project.category)}
                   </Badge>
+                  {project.isConceptOnly && (
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-black/85 text-amber-300 border border-amber-400/40 backdrop-blur-md">
+                      Konsep
+                    </span>
+                  )}
                 </div>
               </div>
 
