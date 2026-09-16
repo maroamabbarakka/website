@@ -111,7 +111,11 @@ function AdminLayoutContent({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row bg-maroa-gray-100">
+    <>
+      <head>
+        <meta name="robots" content="noindex, nofollow" />
+      </head>
+      <div className="min-h-screen flex flex-col md:flex-row bg-maroa-gray-100">
       {/* Sidebar Desktop */}
       <aside className="hidden md:flex flex-col w-64 bg-maroa-black text-maroa-white p-6 justify-between shrink-0 border-r border-maroa-charcoal">
         <div className="space-y-8">
@@ -242,6 +246,7 @@ function AdminLayoutContent({ children }: { children: React.ReactNode }) {
         {children}
       </main>
     </div>
+  </>
   );
 }
 

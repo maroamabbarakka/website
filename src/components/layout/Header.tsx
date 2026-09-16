@@ -115,6 +115,7 @@ export function Header() {
           className="md:hidden p-2 text-maroa-charcoal hover:text-maroa-red focus-visible:outline-2 focus-visible:outline-offset-2 rounded-maroa-sm"
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
+          aria-controls="mobile-navigation-drawer"
           aria-label={isOpen ? "Tutup menu navigasi" : "Buka menu navigasi"}
         >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -128,6 +129,7 @@ export function Header() {
           onClick={() => setIsOpen(false)}
         >
           <div
+            id="mobile-navigation-drawer"
             className="w-full bg-maroa-white border-b border-maroa-gray-300 shadow-xl p-6 flex flex-col gap-5"
             onClick={(e) => e.stopPropagation()}
             role="dialog"

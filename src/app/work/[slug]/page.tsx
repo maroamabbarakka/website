@@ -13,14 +13,16 @@ interface ProjectDetailProps {
 }
 
 export async function generateStaticParams() {
-  return initialProjects.map((p) => ({
-    slug: p.slug,
-  }));
+  return initialProjects
+    .filter((p) => p.isPublished)
+    .map((p) => ({
+      slug: p.slug,
+    }));
 }
 
 export async function generateMetadata({ params }: ProjectDetailProps) {
   const { slug } = await params;
-  const project = initialProjects.find((p) => p.slug === slug);
+  const project = initialProjects.find((p) => p.slug === slug && p.isPublished);
   if (!project) return { title: "Project Not Found" };
 
   return {
@@ -36,15 +38,16 @@ export async function generateMetadata({ params }: ProjectDetailProps) {
 
 export default async function ProjectDetailPage({ params }: ProjectDetailProps) {
   const { slug } = await params;
-  const project = initialProjects.find((p) => p.slug === slug);
+  const project = initialProjects.find((p) => p.slug === slug && p.isPublished);
 
   if (!project) {
     notFound();
   }
 
-  // Cari proyek selanjutnya
-  const currentIndex = initialProjects.findIndex((p) => p.slug === slug);
-  const nextProject = initialProjects[(currentIndex + 1) % initialProjects.length];
+  // Cari proyek selanjutnya hanya dari daftar terbit
+  const publishedProjects = initialProjects.filter((p) => p.isPublished);
+  const currentIndex = publishedProjects.findIndex((p) => p.slug === slug);
+  const nextProject = publishedProjects[(currentIndex + 1) % publishedProjects.length];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -57,25 +60,17 @@ export default async function ProjectDetailPage({ params }: ProjectDetailProps) 
         "headline": project.summary,
         "description": project.seoDescription || project.summary,
         "image": project.heroImage.startsWith("http") ? project.heroImage : `https://maroamedia.web.app${project.heroImage}`,
-        "dateCreated": `${project.year}-01-01`,
+        ...(project.publishedAt ? { "datePublished": `${project.publishedAt}T00:00:00Z` } : {}),
         "inLanguage": "id-ID",
         "creator": {
           "@type": "Corporation",
           "name": "PT MAROA MEDIA MABBARAKKA",
           "url": "https://maroamedia.web.app/"
         },
-        "provider": {
-          "@type": "Corporation",
-          "name": "PT MAROA MEDIA MABBARAKKA"
-        },
         "publisher": {
           "@type": "Corporation",
           "name": "PT MAROA MEDIA MABBARAKKA",
           "url": "https://maroamedia.web.app/"
-        },
-        "sponsor": {
-          "@type": "Organization",
-          "name": project.clientDisplayName
         },
         "keywords": [
           project.category,
@@ -134,6 +129,11 @@ export default async function ProjectDetailPage({ params }: ProjectDetailProps) 
             <Badge variant="red" className="uppercase tracking-wider">
               {project.category}
             </Badge>
+            {project.isConceptOnly && (
+              <span className="text-[11px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-600 border border-amber-500/20 px-2.5 py-0.5 rounded-full">
+                Eksplorasi Konsep & R&D
+              </span>
+            )}
             <span className="text-xs text-maroa-gray-500">Tahun {project.year}</span>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-maroa-black leading-tight max-w-4xl">
@@ -175,7 +175,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailProps) 
                 Peran Nyata MAROA
               </span>
               <span className="font-bold text-maroa-charcoal text-xs sm:text-sm">
-                {project.role || "Mitra Pelaksana & Produksi Terpadu"}
+                {project.role || "Pelaksana Produksi"}
               </span>
             </div>
             {project.sourceCredit && (
