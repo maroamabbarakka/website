@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { initialSiteSettings } from "@/data/initialData";
 import { Mail, MapPin, ArrowUpRight, ExternalLink, Clock } from "lucide-react";
 import { WhatsAppIcon, InstagramIcon } from "@/components/ui/SocialIcons";
@@ -32,6 +35,13 @@ function FooterMenuLink({ href, children, highlight = false }: FooterMenuLinkPro
 }
 
 export function Footer() {
+  const pathname = usePathname();
+
+  // Sembunyikan Footer frontend jika berada di antarmuka admin/CMS
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
+
   const currentYear = new Date().getFullYear();
 
   return (

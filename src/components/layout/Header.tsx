@@ -11,7 +11,6 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
-
   const isHomePage = pathname === "/";
 
   useEffect(() => {
@@ -44,6 +43,11 @@ export function Header() {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isOpen]);
+
+  // Sembunyikan Header frontend secara mutlak jika berada di antarmuka admin/CMS
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
 
   const navLinks = [
     { href: "/", label: "Beranda" },

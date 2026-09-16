@@ -1,10 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "@/styles/globals.css";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import { SkipToContent } from "@/components/layout/SkipToContent";
-import { CookieConsent } from "@/components/ui/CookieConsent";
-import { FloatingWhatsApp } from "@/components/ui/FloatingWhatsApp";
+import { SiteLayoutShell } from "@/components/layout/SiteLayoutShell";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -108,13 +105,7 @@ export default function RootLayout({
     <html lang="id">
       <body className="flex min-h-screen flex-col bg-maroa-white text-maroa-ink selection:bg-maroa-red/20 selection:text-maroa-red">
         <SkipToContent />
-        <Header />
-        <main id="main-content" className="flex-1 focus:outline-none">
-          {children}
-        </main>
-        <Footer />
-        <CookieConsent />
-        <FloatingWhatsApp />
+        <SiteLayoutShell>{children}</SiteLayoutShell>
       </body>
     </html>
   );
