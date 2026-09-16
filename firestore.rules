@@ -14,10 +14,6 @@ service cloud.firestore {
       return signedIn() && adminDoc().data.active == true;
     }
 
-    function hasRole(role) {
-      return activeAdmin() && adminDoc().data.role == role;
-    }
-
     function canEditContent() {
       return activeAdmin() && adminDoc().data.role in ['superadmin', 'editor'];
     }
