@@ -86,4 +86,20 @@ describe("System Integrity & Asset Availability Tests", () => {
     assert.ok(rulesContent.includes("allow read, update: if canHandleLeads()"), "Leads read hanya boleh oleh canHandleLeads()");
     assert.ok(rulesContent.includes("match /adminUsers/{uid}"), "Koleksi adminUsers harus terproteksi");
   });
+
+  test("Official MAROA brand identity and video showreel assets must exist", () => {
+    const officialBrandAssets = [
+      path.join("public", "brand", "LOGO_MAROA_PLAY_ORIGINAL.png"),
+      path.join("public", "brand", "LOGO_MAROA_PLAY_DARK_SAFE.png"),
+      path.join("public", "brand", "ICON_MAROA_ORIGINAL.png"),
+      path.join("public", "video", "MAROA_BRAND_MOTION_CONCEPT.mp4"),
+      path.join("public", "video", "MAROA_BRAND_MOTION_POSTER.png"),
+      path.join("src", "lib", "firebase", "projectRepository.ts"),
+    ];
+
+    for (const asset of officialBrandAssets) {
+      const fullPath = path.join(rootDir, asset);
+      assert.equal(fs.existsSync(fullPath), true, `Aset resmi ${asset} wajib tersedia.`);
+    }
+  });
 });
