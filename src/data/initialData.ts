@@ -1154,26 +1154,26 @@ export const initialProjects: Project[] = [
   {
     id: "gemudaya-festival-majene",
     slug: "gemudaya-festival-majene-2026",
-    title: "GEMUDAYA (Generasi Muda Berdaya) Festival Majene 2026 — Desain Identitas Visual & Kampanye Promosi",
+    title: "GEMUDAYA (Generasi Muda Berdaya) Festival Majene 2026 — Desain Poster, Visual Media & Projector Mapping",
     category: "multimedia",
-    summary: "Perancangan identitas visual, poster kampanye resmi 16:9, dan materi publikasi digital untuk festival pemberdayaan dan ekspresi pemuda di Kabupaten Majene.",
+    summary: "Perancangan poster kampanye resmi 16:9, aset visual media publikasi, dan konten projector mapping arsitektural untuk festival kreativitas generasi muda di Kabupaten Majene.",
     clientDisplayName: "Komunitas Kreatif & Pemuda Majene Bersatu",
     year: "2026",
     heroImage: "/portfolio/covers/gemudaya-festival-majene-2026-cover-1600x900.webp",
     thumbnail: "/portfolio/covers/gemudaya-festival-majene-2026-cover-1600x900.webp",
-    role: "Perancangan Identitas Visual, Poster Promosi 16:9 & Desain Feed Media Sosial",
+    role: "Desain Poster, Visual Media & Projector Mapping",
     sourceCredit: "Arsip Desain Komunikasi Visual Studio MAROA",
     rightsStatus: "Karya Desain Orisinal MAROA",
     services: [
-      "Event Visual Branding",
-      "Official 16:9 Poster Design",
-      "Social Media Campaign Assets",
-      "Typography & Color Palette System"
+      "Poster Campaign Design",
+      "Visual Media Production",
+      "Projector Mapping Content",
+      "Stage Atmosphere Enhancement"
     ],
-    challenge: "Menghadirkan citra visual yang memancarkan energi muda, modernitas, dan optimisme tanpa meninggalkan sentuhan nilai kebersamaan khas tanah Mandar.",
-    approach: "Mengembangkan tipografi kustom berkarakter tebal dipadu palet warna cerah yang mencerminkan semangat kolaborasi dan inovasi generasi muda.",
-    execution: "Membuat master poster 16:9 (1600x900) resolusi tinggi untuk cetak baliho serta format vertikal untuk kebutuhan publikasi di platform media sosial.",
-    outcome: "Materi promosi diterima dengan antusias oleh komunitas pemuda se-Kabupaten Majene dan memperkuat gaung pergerakan kepemudaan daerah.",
+    challenge: "Menghadirkan citra visual yang memancarkan energi muda, modernitas, dan optimisme tanpa meninggalkan sentuhan nilai kebersamaan khas tanah Mandar, serta mentransformasikannya ke format projector mapping fasad.",
+    approach: "Mengembangkan tipografi kustom berkarakter tebal dipadu palet warna cerah yang mencerminkan semangat kolaborasi, serta pemetaan grafis kontur dinding untuk pertunjukan projector mapping.",
+    execution: "Membuat master poster 16:9 (1600x900) resolusi tinggi untuk cetak baliho, aset feed media sosial, dan sekuens animasi mapping proyeksi luar ruang.",
+    outcome: "Materi promosi dan atraksi mapping memukau ribuan pemuda yang hadir, menciptakan pengalaman festival visual yang tak terlupakan di Kabupaten Majene.",
     gallery: [
       "/portfolio/covers/gemudaya-festival-majene-2026-cover-1600x900.webp",
       "/portfolio/gallery/gemudaya-festival-majene-2026-cover-1600x900.jpg"
@@ -1361,6 +1361,168 @@ export const initialProjects: Project[] = [
     publishedAt: "2026-01-28",
     seoTitle: "Sistem Antrean Digital DPPKB Majene — Rekayasa Aplikasi Web | MAROA",
     seoDescription: "Pengembangan sistem antrean publik digital berbasis web untuk DPPKB Kabupaten Majene oleh MAROA.",
+  }
+,
+  {
+    id: "festival-penyu-mampie",
+    slug: "festival-penyu-mampie-2026",
+    title: "Festival Penyu Mampie 2026 — Desain Motion Graphic & Visual Kampanye Konservasi Pesisir",
+    category: "multimedia",
+    summary: "Produksi desain motion graphic panggung edukasi, animasi narasi konservasi penyu laut, dan visualisasi kesadaran ekosistem pesisir pada Festival Penyu Mampie di Kabupaten Polewali Mandar.",
+    clientDisplayName: "Sahabat Penyu Mampie & Dinas Pariwisata Kab. Polewali Mandar",
+    year: "2026",
+    heroImage: "/portfolio/covers/festival-penyu-mampie-2026-cover-1600x900.webp",
+    thumbnail: "/portfolio/covers/festival-penyu-mampie-2026-cover-1600x900.webp",
+    role: "Desain Motion Graphic",
+    sourceCredit: "Dokumentasi Publikasi Sahabat Penyu Mampie & Pemkab Polman",
+    sourceUrl: "https://polmankab.go.id/Front/kegiatandetail/1750214251979-festival-penyu-mampie-2025-harapan-baru-dari-pesisir",
+    rightsStatus: "Karya Desain Motion Orisinal MAROA",
+    services: [
+      "Motion Graphics Design",
+      "Conservation Story Animation",
+      "Stage LED Display Graphics",
+      "Environmental Campaign Visuals"
+    ],
+    challenge: "Menyampaikan pesan konservasi fauna laut yang dilindungi dan urgensi perlindungan pantai dari sampah plastik secara menyentuh, edukatif, dan menarik bagi lintas generasi.",
+    approach: "Mengembangkan animasi motion graphic sinematik bertema perjalanan hidup penyu laut berpadu palet warna biru samudra dan estetika lanskap pesisir Mampie.",
+    execution: "Memproduksi sekuens animasi penayangan panggung berdurasi penuh yang diputar saat seremoni pelepasan tukik dan sesi dialog edukasi lingkungan.",
+    outcome: "Visual motion graphic mengundang antusiasme tinggi peserta dan memperkuat daya gugah kepedulian lingkungan di pesisir barat Sulawesi.",
+    gallery: [
+      "/portfolio/covers/festival-penyu-mampie-2026-cover-1600x900.webp",
+      "/portfolio/gallery/festival-penyu-mampie-2026-cover-1600x900.jpg"
+    ],
+    metrics: [
+      { label: "Peran MAROA", value: "Desain Motion Graphic" },
+      { label: "Fokus Tema", value: "Konservasi Tukik & Laut" },
+      { label: "Lokasi", value: "Pantai Mampie, Polman, Sulbar" }
+    ],
+    features: [
+      {
+        title: "Animasi Narasi Siklus Hidup Penyu",
+        description: "Visualisasi perjalanan tukik menembus ombak samudera dengan transisi grafis gerak yang halus.",
+      },
+      {
+        title: "Pesan Konservasi Visual Edukatif",
+        description: "Infografis bergerak mengenai bahaya limbah plastik dan pentingnya menjaga habitat peneluran.",
+      },
+      {
+        title: "Grafis Panggung LED Terbuka",
+        description: "Optimasi kontras dan kecerahan warna untuk visibilitas maksimal di bawah cahaya panggung pesisir pantai.",
+      }
+    ],
+    isFeatured: true,
+    isPublished: true,
+    publishedAt: "2026-06-14",
+    seoTitle: "Festival Penyu Mampie 2026 — Desain Motion Graphic | MAROA",
+    seoDescription: "Produksi desain motion graphic panggung edukasi dan kampanye konservasi pesisir Festival Penyu Mampie oleh MAROA.",
+  },
+  {
+    id: "mtq-xi-sulbar",
+    slug: "mtq-xi-tingkat-provinsi-sulawesi-barat-2026",
+    title: "MTQ XI Tingkat Provinsi Sulawesi Barat 2026 — Desain Motion Graphic & Visual Mimbar Tilawah",
+    category: "multimedia",
+    summary: "Produksi desain motion graphic panggung utama, animasi bumper cabang musabaqah tilawah, dan ornamen visual kaligrafi digital pada perhelatan akbar MTQ XI Provinsi Sulawesi Barat.",
+    clientDisplayName: "Lembaga Pengembangan Tilawatil Qur'an (LPTQ) & Kanwil Kemenag Sulbar",
+    year: "2026",
+    heroImage: "/portfolio/covers/mtq-xi-sulbar-2026-cover-1600x900.webp",
+    thumbnail: "/portfolio/covers/mtq-xi-sulbar-2026-cover-1600x900.webp",
+    role: "Desain Motion Graphic",
+    sourceCredit: "Kanwil Kementerian Agama Provinsi Sulawesi Barat",
+    sourceUrl: "https://sulbar.kemenag.go.id/index.php/wilayah/mtq-xi-tingkat-provinsi-sulbar-siap-digelar-kemenag-pastikan-kesiapan-teknis-dan-administrasi-9tyCh",
+    rightsStatus: "Karya Desain Motion Orisinal MAROA",
+    services: [
+      "Motion Graphics Design",
+      "Quranic Stage Visual Art",
+      "Competition Category Bumpers",
+      "Ceremony LED Backdrop Animation"
+    ],
+    challenge: "Menghadirkan tata visual mimbar tilawah yang megah, islami, dan berwibawa tinggi dengan pergerakan motion grafis yang anggun tanpa mengaburkan fokus lantunan suci Al-Qur'an.",
+    approach: "Mengolah ragam hias arsitektur islami nusantara dan kaligrafi tsuluts ke dalam komposisi gerak melayang halus dengan pencahayaan emas-zamrud berlatar malam.",
+    execution: "Menyusun rangkaian animasi pembuka defile kafilah 6 kabupaten, bumper penayangan nama dewan hakim dan peserta, serta visual latar mimbar tilawah.",
+    outcome: "Atmosfer panggung utama MTQ XI Sulbar tampil syiar, agung, dan menuai apresiasi tinggi dari para kafilah serta pimpinan Kemenag dan Pemprov Sulbar.",
+    gallery: [
+      "/portfolio/covers/mtq-xi-sulbar-2026-cover-1600x900.webp",
+      "/portfolio/gallery/mtq-xi-sulbar-2026-cover-1600x900.jpg"
+    ],
+    metrics: [
+      { label: "Peran MAROA", value: "Desain Motion Graphic" },
+      { label: "Skala Perhelatan", value: "Tingkat Provinsi Sulbar" },
+      { label: "Kafilah Terlibat", value: "6 Kabupaten Se-Sulbar" }
+    ],
+    features: [
+      {
+        title: "Bumper Animasi Cabang Musabaqah",
+        description: "Grafis gerak transisi penanda cabang lomba tilawah, hifdzil, dan tafsir Al-Qur'an beresolusi tinggi.",
+      },
+      {
+        title: "Latar Visual Dinamis Mimbar Tilawah",
+        description: "Komposisi ornamen kaligrafi dengan gerak partikel halus yang memperkuat keheningan prosesi pembacaan ayat.",
+      },
+      {
+        title: "Defile Kontingen Animasi",
+        description: "Sekuens pembuka penyambutan kafilah peserta dari seluruh kabupaten di Sulawesi Barat.",
+      }
+    ],
+    isFeatured: true,
+    isPublished: true,
+    publishedAt: "2026-05-10",
+    seoTitle: "MTQ XI Provinsi Sulawesi Barat 2026 — Desain Motion Graphic | MAROA",
+    seoDescription: "Produksi desain motion graphic panggung utama dan visual mimbar tilawah MTQ XI Tingkat Provinsi Sulawesi Barat oleh MAROA.",
+  },
+  {
+    id: "pos-sanggar-3-berlian",
+    slug: "aplikasi-kasir-pos-sanggar-seni-3-berlian",
+    title: "Aplikasi Kasir Sanggar Seni 3 Berlian — Sistem POS & Manajemen Persewaan Busana Seni",
+    category: "digital",
+    summary: "Pengembangan sistem kasir web Point of Sale (POS) dan manajemen inventaris persewaan busana adat, properti tari tradisional, dan tata rias Sanggar Seni 3 Berlian.",
+    clientDisplayName: "Sanggar Seni 3 Berlian",
+    year: "2025 - 2026",
+    heroImage: "/portfolio/sbl-portal-desktop.webp",
+    thumbnail: "/portfolio/sbl-portal-desktop.webp",
+    mobileImage: "/portfolio/sbl-portal-mobile.webp",
+    role: "Aplikasi Kasir Sanggar Seni 3 Berlian",
+    sourceCredit: "Repositori Kode Sumber Resmi MAROA (GitHub: sblfm2025/3berlian)",
+    sourceUrl: "https://github.com/sblfm2025/3berlian",
+    githubUrl: "https://github.com/sblfm2025/3berlian",
+    rightsStatus: "Pengembangan Perangkat Lunak Resmi MAROA",
+    services: [
+      "Point of Sale (POS) Architecture",
+      "Costume Rental Tracking",
+      "Billing & Receipt Generation",
+      "Mobile-Responsive Cashier UI"
+    ],
+    challenge: "Mengganti pencatatan manual sewa busana adat dan properti tari yang rentan selisih inventaris dengan sistem kasir terintegrasi yang mencatat deposit dan tenggat kembali.",
+    approach: "Merancang aplikasi kasir berbasis web ringan yang dapat dioperasikan dari tablet maupun ponsel kasir dengan alur sewa-kembali yang intuitif.",
+    execution: "Membangun modul katalog busana adat, kalkulasi sewa otomatis per hari, integrasi cetak struk nota digital, dan pelacakan riwayat keterlambatan pengembalian.",
+    outcome: "Operasional transaksi sanggar menjadi rapi, pelacakan busana tari yang sedang tersewa terpantau akurat, dan laporan omzet harian terekam otomatis.",
+    gallery: [
+      "/portfolio/sbl-portal-desktop.webp",
+      "/portfolio/sbl-portal-mobile.webp"
+    ],
+    metrics: [
+      { label: "Peran MAROA", value: "Aplikasi Kasir POS" },
+      { label: "Platform", value: "Web-Based Responsive POS" },
+      { label: "Repositori", value: "Tervalidasi di GitHub" }
+    ],
+    features: [
+      {
+        title: "Katalog Inventaris Busana & Properti Tari",
+        description: "Pencatatan foto, ukuran, dan ketersediaan stok baju bodo, jas tutup, mahkota, dan aksesoris pentas.",
+      },
+      {
+        title: "Kalkulator Sewa & Pelacak Tenggat Kembali",
+        description: "Perhitungan biaya sewa harian, uang jaminan, serta notifikasi jatuh tempo pengembalian barang.",
+      },
+      {
+        title: "Nota Digital & Struk Kasir Otomatis",
+        description: "Penerbitan bukti transaksi sewa langsung yang dapat dicetak atau dikirim via WhatsApp pelanggan.",
+      }
+    ],
+    isFeatured: false,
+    isPublished: true,
+    publishedAt: "2026-02-10",
+    seoTitle: "Aplikasi Kasir Sanggar Seni 3 Berlian — Sistem POS Persewaan | MAROA",
+    seoDescription: "Pengembangan aplikasi kasir web Point of Sale (POS) dan manajemen persewaan busana tari Sanggar Seni 3 Berlian oleh MAROA.",
   }
 
 ];
