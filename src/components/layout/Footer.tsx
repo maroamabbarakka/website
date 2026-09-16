@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { initialSiteSettings } from "@/data/initialData";
-import { Mail, MapPin, ArrowUpRight, ExternalLink, ShieldCheck } from "lucide-react";
+import { Mail, MapPin, ArrowUpRight, ExternalLink, Clock } from "lucide-react";
 import { WhatsAppIcon, InstagramIcon } from "@/components/ui/SocialIcons";
 
 interface FooterMenuLinkProps {
@@ -36,11 +36,11 @@ export function Footer() {
 
   return (
     <footer className="w-full bg-maroa-black text-maroa-white border-t border-maroa-charcoal mt-auto">
-      <div className="container-maroa pt-12 pb-10 lg:pt-16 lg:pb-12">
-        {/* BAGIAN ATAS: Identitas Brand & 4 Kolom Navigasi Utama */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-12">
-          {/* Sisi Kiri: Logo MAROA & Ringkasan Korporat (4 Kolom di Desktop) */}
-          <div className="flex flex-col gap-4 lg:col-span-4 lg:pr-6">
+      <div className="container-maroa pt-12 pb-16 lg:pt-16 lg:pb-16">
+        {/* BAGIAN ATAS: Profil Perusahaan & 3 Kolom Navigasi Utama (Portofolio Ditiadakan Sesuai Permintaan) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pb-12">
+          {/* Kolom 1 (Kiri): Identitas Brand & Info Perusahaan (Lebar 5/12 di Desktop) */}
+          <div className="flex flex-col gap-4 lg:col-span-5 lg:pr-8">
             <div className="relative h-9 w-36">
               <Image
                 src="/logos/maroa-main-signal.png"
@@ -53,7 +53,7 @@ export function Footer() {
             <p className="text-maroa-red font-semibold text-xs tracking-wider uppercase">
               Creative Technology & Experience Company
             </p>
-            <p className="text-maroa-gray-400 text-xs sm:text-[13px] leading-relaxed">
+            <p className="text-maroa-gray-400 text-xs sm:text-[13px] leading-relaxed max-w-md">
               Mengintegrasikan penyelenggaraan event, produksi multimedia panggung & studio, serta rekayasa sistem aplikasi web untuk menciptakan dampak nyata bagi klien dan audiens.
             </p>
             <div className="flex items-start gap-2 text-xs text-maroa-gray-400 mt-1">
@@ -62,12 +62,12 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Kolom 1: Pilar Layanan (2 Kolom di Desktop) */}
-          <div className="flex flex-col gap-3 lg:col-span-2">
-            <h2 className="text-xs font-bold uppercase tracking-widest text-maroa-white pb-1 border-b border-maroa-charcoal">
+          {/* Kolom 2: Layanan & Pilar (Lebar 3/12 di Desktop) */}
+          <div className="flex flex-col gap-3 lg:col-span-3">
+            <h2 className="text-xs font-bold uppercase tracking-widest text-maroa-white pb-1.5 border-b border-maroa-charcoal">
               Layanan & Pilar
             </h2>
-            <ul className="flex flex-col gap-0.5">
+            <ul className="flex flex-col gap-0.5 pt-1">
               <FooterMenuLink href="/expertise/events">
                 Events & Experiences
               </FooterMenuLink>
@@ -77,42 +77,20 @@ export function Footer() {
               <FooterMenuLink href="/expertise/digital">
                 Digital & Web Applications
               </FooterMenuLink>
-              <FooterMenuLink href="/about#ventures">
-                Ventures: MAROA Café
-              </FooterMenuLink>
+              <div className="pt-2 mt-1 border-t border-maroa-charcoal/60">
+                <FooterMenuLink href="/about#ventures">
+                  Ventures: MAROA Café
+                </FooterMenuLink>
+              </div>
             </ul>
           </div>
 
-          {/* Kolom 2: Solusi & Portofolio (2 Kolom di Desktop) */}
+          {/* Kolom 3: Sumber Daya (Lebar 2/12 di Desktop) */}
           <div className="flex flex-col gap-3 lg:col-span-2">
-            <h2 className="text-xs font-bold uppercase tracking-widest text-maroa-white pb-1 border-b border-maroa-charcoal">
-              Solusi & Portofolio
-            </h2>
-            <ul className="flex flex-col gap-0.5">
-              <FooterMenuLink href="/work/portal-lppl-radio-suara-bumi-lasinrang">
-                Portal LPPL Radio SBL
-              </FooterMenuLink>
-              <FooterMenuLink href="/work/web-streaming-radio-suara-bumi-lasinrang">
-                Web Streaming Radio SBL
-              </FooterMenuLink>
-              <FooterMenuLink href="/work/tersanjung-ckg-pkm-malimpung">
-                Aplikasi CKG Malimpung
-              </FooterMenuLink>
-              <FooterMenuLink href="/work/peduli-pinrang">
-                Portal Peduli Pinrang
-              </FooterMenuLink>
-              <FooterMenuLink href="/work">
-                Semua Studi Kasus & Portofolio
-              </FooterMenuLink>
-            </ul>
-          </div>
-
-          {/* Kolom 3: Sumber Daya & Wawasan (2 Kolom di Desktop) */}
-          <div className="flex flex-col gap-3 lg:col-span-2">
-            <h2 className="text-xs font-bold uppercase tracking-widest text-maroa-white pb-1 border-b border-maroa-charcoal">
+            <h2 className="text-xs font-bold uppercase tracking-widest text-maroa-white pb-1.5 border-b border-maroa-charcoal">
               Sumber Daya
             </h2>
-            <ul className="flex flex-col gap-0.5">
+            <ul className="flex flex-col gap-0.5 pt-1">
               <FooterMenuLink href="/insights">
                 Artikel & Insights
               </FooterMenuLink>
@@ -128,17 +106,20 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Kolom 4: Perusahaan (2 Kolom di Desktop) */}
+          {/* Kolom 4: Perusahaan (Lebar 2/12 di Desktop) */}
           <div className="flex flex-col gap-3 lg:col-span-2">
-            <h2 className="text-xs font-bold uppercase tracking-widest text-maroa-white pb-1 border-b border-maroa-charcoal">
+            <h2 className="text-xs font-bold uppercase tracking-widest text-maroa-white pb-1.5 border-b border-maroa-charcoal">
               Perusahaan
             </h2>
-            <ul className="flex flex-col gap-0.5">
+            <ul className="flex flex-col gap-0.5 pt-1">
               <FooterMenuLink href="/about">
                 Tentang MAROA
               </FooterMenuLink>
               <FooterMenuLink href="/expertise">
                 Kapabilitas & Keahlian
+              </FooterMenuLink>
+              <FooterMenuLink href="/work">
+                Selected Work
               </FooterMenuLink>
               <FooterMenuLink href="/legal">
                 Legalitas & Regulasi
@@ -151,12 +132,12 @@ export function Footer() {
         </div>
 
         {/* GARIS PEMBATAS TENGAH */}
-        <div className="border-t border-maroa-charcoal/80 my-2" />
+        <div className="border-t border-maroa-charcoal/80" />
 
         {/* BAGIAN TENGAH: BADGES QR CODE LEGALITAS & SOSIAL MEDIA */}
-        <div className="py-8 flex flex-col xl:flex-row items-start xl:items-center justify-between gap-8">
-          {/* Sebelah Kiri: 3 QR Code Resmi Verifikasi Pemerintah RI */}
-          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+        <div className="py-8 flex flex-col xl:flex-row items-start xl:items-center justify-between gap-6">
+          {/* Sisi Kiri: 3 QR Code Resmi Verifikasi Pemerintah RI + Badge Status PSE Komdigi */}
+          <div className="flex flex-wrap items-center gap-3.5 sm:gap-5">
             {/* 1. Kemenkumham RI - AHU */}
             <a
               href="https://elayanan.ahu.go.id/perseroan-perseorangan/sertifikat/Perubahan Data/MAROA MEDIA MABBARAKKA"
@@ -165,12 +146,12 @@ export function Footer() {
               className="flex items-center gap-2.5 p-2 rounded-lg bg-maroa-charcoal/60 hover:bg-maroa-charcoal border border-maroa-charcoal hover:border-gray-600 transition-all group"
               title="Klik untuk verifikasi resmi Akta & SK Pengesahan AHU Kemenkumham RI"
             >
-              <div className="relative h-11 w-11 shrink-0 bg-white p-0.5 rounded border border-gray-300 overflow-hidden">
+              <div className="relative h-10 w-10 shrink-0 bg-white p-0.5 rounded border border-gray-300 overflow-hidden">
                 <Image
                   src="/compliance/qr-kemenkumham-ahu.png"
                   alt="QR Code Kemenkumham AHU PT MAROA MEDIA MABBARAKKA"
-                  width={44}
-                  height={44}
+                  width={40}
+                  height={40}
                   className="object-contain w-full h-full"
                 />
               </div>
@@ -185,7 +166,7 @@ export function Footer() {
                   Badan Hukum AHU Terdaftar
                 </span>
                 <span className="text-[9px] text-emerald-400 font-mono">
-                  Terverifikasi Resmi
+                  Terverifikasi Sah
                 </span>
               </div>
             </a>
@@ -198,12 +179,12 @@ export function Footer() {
               className="flex items-center gap-2.5 p-2 rounded-lg bg-maroa-charcoal/60 hover:bg-maroa-charcoal border border-maroa-charcoal hover:border-gray-600 transition-all group"
               title="Klik untuk verifikasi Perizinan Berusaha Berbasis Risiko OSS BKPM RI"
             >
-              <div className="relative h-11 w-11 shrink-0 bg-white p-0.5 rounded border border-gray-300 overflow-hidden">
+              <div className="relative h-10 w-10 shrink-0 bg-white p-0.5 rounded border border-gray-300 overflow-hidden">
                 <Image
                   src="/compliance/qr-oss-nib.png"
                   alt="QR Code OSS NIB PT MAROA MEDIA MABBARAKKA"
-                  width={44}
-                  height={44}
+                  width={40}
+                  height={40}
                   className="object-contain w-full h-full"
                 />
               </div>
@@ -228,12 +209,12 @@ export function Footer() {
               className="flex items-center gap-2.5 p-2 rounded-lg bg-maroa-charcoal/60 border border-maroa-charcoal"
               title="Validasi Administrasi Perpajakan DJP Kemenkeu RI"
             >
-              <div className="relative h-11 w-11 shrink-0 bg-white p-0.5 rounded border border-gray-300 overflow-hidden">
+              <div className="relative h-10 w-10 shrink-0 bg-white p-0.5 rounded border border-gray-300 overflow-hidden">
                 <Image
                   src="/compliance/qr-djp-pajak.png"
                   alt="QR Code DJP Kemenkeu RI PT MAROA MEDIA MABBARAKKA"
-                  width={44}
-                  height={44}
+                  width={40}
+                  height={40}
                   className="object-contain w-full h-full"
                 />
               </div>
@@ -250,26 +231,35 @@ export function Footer() {
               </div>
             </div>
 
-            {/* 4. Kesiapan PSE Komdigi */}
-            <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-maroa-charcoal/40 border border-maroa-charcoal/80">
-              <ShieldCheck className="h-4 w-4 text-emerald-400 shrink-0" />
+            {/* 4. Status PSE Komdigi (Keterangan Baru: Dalam Proses Registrasi Resmi) */}
+            <div
+              className="flex items-center gap-2.5 p-2 rounded-lg bg-maroa-charcoal/60 border border-maroa-charcoal"
+              title="Kesiapan & Kepatuhan Pendaftaran Penyelenggara Sistem Elektronik (PSE) Komdigi RI"
+            >
+              <div className="h-10 w-10 shrink-0 rounded bg-maroa-charcoal flex items-center justify-center border border-gray-700/60">
+                <Clock className="h-4 w-4 text-amber-400" />
+              </div>
               <div className="flex flex-col text-left">
                 <span className="text-[11px] font-bold text-white">
-                  PSE KOMDIGI
+                  PSE KOMDIGI RI
                 </span>
-                <span className="text-[9px] text-maroa-gray-400">
-                  Sistem Elektronik Terdata
+                <span className="text-[10px] text-maroa-gray-400">
+                  Sistem Elektronik
+                </span>
+                <span className="text-[9px] text-amber-400 font-mono flex items-center gap-1">
+                  <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                  Dalam Proses Registrasi
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Sebelah Kanan: Connect With Us & Social Icons */}
-          <div className="flex items-center gap-4 shrink-0">
+          {/* Sisi Kanan: Connect With Us & Social Icons */}
+          <div className="flex items-center gap-3.5 shrink-0 self-start xl:self-center">
             <span className="text-xs font-semibold uppercase tracking-wider text-maroa-gray-400">
               Connect with us
             </span>
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-2">
               <a
                 href="https://wa.me/6281343511099"
                 target="_blank"
@@ -300,36 +290,37 @@ export function Footer() {
         </div>
 
         {/* GARIS PEMBATAS BAWAH */}
-        <div className="border-t border-maroa-charcoal/80 my-2" />
+        <div className="border-t border-maroa-charcoal/80" />
 
-        {/* BAGIAN BAWAH: Hak Cipta & Inline Legal Links */}
-        <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-maroa-gray-500 sm:pr-48">
-          <div className="text-center sm:text-left">
+        {/* BAGIAN BAWAH: HAK CIPTA & LINK LEGALITAS YANG RAPI, PRESISI, DAN TIDAK TERPOTONG */}
+        <div className="pt-6 flex flex-col lg:flex-row items-center justify-between gap-4 text-xs">
+          {/* Teks Hak Cipta Perusahaan (Kiri) */}
+          <div className="text-center lg:text-left text-maroa-gray-500 shrink-0">
             <span>© {currentYear} PT MAROA MEDIA MABBARAKKA. Seluruh hak cipta dilindungi.</span>
           </div>
 
-          {/* Deretan Link Legal Lengkap Sesuai Format Standar Perusahaan Terkemuka */}
-          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-xs text-maroa-gray-400">
+          {/* Deretan Link Legalitas Lengkap, Simetris, & Teratur (Kanan) */}
+          <div className="flex flex-wrap items-center justify-center lg:justify-end gap-x-3.5 gap-y-1.5 text-maroa-gray-400 text-xs">
             <Link href="/terms" className="hover:text-maroa-white transition-colors">
               Syarat & Ketentuan
             </Link>
-            <span className="text-maroa-gray-700">|</span>
+            <span className="text-maroa-gray-700 select-none">|</span>
             <Link href="/privacy" className="hover:text-maroa-white transition-colors">
               Kebijakan Privasi
             </Link>
-            <span className="text-maroa-gray-700">|</span>
+            <span className="text-maroa-gray-700 select-none">|</span>
             <Link href="/cookies" className="hover:text-maroa-white transition-colors">
               Kebijakan Cookie
             </Link>
-            <span className="text-maroa-gray-700">|</span>
+            <span className="text-maroa-gray-700 select-none">|</span>
             <Link href="/legal" className="hover:text-maroa-white transition-colors">
               Informasi Legal
             </Link>
-            <span className="text-maroa-gray-700">|</span>
+            <span className="text-maroa-gray-700 select-none">|</span>
             <Link href="/accessibility" className="hover:text-maroa-white transition-colors">
               Pernyataan Aksesibilitas
             </Link>
-            <span className="text-maroa-gray-700">|</span>
+            <span className="text-maroa-gray-700 select-none">|</span>
             <Link href="/security" className="hover:text-maroa-white transition-colors">
               Keamanan & Kepatuhan
             </Link>
