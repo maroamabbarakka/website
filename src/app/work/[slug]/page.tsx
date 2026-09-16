@@ -148,7 +148,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailProps) 
       {/* Project Facts Bar */}
       <section className="w-full py-6 bg-maroa-gray-100/60 border-b border-maroa-gray-300">
         <div className="container-maroa">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-xs">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-6 text-xs">
             <div className="flex flex-col gap-1">
               <span className="text-maroa-gray-500 font-medium uppercase tracking-wider flex items-center gap-1.5">
                 <User className="h-3.5 w-3.5 text-maroa-red" />
@@ -170,27 +170,119 @@ export default async function ProjectDetailPage({ params }: ProjectDetailProps) 
               </span>
               <span className="font-bold text-maroa-black text-sm uppercase">{project.category}</span>
             </div>
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-1 col-span-2 sm:col-span-1">
               <span className="text-maroa-gray-500 font-medium uppercase tracking-wider">
-                Lingkup Servis
+                Peran Nyata MAROA
               </span>
-              <span className="font-bold text-maroa-black text-sm truncate">
-                {project.services.join(", ")}
+              <span className="font-bold text-maroa-charcoal text-xs sm:text-sm">
+                {project.role || "Mitra Pelaksana & Produksi Terpadu"}
               </span>
             </div>
+            {project.sourceCredit && (
+              <div className="flex flex-col gap-1 col-span-2 sm:col-span-1">
+                <span className="text-maroa-gray-500 font-medium uppercase tracking-wider">
+                  Kredit Dokumentasi
+                </span>
+                <span className="font-semibold text-maroa-gray-700 text-xs">
+                  {project.sourceCredit}
+                </span>
+              </div>
+            )}
           </div>
         </div>
       </section>
 
-      {/* Hero Visual Multi-Device Showcase Mockup */}
+      {/* Hero Visual Showcase — Dibedakan Sesuai Kategori: Digital / Multimedia / Events */}
       <section className="w-full py-8 sm:py-12 bg-maroa-white border-b border-maroa-gray-100">
         <div className="container-maroa">
-          <DeviceMockupShowcase
-            desktopImage={project.heroImage}
-            mobileImage={project.mobileImage}
-            title={project.title}
-            category={project.category}
-          />
+          {project.category === "digital" ? (
+            /* Digital: Mockup Layar Perangkat Responsif */
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-semibold uppercase tracking-widest text-maroa-red flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-maroa-red animate-pulse" />
+                  <span>Antarmuka Sistem & Mockup Perangkat</span>
+                </span>
+                {project.githubUrl && (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-maroa-charcoal hover:text-maroa-red font-semibold transition-colors flex items-center gap-1.5"
+                  >
+                    <span>Repositori Kode Sumber GitHub</span>
+                    <ArrowRight className="h-3 w-3" />
+                  </a>
+                )}
+              </div>
+              <DeviceMockupShowcase
+                desktopImage={project.heroImage}
+                mobileImage={project.mobileImage}
+                title={project.title}
+                category={project.category}
+              />
+            </div>
+          ) : project.category === "multimedia" ? (
+            /* Multimedia & Desain Visual: Format Layar Panggung 16:9 Ultra-Sharp */
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-semibold uppercase tracking-widest text-maroa-red flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-maroa-red" />
+                  <span>Presentasi Artwork & Konten Multimedia 16:9</span>
+                </span>
+                <span className="text-xs text-maroa-gray-500 font-medium">
+                  Rasio Master 16:9 • Kualitas Ultra-Sharp
+                </span>
+              </div>
+              <div className="relative aspect-[16/9] w-full rounded-maroa-lg overflow-hidden border border-maroa-gray-300 shadow-xl bg-maroa-charcoal group">
+                <Image
+                  src={project.heroImage}
+                  alt={project.title}
+                  fill
+                  priority
+                  className="object-contain sm:object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 1200px) 100vw, 1200px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-maroa-black/60 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 text-maroa-white pointer-events-none">
+                  <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 bg-maroa-red/90 rounded text-maroa-white backdrop-blur-sm">
+                    Artwork Master 1600x900
+                  </span>
+                  <p className="text-sm sm:text-base font-bold mt-1.5 drop-shadow-md">
+                    {project.title}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ) : (
+            /* Events & Experience: Dokumentasi Lapangan Nyata */
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-semibold uppercase tracking-widest text-maroa-red flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-maroa-red" />
+                  <span>Dokumentasi Pelaksanaan Lapangan & Panggung Nyata</span>
+                </span>
+                <span className="text-xs text-maroa-gray-500 font-medium">
+                  {project.sourceCredit || "Dokumentasi Resmi Kerjasama"}
+                </span>
+              </div>
+              <div className="relative aspect-[16/9] w-full rounded-maroa-lg overflow-hidden border border-maroa-gray-300 shadow-xl bg-maroa-charcoal">
+                <Image
+                  src={project.heroImage}
+                  alt={project.title}
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 1200px) 100vw, 1200px"
+                />
+                <div className="absolute bottom-4 left-4 right-4 text-maroa-white pointer-events-none">
+                  <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 bg-maroa-charcoal/90 rounded text-maroa-white border border-white/20">
+                    Live Event Documentation
+                  </span>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -314,6 +406,43 @@ export default async function ProjectDetailPage({ params }: ProjectDetailProps) 
                     </li>
                   ))}
                 </ul>
+              </div>
+
+              {/* Transparansi & Bukti Legalitas Pekerjaan */}
+              <div className="bg-maroa-gray-100/70 p-6 rounded-maroa-md border border-maroa-gray-300 flex flex-col gap-4">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-maroa-black flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-maroa-red" />
+                  <span>Transparansi & Bukti Proyek</span>
+                </h3>
+                <div className="space-y-3 text-xs text-maroa-gray-700">
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-maroa-gray-500 font-medium">Status Hak Media:</span>
+                    <span className="font-semibold text-maroa-charcoal">
+                      {project.rightsStatus || "Arsip Resmi PT MAROA MEDIA MABBARAKKA"}
+                    </span>
+                  </div>
+                  {project.sourceCredit && (
+                    <div className="flex flex-col gap-0.5">
+                      <span className="text-maroa-gray-500 font-medium">Kredit Sumber:</span>
+                      <span className="font-semibold text-maroa-charcoal">
+                        {project.sourceCredit}
+                      </span>
+                    </div>
+                  )}
+                  {project.sourceUrl && (
+                    <div className="pt-2 border-t border-maroa-gray-300">
+                      <a
+                        href={project.sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-xs font-bold text-maroa-red hover:underline"
+                      >
+                        <span>Verifikasi Dokumen Resmi / Rilis</span>
+                        <ArrowRight className="h-3 w-3" />
+                      </a>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>

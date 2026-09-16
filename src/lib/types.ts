@@ -43,6 +43,13 @@ export interface Project {
   outcome: string;
   gallery: string[];
   metrics?: ProjectMetric[];
+  role?: string;
+  sourceCredit?: string;
+  sourceUrl?: string;
+  deliverables?: string[];
+  rightsStatus?: string;
+  githubUrl?: string;
+  demoUrl?: string;
   isFeatured: boolean;
   isPublished: boolean;
   publishedAt: string;

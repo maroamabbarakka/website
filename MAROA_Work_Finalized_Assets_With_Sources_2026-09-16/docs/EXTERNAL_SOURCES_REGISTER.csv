@@ -1,0 +1,14 @@
+project_slug,source_kind,source_url,publisher,what_it_supports,usage_note
+porsenijar-sidrap-pgri-2026,official_news,https://sidrapkab.go.id/berita/detail_berita/Berita054835-Porsenijar-PGRI-Sulsel-Sukses-Digelar--Bupati-Syaharuddin-Apresiasi-Dukungan-Seluruh-Pihak,Pemkab Sidrap,event completed and official photo candidate,Use as external gallery reference; source credit required
+porsenijar-sidrap-pgri-2026,official_news,https://sidrapkab.go.id/berita/detail_berita/Berita073019-Jelang-Porsenijar-PGRI-Sulsel--Bupati-Syaharuddin-Cek-Kesiapan-Venue,Pemkab Sidrap,prep and venue photo candidate,Supplemental gallery reference
+mandar-culture-festival-2026,official_news,https://polmankab.go.id/Front/kegiatandetail/1771980082871-press-conference--soft-launching-mandar-culture-festival-2026-menjaga-warisan-merajut-masa-depan,Pemkab Polewali Mandar,official event confirmation and photo candidate,Use source attribution if any image is reused
+mandar-culture-festival-2026,official_event_listing,https://www.indonesia.travel/de/de/events/event-detail/mandar-culture-festival-2026,Indonesia Travel,official event listing and hero image context,Reference only; confirm image rights before reuse
+mtq-xi-sulbar-2026,official_news,https://sulbar.kemenag.go.id/index.php/wilayah/mtq-xi-tingkat-provinsi-sulbar-siap-digelar-kemenag-pastikan-kesiapan-teknis-dan-administrasi-9tyCh,Kanwil Kemenag Sulbar,official confirmation and photo candidate,Use source attribution if any image is reused
+festival-penyu-mampie-2026,official_news,https://polmankab.go.id/Front/kegiatandetail/1750214251979-festival-penyu-mampie-2025-harapan-baru-dari-pesisir,Pemkab Polewali Mandar,closest official documentation found; 2025 not 2026,Reference only; do not mislabel as 2026
+dppkb-majene-queue-system,github,https://github.com/maroamabbarakka/Antrian-DPPKB-,GitHub,source code and technical brief,Create product screenshots internally
+sbl-broadcast-overlay-studio,github,https://github.com/fajarbakri9/SBLPodcastOverlay,GitHub,source code and acceptance/current-state docs,Release pending target validation
+zonasi-hd,github,https://github.com/maroamabbarakka/ZONASI-HD,GitHub,application repo,Use only app screenshots with synthetic data
+ckg-malimpung,github,https://github.com/maroamabbarakka/ckgmalimpung,GitHub,application repo,Use only app screenshots with synthetic data
+disperindag-pinrang,github,https://github.com/fajarbakri9/disperindagesdm,GitHub,website repo,Capture deployed website separately
+lasinrang-wgb-tournament-system,github,https://github.com/sblfm2025/lgbw,GitHub,tournament system repo,Confirm whether separate case study or part of TYRO1
+3-berlian-pos-kostum,github,https://github.com/sblfm2025/3berlian,GitHub,POS rental repo,Demo only until security/live use verified

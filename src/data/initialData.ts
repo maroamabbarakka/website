@@ -578,27 +578,31 @@ export const initialProjects: Project[] = [
   {
     id: "porsenijar-sidrap-pgri",
     slug: "porsenijar-sidrap-pgri-sulsel-multimedia-videotron",
-    title: "PORSENIJAR PGRI Sulsel 2026 Sidrap — Produksi Konten Desain Multimedia & Stage Videotron Panggung Utama Kolosal",
+    title: "PORSENIJAR PGRI Sulsel Kab. Sidrap 2026 — Tata Multimedia Videotron & Visual Panggung",
     category: "multimedia",
-    summary: "Produksi visual panggung akbar pekan olahraga, seni, dan pembelajaran tingkat Provinsi Sulawesi Selatan dengan layar videotron raksasa, motion graphics kolosal, dan sistem tampilan cabang lomba.",
-    clientDisplayName: "Pengurus PGRI Sulawesi Selatan & Panitia Sidrap",
+    summary: "Produksi motion graphics pembuka, visual bumper pengiring kontingen, dan operasional layar videotron panggung utama pada perhelatan akbar PORSENIJAR PGRI Sulsel di Kabupaten Sidrap.",
+    clientDisplayName: "Pengurus PGRI Provinsi Sulawesi Selatan & Panitia Pelaksana Sidrap",
     year: "2026",
-    heroImage: "/portfolio/events/porsenijar-sidrap.png",
-    thumbnail: "/portfolio/events/porsenijar-sidrap.png",
+    heroImage: "/portfolio/covers/porsenijar-sidrap-pgri-2026-cover-1600x900.webp",
+    thumbnail: "/portfolio/covers/porsenijar-sidrap-pgri-2026-cover-1600x900.webp",
+    role: "Produksi Motion Graphics, Visual Panggung & Tata Multimedia Videotron",
+    sourceCredit: "Dokumentasi Resmi Humas Pemkab Sidenreng Rappang (Sidrap)",
+    sourceUrl: "https://sidrapkab.go.id/berita/detail_berita/Berita054835-Porsenijar-PGRI-Sulsel-Sukses-Digelar--Bupati-Syaharuddin-Apresiasi-Dukungan-Seluruh-Pihak",
+    rightsStatus: "Dokumentasi Pelaksanaan & Arsip Resmi MAROA",
     services: [
-      "Produksi Desain Multimedia",
-      "Stage Videotron Panggung Utama",
-      "Motion Graphics Opening Ceremony",
-      "Sistem Visual Lomba Seni & Olahraga",
-      "Layout Dynamic Split-Screen"
+      "Stage LED Screen Content Production",
+      "Contingent Parade Video Bumpers",
+      "Live Videotron Switching Operation",
+      "Motion Typography & Scoreboard Graphics"
     ],
-    challenge: "Mengorkestrasi materi visual untuk perhelatan akbar olahraga, seni, dan pembelajaran terbesar di Sulawesi Selatan yang melibatkan 24 kontingen kabupaten/kota dan puluhan ribu insan pendidik, di mana videotron panggung utama harus menampilkan dinamika pertandingan, seni, dan upacara pembukaan secara megah tanpa jeda teknis.",
-    approach: "Merancang identitas visual megah 3D yang menyatukan simbol-simbol ikonik Sidrap (Monumen Beras, Masjid Agung, Kincir Angin PLTB, Rumah Adat Bugis, dan Monumen Sepeda) dengan cabang-cabang olahraga serta seni dalam bingkai animasi panggung dinamis beresolusi 4K.",
-    execution: "Memproduksi motion graphics pembukaan upacara (opening countdown 3D spektakuler), aset looping video dinamis latar penampilan tari kolosal dan paduan suara, serta sistem layout videotron terbagi (split-screen) untuk pembacaan janji guru dan sambutan pimpinan daerah.",
-    outcome: "Menciptakan atmosfer upacara pembukaan dan penutupan yang gegap gempita, menuai apresiasi luas dari ribuan pendidik se-Sulawesi Selatan dan pemerintah daerah atas kemegahan dan kerapian tata multimedia panggung.",
+    challenge: "Menyelenggarakan tata visual panggung yang dinamis untuk defile puluhan ribu tenaga pendidik dari 24 kabupaten/kota se-Sulsel di stadion terbuka dengan visibilitas prima.",
+    approach: "Membuat template grafis gerak resolusi tinggi berkecepatan refresh tinggi yang memadukan identitas oranye-hitam khas PGRI dengan elemen kultural Bumi Nene Mallomo.",
+    execution: "Menyiapkan sekuens animasi penayangan nama kontingen, cuplikan prestasi cabang olahraga, dan sinkronisasi audio-visual live selama upacara pembukaan dan penutupan.",
+    outcome: "Perhelatan pembukaan berlangsung meriah dan mendapatkan apresiasi langsung dari Bupati Sidrap dan jajaran Pengurus Besar PGRI.",
     gallery: [
-      "/portfolio/events/porsenijar-sidrap.png",
-      "/portfolio/events/tpn-guru-belajar.png"
+      "/portfolio/covers/porsenijar-sidrap-pgri-2026-cover-1600x900.webp",
+      "/portfolio/gallery/porsenijar-sidrap-pgri-2026-cover-1600x900.jpg",
+      "/portfolio/events/porsenijar-sidrap.png"
     ],
     metrics: [
       { label: "Partisipasi", value: "24 Kontingen Se-Sulsel" },
@@ -806,25 +810,31 @@ export const initialProjects: Project[] = [
   },
   {
     id: "mandar-culture-fest",
-    slug: "mandar-culture-fest-produksi-konten-desain-multimedia",
-    title: "MANDAR Culture Fest — Produksi Konten Desain Multimedia & Visual Storytelling Warisan Budaya Maritim",
+    slug: "mandar-culture-festival-2026",
+    title: "Mandar Culture Festival 2026 — Desain Grafis Promosi & Visual Branding Warisan Maritim",
     category: "multimedia",
-    summary: "Produksi aset multimedia panggung tepi pantai, motion graphics keagungan perahu Sandeq, dan visualisasi tarian tradisional dalam perhelatan akbar pelestarian budaya maritim Mandar.",
-    clientDisplayName: "Dinas Kebudayaan & Panitia Pelestari Adat Kebudayaan Mandar",
-    year: "2025 - 2026",
-    heroImage: "/portfolio/events/mandar-culture-fest.jpg",
-    thumbnail: "/portfolio/events/mandar-culture-fest.jpg",
+    summary: "Perancangan identitas visual, desain poster resmi, dan materi promosi kultural untuk festival kebudayaan maritim Mandar di Kabupaten Polewali Mandar.",
+    clientDisplayName: "Dinas Pemuda, Olahraga & Pariwisata Kab. Polewali Mandar",
+    year: "2026",
+    heroImage: "/portfolio/covers/mandar-culture-festival-2026-cover-1600x900.webp",
+    thumbnail: "/portfolio/covers/mandar-culture-festival-2026-cover-1600x900.webp",
+    role: "Desain Grafis Poster Resmi & Media Publikasi Visual",
+    sourceCredit: "Rilis Resmi Dinas Kebudayaan & Pariwisata Pemkab Polewali Mandar",
+    sourceUrl: "https://polmankab.go.id/Front/kegiatandetail/1771980082871-press-conference--soft-launching-mandar-culture-festival-2026-menjaga-warisan-merajut-masa-depan",
+    rightsStatus: "Karya Desain Promosi Resmi Klien",
     services: [
-      "Konten Desain Multimedia Panggung",
-      "Visual Background Seni Tari Tradisi",
-      "Motion Graphics Narasi Perahu Sandeq",
-      "Audio-Visual Stage Atmosphere Enhancement"
+      "Official Poster & Key Visual Design",
+      "Social Media Campaign Assets",
+      "Stage Screen Graphic Backdrop",
+      "Print Media Supervision"
     ],
-    challenge: "Menghadirkan kekayaan filosofis peradaban maritim Mandar—khususnya keagungan perahu Sandeq dan ritus bahari leluhur—ke dalam panggung festival terbuka tepi pantai modern yang memikat generasi muda serta wisatawan nusantara.",
-    approach: "Mengembangkan visual motion 3D latar panggung LED melengkung yang menggambarkan armada Sandeq berlayar gagah menembus samudera malam di bawah gugusan bintang, dipadukan ornamen ukiran tradisional Passayang-sayang.",
-    execution: "Memproduksi animasi visual panggung berdurasi penuh yang tersinkronisasi harmonis dengan koreografi tarian tradisional, pertunjukan musik Calong dan gendang, serta narasi tuturan riwayat keperkasaan pelaut Mandar.",
-    outcome: "Pertunjukan panggung kebudayaan tampil memukau dengan kedalaman narasi audio-visual, memperkuat apresiasi generasi muda terhadap marwah leluhur bahari Sulawesi Barat dan mengundang decak kagum para tamu undangan.",
+    challenge: "Menampilkan filosofi kelautan Mandar dan ikon perahu Sandeq dalam format poster vertikal modern tanpa kehilangan identitas kultural lokal, serta mentransformasikannya ke format layar panggung 16:9 secara proporsional.",
+    approach: "Mengembangkan tata letak poster vertikal dinamis dengan perpaduan warna tanah liat kultural dan merah menyala, kemudian menyusun komposisi non-destruktif 16:9 berlatar ambient agar seluruh judul, tipografi, dan sponsor penanggung jawab tampil utuh.",
+    execution: "Menghasilkan master artwork cetak resolusi tinggi (1080x1350) untuk materi media luar ruang, serta paket aset visual panggung 16:9 (1600x900) untuk kebutuhan penayangan layar digital.",
+    outcome: "Desain poster dipublikasikan secara resmi oleh Pemkab Polman dan menjadi materi visual utama promosi kebudayaan daerah hingga portal pariwisata nasional.",
     gallery: [
+      "/portfolio/covers/mandar-culture-festival-2026-cover-1600x900.webp",
+      "/portfolio/gallery/mandar-culture-festival-2026-cover-1600x900.jpg",
       "/portfolio/events/mandar-culture-fest.jpg"
     ],
     metrics: [
@@ -968,24 +978,29 @@ export const initialProjects: Project[] = [
   {
     id: "wisuda-icp-senat",
     slug: "wisuda-sarjana-pengukuhan-guru-besar-institut-cokroaminoto-pinrang",
-    title: "Rapat Senat Terbuka Luar Biasa Wisuda Sarjana III & Pengukuhan Guru Besar ICP — Desain Visual Panggung & Multimedia Akademik",
-    category: "multimedia",
-    summary: "Perancangan identitas visual panggung beraksen emerald-gold 3D mewah, master backdrop rapat senat agung, dan media presentasi pengukuhan guru besar di Institut Cokroaminoto Pinrang.",
+    title: "Wisuda Sarjana & Pengukuhan Guru Besar Institut Cokroaminoto Pinrang 2026",
+    category: "events",
+    summary: "Manajemen multimedia panggung, penayangan nama wisudawan real-time, dan dokumentasi siaran langsung multi-kamera untuk sidang senat terbuka wisuda sarjana dan pengukuhan guru besar.",
     clientDisplayName: "Institut Cokroaminoto Pinrang (ICP)",
     year: "2026",
-    heroImage: "/portfolio/events/wisuda-icp.jpg",
-    thumbnail: "/portfolio/events/wisuda-icp.jpg",
+    heroImage: "/portfolio/covers/wisuda-icp-2026-cover-1600x900.webp",
+    thumbnail: "/portfolio/covers/wisuda-icp-2026-cover-1600x900.webp",
+    role: "Manajemen Tata Multimedia Panggung & Produksi Siaran Multi-Kamera",
+    sourceCredit: "Arsip Dokumentasi Sidang Senat Terbuka ICP Pinrang",
+    rightsStatus: "Dokumentasi Resmi Kerjasama Kampus",
     services: [
-      "Desain Visual Panggung Emerald-Gold 3D",
-      "Multimedia Rapat Senat Terbuka",
-      "Motion Graphic Profil Wisudawan",
-      "Stage Backdrop Production"
+      "Live Multi-Camera Video Production",
+      "Graduate Name Display Automation",
+      "Stage LED Multimedia Management",
+      "Audio-Visual Protocol Recording"
     ],
-    challenge: "Menghadirkan tata visual panggung yang khidmat, agung, dan bermartabat tinggi untuk momen bersejarah Dies Natalis, Wisuda Sarjana Angkatan III, dan Pengukuhan Guru Besar pertama di kampus Institut Cokroaminoto Pinrang.",
-    approach: "Memadukan warna hijau zamrud (emerald green) institusional dengan kilau aksen emas foil 3D dan tirai sutra emas mewah, menciptakan kemegahan visual yang memancarkan integritas akademis tinggi.",
-    execution: "Mendesain master banner backdrop panggung senat berdimensi besar dengan resolusi cetak ultra-tinggi, animasi transisi layar prosesi pemindahan kuncir toga wisudawan terbaik, serta orasi ilmiah guru besar.",
-    outcome: "Menghadirkan kebanggaan mendalam bagi para wisudawan, orang tua, dewan senat guru besar, dan tamu kehormatan dari LLDIKTI serta jajaran Forkopimda daerah.",
+    challenge: "Menjaga kekhidmatan prosesi akademik wisuda sekaligus memastikan penayangan profil wisudawan tersinkronisasi presisi detik per detik saat prosesi pemindahan kuncir.",
+    approach: "Membangun sistem switching video multi-kamera latensi rendah dan antarmuka operator operator penayangan nama wisudawan berbasis nomor urut kursi.",
+    execution: "Menghubungkan kamera panggung utama, kamera audiens keluarga, dan sistem proyeksi aula besar dengan audio terkalibrasi.",
+    outcome: "Rangkaian prosesi wisuda berjalan tertib dan keluarga wisudawan menikmati tayangan visual panggung yang jernih dan berwibawa.",
     gallery: [
+      "/portfolio/covers/wisuda-icp-2026-cover-1600x900.webp",
+      "/portfolio/gallery/wisuda-icp-2026-cover-1600x900.jpg",
       "/portfolio/events/wisuda-icp.jpg"
     ],
     metrics: [
@@ -1020,24 +1035,30 @@ export const initialProjects: Project[] = [
   {
     id: "tyro1-wgb-tournament",
     slug: "tyro1-water-gel-blaster-war-zone-official-partner-3d-visual",
-    title: "TYRO1 Water Gel Blaster War Zone 2026 — Official Media Partner & Produksi Desain 3D Arena Tournament",
+    title: "TYRO1 Water Gel Blaster Arena 2026 — Identitas Visual 3D & Cuplikan Video Aksi",
     category: "multimedia",
-    summary: "Official partner dan produksi desain visual 3D arena kompetisi Water Gel Blaster di Lapangan Mattiro Deceng Tiroang, mencakup pemodelan maskot Ayam Cyberpunk, emblem kejuaraan, dan scoreboard dinamis.",
-    clientDisplayName: "Armani TYRO1 & Komunitas Lasinrang WGB Tiroang",
+    summary: "Pengembangan visual branding arena permainan taktis, desain materi promosi 3D, dan produksi teaser video sinematik untuk arena Water Gel Blaster modern pertama di Pinrang.",
+    clientDisplayName: "Manajemen Arena Taktis TYRO1 Pinrang",
     year: "2026",
-    heroImage: "/portfolio/events/tyro1-wgb.jpg",
-    thumbnail: "/portfolio/events/tyro1-wgb.jpg",
+    heroImage: "/portfolio/covers/tyro1-wgb-2026-cover-1600x900.webp",
+    thumbnail: "/portfolio/covers/tyro1-wgb-2026-cover-1600x900.webp",
+    role: "Pengembangan Identitas Visual 3D, Desain Grafis Arena & Video Sinematik",
+    sourceCredit: "Arsip Produksi Studio Multimedia MAROA & TYRO1 Pinrang",
+    rightsStatus: "Kemitraan Komersial Resmi MAROA",
     services: [
-      "Pemodelan Karakter Maskot 3D Cyberpunk",
-      "Arena Stage Visual Branding",
-      "Live Scoreboard Motion Graphics",
-      "Official Media & Creative Production Partner"
+      "3D Visual Asset Development",
+      "Tactical Arena Branding & Signage",
+      "Cinematic Action Video Production",
+      "Tournament Visual Guidelines"
     ],
-    challenge: "Mengangkat turnamen olahraga taktis Water Gel Blaster (WGB) di Lapangan Mattiro Deceng Tiroang agar memiliki atmosfer dan gengsi setara turnamen esports profesional nasional dengan total hadiah jutaan rupiah.",
-    approach: "Merancang maskot kebanggaan daerah berupa Ayam Jantan Pejuang Cyberpunk ('Ayam Jantan dari Timur') berbalut armor sci-fi 3D memegang blaster futuristik, diperkuat tipografi esport metalik dan duel kontras elemen es (Frost) vs api (Incendiary).",
-    execution: "Pembuatan master visual tournament poster 3D, emblem logam kejuaraan, desain koin medali emas digital Rp 10 Juta, branding pembatas lapangan laga, serta motion graphics overlay siaran.",
-    outcome: "Menarik puluhan skuad taktis dari berbagai penjuru, menciptakan animo penonton yang membludak, dan menempatkan Tiroang sebagai episentrum kompetisi olahraga taktis WGB bergengsi di Sulawesi Selatan.",
+    challenge: "Mengkomunikasikan sensasi olahraga taktis yang seru, aman, dan kompetitif kepada komunitas anak muda dan keluarga di Pinrang dan sekitarnya.",
+    approach: "Menggabungkan estetika militer futuristik dengan palet warna berdaya tarik tinggi dan potongan video laga berkecepatan tinggi.",
+    execution: "Membuat render visual 3D perlengkapan taktis, papan panduan keselamatan arena, serta mengedit klip video promosi aksi pemain di lapangan.",
+    outcome: "Arena TYRO1 sukses menjadi destinasi favorit komunitas pemuda dan membuka kejuaraan mini perdana dengan antusiasme tinggi.",
     gallery: [
+      "/portfolio/covers/tyro1-wgb-2026-cover-1600x900.webp",
+      "/portfolio/gallery/tyro1-wgb-video-2026-03s.jpg",
+      "/portfolio/gallery/tyro1-wgb-video-2026-12s.jpg",
       "/portfolio/events/tyro1-wgb.jpg"
     ],
     metrics: [
@@ -1076,24 +1097,29 @@ export const initialProjects: Project[] = [
   {
     id: "tpn-kgbn-pinrang",
     slug: "temu-pendidik-nusantara-kgbn-pinrang-mitra-kolaborasi",
-    title: "Temu Pendidik Nusantara (TPN) Pinrang — Mitra Daerah & Kolaborasi Ekosistem Transformasi Pendidikan Guru",
+    title: "Temu Pendidik Nusantara XIII Kab. Pinrang 2026 — Desain Visual Panggung & Kemitraan Daerah",
     category: "events",
-    summary: "Kemitraan strategis daerah dan penyusunan tata kelola visual kolaborasi puluhan instansi, dinas pemerintah, ormas guru, lembaga filantropi, dan UMKM lokal dalam konferensi Temu Pendidik Nusantara.",
-    clientDisplayName: "Komunitas Guru Belajar Nusantara (KGBN) Pinrang",
-    year: "2025 - 2026",
-    heroImage: "/portfolio/events/tpn-guru-belajar.png",
-    thumbnail: "/portfolio/events/tpn-guru-belajar.png",
+    summary: "Desain visual panggung utama, materi seminar kependidikan, dan kemitraan teknologi publikasi untuk forum tahunan komunitas guru inovatif se-Kabupaten Pinrang.",
+    clientDisplayName: "Komunitas Guru Belajar Nusantara (KGBN) Kabupaten Pinrang",
+    year: "2026",
+    heroImage: "/portfolio/covers/tpn-xiii-pinrang-2026-cover-1600x900.webp",
+    thumbnail: "/portfolio/covers/tpn-xiii-pinrang-2026-cover-1600x900.webp",
+    role: "Mitra Desain Visual, Tata Panggung Kultural & Kemitraan Teknis",
+    sourceCredit: "Dokumentasi Resmi KGBN Pinrang & MAROA Media",
+    rightsStatus: "Kemitraan Komunitas Pendidikan Daerah",
     services: [
-      "Mitra Strategis Kolaborasi Daerah",
-      "Materi Visual Presentasi Pendidik",
-      "Stage Visual & Branding Konferensi",
-      "Dokumentasi & Publikasi Kolaboratif"
+      "Stage Backdrop Artwork & Banner Design",
+      "Educational Seminar Presentation Layout",
+      "Digital Registration Coordination Support",
+      "Community Documentation Packaging"
     ],
-    challenge: "Membangun sinergi multipihak antara pemerintah daerah, dinas pendidikan, kementerian agama, ormas pendidik (PGRI, IGI), lembaga zakat Baznas, Kominfo, serta puluhan pelaku UMKM lokal dalam satu ruang temu inovasi pengajaran.",
-    approach: "Menyusun tatanan identitas kemitraan terpadu yang harmonis, menata logo puluhan mitra daerah dan kolaborator dengan hierarki visual yang jelas dan terhormat untuk mencerminkan semangat gotong royong pendidikan.",
-    execution: "Memproduksi master visual mitra kolaborasi resmi berukuran besar, materi visual ruang kelas berbagi praktik baik guru, tata panggung pembukaan konferensi, serta siaran media bersama Radio SBL.",
-    outcome: "Menyatukan lebih dari 40 mitra kolaborasi dan UMKM daerah dalam gerakan memajukan kompetensi guru di Kabupaten Pinrang, memperkokoh peran MAROA sebagai mitra terpercaya transformasi sosial dan edukasi.",
+    challenge: "Menghadirkan suasana ruang belajar yang bersahabat, kolaboratif, namun berstandar konferensi profesional bagi ratusan pendidik dari berbagai pelosok daerah.",
+    approach: "Memilih kombinasi tipografi bersahabat dengan elemen visual batik/ornamen edukasi nusantara dalam komposisi panggung yang lapang dan terang.",
+    execution: "Menyiapkan file cetak backdrop panggung berskala besar (1600x900 / 2048x1365), sertifikat digital peserta, dan materi tayangan presentasi narasumber utama.",
+    outcome: "Konferensi berjalan sukses dan menghasilkan ruang berbagi praktik baik pembelajaran antar-guru dengan kepuasan peserta yang tinggi.",
     gallery: [
+      "/portfolio/covers/tpn-xiii-pinrang-2026-cover-1600x900.webp",
+      "/portfolio/gallery/tpn-xiii-pinrang-backdrop-2026-cover-1600x900.jpg",
       "/portfolio/events/tpn-guru-belajar.png"
     ],
     metrics: [
@@ -1124,7 +1150,219 @@ export const initialProjects: Project[] = [
     publishedAt: "2025-10-15",
     seoTitle: "Temu Pendidik Nusantara Pinrang — Mitra Kolaborasi Daerah | MAROA",
     seoDescription: "Kemitraan strategis daerah dan produksi visual ekosistem Temu Pendidik Nusantara KGBN Kabupaten Pinrang bersama MAROA.",
+  },
+  {
+    id: "gemudaya-festival-majene",
+    slug: "gemudaya-festival-majene-2026",
+    title: "GEMUDAYA (Generasi Muda Berdaya) Festival Majene 2026 — Desain Identitas Visual & Kampanye Promosi",
+    category: "multimedia",
+    summary: "Perancangan identitas visual, poster kampanye resmi 16:9, dan materi publikasi digital untuk festival pemberdayaan dan ekspresi pemuda di Kabupaten Majene.",
+    clientDisplayName: "Komunitas Kreatif & Pemuda Majene Bersatu",
+    year: "2026",
+    heroImage: "/portfolio/covers/gemudaya-festival-majene-2026-cover-1600x900.webp",
+    thumbnail: "/portfolio/covers/gemudaya-festival-majene-2026-cover-1600x900.webp",
+    role: "Perancangan Identitas Visual, Poster Promosi 16:9 & Desain Feed Media Sosial",
+    sourceCredit: "Arsip Desain Komunikasi Visual Studio MAROA",
+    rightsStatus: "Karya Desain Orisinal MAROA",
+    services: [
+      "Event Visual Branding",
+      "Official 16:9 Poster Design",
+      "Social Media Campaign Assets",
+      "Typography & Color Palette System"
+    ],
+    challenge: "Menghadirkan citra visual yang memancarkan energi muda, modernitas, dan optimisme tanpa meninggalkan sentuhan nilai kebersamaan khas tanah Mandar.",
+    approach: "Mengembangkan tipografi kustom berkarakter tebal dipadu palet warna cerah yang mencerminkan semangat kolaborasi dan inovasi generasi muda.",
+    execution: "Membuat master poster 16:9 (1600x900) resolusi tinggi untuk cetak baliho serta format vertikal untuk kebutuhan publikasi di platform media sosial.",
+    outcome: "Materi promosi diterima dengan antusias oleh komunitas pemuda se-Kabupaten Majene dan memperkuat gaung pergerakan kepemudaan daerah.",
+    gallery: [
+      "/portfolio/covers/gemudaya-festival-majene-2026-cover-1600x900.webp",
+      "/portfolio/gallery/gemudaya-festival-majene-2026-cover-1600x900.jpg"
+    ],
+    metrics: [
+      { label: "Format Master", value: "1600x900 WebP + Vector" },
+      { label: "Cakupan Aset", value: "Baliho + Feed + Story" },
+      { label: "Target Audiens", value: "Komunitas Pemuda Majene" }
+    ],
+    features: [
+      {
+        title: "Tipografi Kustom Berdaya Tarik Tinggi",
+        description: "Penataan judul bergaya modern yang mudah dikenali dari kejauhan pada media luar ruang.",
+      },
+      {
+        title: "Palet Warna Harmonis Multikultural",
+        description: "Gradasi warna yang melambangkan keberagaman bakat dan semangat kepemudaan kontemporer.",
+      },
+      {
+        title: "Aset Multi-Format Siap Cetak & Digital",
+        description: "Pemisahan layer grafis untuk kemudahan adaptasi ke berbagai rasio media penayangan.",
+      }
+    ],
+    isFeatured: true,
+    isPublished: true,
+    publishedAt: "2026-02-28",
+    seoTitle: "GEMUDAYA Festival Majene 2026 — Desain Identitas Visual | MAROA",
+    seoDescription: "Perancangan identitas visual, poster kampanye 16:9, dan materi publikasi digital festival pemuda Majene oleh MAROA.",
+  },
+  {
+    id: "maulid-salabose-majene",
+    slug: "maulid-nabi-salabose-majene-2026",
+    title: "Peringatan Tradisi Maulid Nabi Besar Muhammad SAW Masjid Kuno Salabose Majene 2026",
+    category: "multimedia",
+    summary: "Desain visual backdrop panggung dan materi grafis ornamen bernuansa kultural Mandar untuk peringatan tradisi Maulid akbar di kawasan bersejarah Salabose.",
+    clientDisplayName: "Panitia Hari Besar Islam & Pengurus Masjid Salabose Majene",
+    year: "2026",
+    heroImage: "/portfolio/covers/maulid-salabose-majene-2026-cover-1600x900.webp",
+    thumbnail: "/portfolio/covers/maulid-salabose-majene-2026-cover-1600x900.webp",
+    role: "Desain Visual Panggung, Tata Kaligrafi Kultural & Supervisi Cetak Luar Ruang",
+    sourceCredit: "Dokumentasi Desain MAROA & Panitia Peringatan Maulid Salabose",
+    rightsStatus: "Karya Desain Orisinal MAROA",
+    services: [
+      "Stage Backdrop Artwork Design",
+      "Cultural Calligraphy Layout",
+      "High-Resolution Print Preparation",
+      "Venue Signage & Welcome Banners"
+    ],
+    challenge: "Mengharmonisasikan kesakralan tradisi keagamaan lokal dengan estetika panggung modern yang anggun dan proporsional bagi ribuan jamaah lintas daerah.",
+    approach: "Memadukan ornamen geometris Islam klasik dengan sentuhan ragam hias khas Mandar dalam komposisi panggung simetris seimbang.",
+    execution: "Menghasilkan format cetak backdrop panggung berskala besar (1600x900) siap cetak tanpa degradasi resolusi dan format proyeksi layar.",
+    outcome: "Suasana peringatan Maulid berlangsung khidmat dan visual panggung diapresiasi luas oleh jamaah, tokoh adat, serta pejabat pemerintah yang hadir.",
+    gallery: [
+      "/portfolio/covers/maulid-salabose-majene-2026-cover-1600x900.webp",
+      "/portfolio/gallery/maulid-salabose-majene-2026-cover-1600x900.jpg"
+    ],
+    metrics: [
+      { label: "Skala Cetak", value: "Backdrop Panggung Utama" },
+      { label: "Ragam Hias", value: "Kaligrafi + Ornamen Mandar" },
+      { label: "Lokasi", value: "Salabose, Majene, Sulbar" }
+    ],
+    features: [
+      {
+        title: "Komposisi Kaligrafi Arab Simetris",
+        description: "Tata letak lafaz suci yang diposisikan proporsional sebagai titik fokus utama panggung.",
+      },
+      {
+        title: "Integrasi Ornamen Kultural Lokal",
+        description: "Aksen motif khas Mandar pada tepian bingkai untuk mempertegas identitas sejarah Salabose.",
+      },
+      {
+        title: "Spesifikasi Cetak Ultra-Sharp",
+        description: "Optimasi ketajaman warna agar tetap kontras dan tidak pudar di bawah pencahayaan panggung malam.",
+      }
+    ],
+    isFeatured: false,
+    isPublished: true,
+    publishedAt: "2026-03-02",
+    seoTitle: "Maulid Nabi Salabose Majene 2026 — Desain Visual Panggung | MAROA",
+    seoDescription: "Desain visual backdrop panggung kultural peringatan Maulid Nabi Masjid Kuno Salabose Majene oleh MAROA.",
+  },
+  {
+    id: "bhayangkara-80-polres-sidrap",
+    slug: "hari-bhayangkara-ke-80-polres-sidenreng-rappang",
+    title: "Hari Bhayangkara Ke-80 Polres Sidrap 2026 — Produksi Motion Graphics & Visual Sinematik Panggung",
+    category: "multimedia",
+    summary: "Produksi motion graphics pembuka, cuplikan video sinematik pengabdian, dan tata visual layar videotron untuk rangkaian peringatan Hari Bhayangkara Ke-80 di Kabupaten Sidrap.",
+    clientDisplayName: "Kepolisian Resor Sidenreng Rappang (Polres Sidrap)",
+    year: "2026",
+    heroImage: "/portfolio/gallery/bhayangkara-80-polres-sidrap-2026-03s.jpg",
+    thumbnail: "/portfolio/gallery/bhayangkara-80-polres-sidrap-2026-03s.jpg",
+    role: "Produksi Motion Graphics, Editing Video Sinematik & Visual Layar Videotron",
+    sourceCredit: "Cuplikan Video Arsip Produksi Studio Multimedia MAROA",
+    rightsStatus: "Dokumentasi Produksi Asli MAROA",
+    services: [
+      "Cinematic Video Editing",
+      "Motion Graphics Opening Bumper",
+      "LED Videotron Screen Content",
+      "Audio-Visual Sync for Official Ceremony"
+    ],
+    challenge: "Menyajikan narasi pengabdian kepolisian yang berwibawa, tegas, namun tetap humanis dalam format tayangan resolusi tinggi yang selaras dengan alur protokoler resmi.",
+    approach: "Memanfaatkan ritme visual dinamis dengan tipografi berkarakter kokoh dan gradasi palet warna emas-biru tua kepolisian.",
+    execution: "Memproduksi bumper video pembuka, transisi segmen sambutan, serta klip dokumentasi pengamanan terpadu untuk penayangan di layar videotron aula utama.",
+    outcome: "Penayangan multimedia berjalan mulus dan memperkuat citra profesional institusi di hadapan jajaran Forkopimda dan tamu undangan.",
+    gallery: [
+      "/portfolio/gallery/bhayangkara-80-polres-sidrap-2026-03s.jpg",
+      "/portfolio/gallery/bhayangkara-80-polres-sidrap-2026-12s.jpg"
+    ],
+    metrics: [
+      { label: "Format Video", value: "Full HD Sinematik 60fps" },
+      { label: "Medium Tayang", value: "Videotron Panggung Aula" },
+      { label: "Klien", value: "Polres Sidrap" }
+    ],
+    features: [
+      {
+        title: "Bumper Video Pembuka Dinamis",
+        description: "Sekuens animasi logo dan angka 80 tahun Hari Bhayangkara dengan efek suara berbobot menggelegar.",
+      },
+      {
+        title: "Visualisasi Pengabdian Presisi",
+        description: "Potongan video aksi pelayanan masyarakat dan ketertiban wilayah yang tertata terstruktur.",
+      },
+      {
+        title: "Template Layar Protokoler",
+        description: "Tata grafis pendamping saat momen pengucapan ikrar, sambutan pimpinan, dan ramah tamah.",
+      }
+    ],
+    isFeatured: true,
+    isPublished: true,
+    publishedAt: "2026-07-01",
+    seoTitle: "Hari Bhayangkara Ke-80 Polres Sidrap — Produksi Visual Multimedia | MAROA",
+    seoDescription: "Produksi motion graphics, video sinematik, dan visual videotron perhelatan Hari Bhayangkara Ke-80 Polres Sidrap oleh MAROA.",
+  },
+  {
+    id: "antrian-dppkb-majene",
+    slug: "sistem-antrean-digital-pelayanan-dppkb-majene",
+    title: "Sistem Antrean Digital Pelayanan Publik Terpadu DPPKB Kabupaten Majene",
+    category: "digital",
+    summary: "Pengembangan sistem antrean berbasis aplikasi web untuk otomasi loket pelayanan administrasi kependudukan dan penyuluhan KB pada Dinas Pengendalian Penduduk dan KB Majene.",
+    clientDisplayName: "Dinas Pengendalian Penduduk & KB Kabupaten Majene",
+    year: "2025 - 2026",
+    heroImage: "/portfolio/sbl-portal-desktop.webp",
+    thumbnail: "/portfolio/sbl-portal-desktop.webp",
+    mobileImage: "/portfolio/sbl-portal-mobile.webp",
+    role: "Rekayasa Perangkat Lunak Web, Antarmuka Multi-Loket & Pengelolaan Basis Data",
+    sourceCredit: "Repositori Kode Sumber Resmi MAROA (GitHub: maroamabbarakka/Antrian-DPPKB-)",
+    sourceUrl: "https://github.com/maroamabbarakka/Antrian-DPPKB-",
+    githubUrl: "https://github.com/maroamabbarakka/Antrian-DPPKB-",
+    rightsStatus: "Pengembangan Perangkat Lunak Resmi MAROA",
+    services: [
+      "Web Queue Management System",
+      "Multi-Counter Audio Announcement",
+      "Public TV Display Dashboard",
+      "Real-Time Wait-Time Tracking"
+    ],
+    challenge: "Mengurai penumpukan warga pada jam sibuk loket pelayanan dengan sistem pemanggilan otomatis yang tertib, mudah dipantau, dan tidak memerlukan biaya perangkat keras mahal.",
+    approach: "Membangun sistem berbasis web browser responsif yang dapat dioperasikan langsung pada layar monitor publik dan perangkat kerja petugas loket.",
+    execution: "Mengembangkan algoritma antrean multi-layanan, integrasi modul text-to-speech bahasa Indonesia untuk pemanggilan nomor antrean, serta pencatatan waktu tunggu per warga.",
+    outcome: "Alur antrean masyarakat menjadi jauh lebih teratur, waktu tunggu warga menurun drastis, dan petugas memiliki rekapitulasi data layanan harian yang transparan.",
+    gallery: [
+      "/portfolio/sbl-portal-desktop.webp",
+      "/portfolio/sbl-portal-mobile.webp"
+    ],
+    metrics: [
+      { label: "Arsitektur", value: "Web-Based Multi-Loket" },
+      { label: "Audio", value: "Otomatisasi Panggilan Suara" },
+      { label: "Repositori", value: "Tervalidasi di GitHub" }
+    ],
+    features: [
+      {
+        title: "Tampilan Layar Antrean Publik",
+        description: "Antarmuka layar monitor lobi yang menampilkan nomor antrean aktif, loket tujuan, dan video edukasi KB.",
+      },
+      {
+        title: "Panel Kendali Petugas Loket",
+        description: "Tombol panggilan antrean berikutnya, panggil ulang, dan penandaan selesai layanan yang ringkas.",
+      },
+      {
+        title: "Suara Panggilan Otomatis",
+        description: "Sistem audio yang membacakan nomor antrean dan nama loket dengan artikulasi jelas.",
+      }
+    ],
+    isFeatured: false,
+    isPublished: true,
+    publishedAt: "2026-01-28",
+    seoTitle: "Sistem Antrean Digital DPPKB Majene — Rekayasa Aplikasi Web | MAROA",
+    seoDescription: "Pengembangan sistem antrean publik digital berbasis web untuk DPPKB Kabupaten Majene oleh MAROA.",
   }
+
 ];
 
 export const initialInsights = [

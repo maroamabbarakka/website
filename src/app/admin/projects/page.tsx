@@ -1,18 +1,41 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { initialProjects } from "@/data/initialData";
 import { Project } from "@/lib/types";
-import { Plus, Eye, CheckCircle2, XCircle } from "lucide-react";
+import { getAllProjects, saveProject, validateProjectPublishability, exportProjectsToJson } from "@/lib/projectStorage";
+import { Plus, Eye, CheckCircle2, XCircle, Download, AlertTriangle } from "lucide-react";
 
 export default function AdminProjectsPage() {
-  const [projects, setProjects] = useState<Project[]>(initialProjects);
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [validationAlert, setValidationAlert] = useState<{ id: string; missing: string[] } | null>(null);
+
+  useEffect(() => {
+    setProjects(getAllProjects());
+  }, []);
 
   const togglePublish = (id: string) => {
-    setProjects((prev) =>
-      prev.map((p) => (p.id === id ? { ...p, isPublished: !p.isPublished } : p))
-    );
+    const target = projects.find((p) => p.id === id);
+    if (!target) return;
+
+    // Jika ingin mempublikasikan (dari draft -> publish), lakukan validasi prasyarat
+    if (!target.isPublished) {
+      const validation = validateProjectPublishability(target);
+      if (!validation.isValid) {
+        setValidationAlert({ id, missing: validation.missingFields });
+        return;
+      }
+    }
+
+    setValidationAlert(null);
+    const updated = { ...target, isPublished: !target.isPublished };
+    const res = saveProject(updated);
+
+    if (res.success) {
+      setProjects(getAllProjects());
+    } else {
+      alert(res.message);
+    }
   };
 
   return (
@@ -21,18 +44,46 @@ export default function AdminProjectsPage() {
         <div>
           <h1 className="text-2xl font-bold text-maroa-black">Manajemen Portofolio Proyek</h1>
           <p className="text-xs text-maroa-gray-700 mt-1">
-            Kelola studi kasus yang dipublikasikan pada halaman publik /work dan beranda.
+            Kelola studi kasus faktual MAROA. Data tersimpan secara permanen pada penyimpanan admin.
           </p>
         </div>
 
-        <Link
-          href="/admin/projects/new"
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-maroa-sm bg-maroa-red text-white text-xs font-semibold hover:bg-maroa-red-dark transition-colors shadow-sm self-start sm:self-auto"
-        >
-          <Plus className="h-4 w-4" />
-          <span>Tambah Studi Kasus</span>
-        </Link>
+        <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={exportProjectsToJson}
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-maroa-sm bg-maroa-white border border-maroa-gray-300 text-maroa-charcoal text-xs font-semibold hover:bg-maroa-gray-100 transition-colors shadow-sm"
+            title="Unduh snapshot data JSON untuk arsip atau pembaruan repositori"
+          >
+            <Download className="h-3.5 w-3.5" />
+            <span>Ekspor Data JSON</span>
+          </button>
+
+          <Link
+            href="/admin/projects/new"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-maroa-sm bg-maroa-red text-white text-xs font-semibold hover:bg-maroa-red-dark transition-colors shadow-sm"
+          >
+            <Plus className="h-4 w-4" />
+            <span>Tambah Studi Kasus</span>
+          </Link>
+        </div>
       </div>
+
+      {validationAlert && (
+        <div className="p-4 rounded-maroa-md bg-amber-50 border border-amber-300 text-amber-900 text-xs flex items-start gap-3">
+          <AlertTriangle className="h-4 w-4 text-amber-600 shrink-0 mt-0.5" />
+          <div className="space-y-1">
+            <span className="font-bold">Publikasi Dibatalkan — Data Wajib Belum Lengkap:</span>
+            <p>
+              Proyek ini tidak dapat dipublikasikan sebelum melengkapi bidang:{" "}
+              <span className="font-semibold text-maroa-red">{validationAlert.missing.join(", ")}</span>.
+            </p>
+            <p className="text-amber-800 text-[11px]">
+              Silakan klik tombol <strong>Edit</strong> untuk melengkapi data sebelum mengubah status ke Published.
+            </p>
+          </div>
+        </div>
+      )}
 
       {/* Table Container */}
       <div className="bg-maroa-white border border-maroa-gray-300 rounded-maroa-md shadow-card overflow-x-auto">
