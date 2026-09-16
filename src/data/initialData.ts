@@ -1524,6 +1524,400 @@ export const initialProjects: Project[] = [
     seoTitle: "Aplikasi Kasir Sanggar Seni 3 Berlian — Sistem POS Persewaan | MAROA",
     seoDescription: "Pengembangan aplikasi kasir web Point of Sale (POS) dan manajemen persewaan busana tari Sanggar Seni 3 Berlian oleh MAROA.",
   }
+,
+  {
+    id: "hiswanamigas-sulbar-2025",
+    slug: "hiswanamigas-pelantikan-pengurus-2025",
+    title: "Pelantikan Pengurus DPC VIII Hiswana Migas Sulawesi Barat 2025",
+    category: "multimedia",
+    summary: "Produksi motion graphic latar videotron LED panggung pada upacara pelantikan Pengurus DPC VIII Hiswana Migas Provinsi Sulawesi Barat di Hotel MATOS Mamuju.",
+    clientDisplayName: "DPC VIII Hiswana Migas Sulawesi Barat",
+    year: "2025",
+    heroImage: "/portfolio/covers/hiswanamigas-pelantikan-pengurus-2025--cover.webp",
+    thumbnail: "/portfolio/covers/hiswanamigas-pelantikan-pengurus-2025--cover.webp",
+    role: "Desain Motion Graphic Latar Layar LED",
+    sourceCredit: "DPC VIII Hiswana Migas Sulawesi Barat & Arsip Studio MAROA",
+    sourceUrl: "https://sulbarpedia.com/hiswana-migas-sulbar-gelar-muscab-ke-ii-di-mamuju-dibuka-langsung-gubernur-sdk/",
+    rightsStatus: "Karya Desain Motion Orisinal Studio MAROA",
+    services: [
+      "Motion Graphics Design",
+      "LED Stage Backdrop Animation",
+      "Corporate Event Identity"
+    ],
+    challenge: "Menghadirkan komposisi visual panggung pelantikan organisasi energi migas yang formal, berwibawa, dan elegan dengan animasi partikel logo dinamis.",
+    approach: "Mengembangkan transisi tipografi resmi dipadu identitas warna biru-merah korporat energi dan pencahayaan panggung hotel konvensi.",
+    execution: "Memproduksi video looping beresolusi tinggi 16:9 untuk diproyeksikan pada layar LED panggung utama selama rangkaian sambutan pimpinan dan pelantikan.",
+    outcome: "Suasana pelantikan berlangsung khidmat dan visual layar LED menghadirkan standar estetika korporat yang prestisius.",
+    gallery: [
+      "/portfolio/gallery/hiswanamigas-pelantikan-pengurus-2025--frame-02s.webp",
+      "/portfolio/gallery/hiswanamigas-pelantikan-pengurus-2025--frame-17s.webp"
+    ],
+    galleryCaptions: {
+      "/portfolio/gallery/hiswanamigas-pelantikan-pengurus-2025--frame-02s.webp": "Cuplikan Motion Graphic — Pembuka Seremoni Pelantikan",
+      "/portfolio/gallery/hiswanamigas-pelantikan-pengurus-2025--frame-17s.webp": "Cuplikan Motion Graphic — Visual Latar Layar LED Panggung"
+    },
+    metrics: [
+      { label: "Peran MAROA", value: "Motion Graphic LED" },
+      { label: "Format Visual", value: "16:9 High Definition" },
+      { label: "Lokasi Acara", value: "Hotel MATOS Mamuju" }
+    ],
+    isFeatured: false,
+    isPublished: true,
+    publishedAt: "2025-05-18",
+    seoTitle: "Pelantikan Hiswana Migas Sulbar 2025 — Motion Graphic LED | MAROA",
+    seoDescription: "Produksi motion graphic latar videotron LED pelantikan Pengurus DPC VIII Hiswana Migas Sulawesi Barat oleh MAROA.",
+  },
+  {
+    id: "jamnas-iv-ivi-soppeng-2025",
+    slug: "jamnas-iv-ivi-soppeng-2025",
+    title: "JAMNAS IV IVI Soppeng 2025 — Jambore Nasional Indonesia Vespa Idaman",
+    category: "multimedia",
+    summary: "Produksi konten motion graphic panggung utama dan visual animasi videotron pada perhelatan akbar Jambore Nasional IV Indonesia Vespa Idaman (IVI) di Kabupaten Soppeng.",
+    clientDisplayName: "Indonesia Vespa Idaman (IVI) & Panitia Jamnas IV Soppeng",
+    year: "2025",
+    heroImage: "/portfolio/covers/jamnas-iv-ivi-soppeng-2025--cover.webp",
+    thumbnail: "/portfolio/covers/jamnas-iv-ivi-soppeng-2025--cover.webp",
+    role: "Desain Motion Graphic Latar Videotron Panggung",
+    sourceCredit: "Panitia Jamnas IV IVI Soppeng & Dokumentasi Komunitas",
+    sourceUrl: "https://www.detik.com/sulsel/berita/d-8207023/jambore-nasional-vespa-2025-jadi-ajang-promosi-wisata-soppeng",
+    rightsStatus: "Karya Desain Grafis & Motion Orisinal MAROA",
+    services: [
+      "Stage Motion Graphic",
+      "Videotron Visual Loop",
+      "Community Event Branding"
+    ],
+    challenge: "Menyatukan semangat solidaritas skuteris nusantara dengan kekayaan budaya lokal Bumi Latemmamala ke dalam visual panggung musik luar ruang yang energik.",
+    approach: "Merancang grafis siluet vespa legendaris berpadu efek neon dan elemen motif kearifan lokal dalam sekuens gerak yang sinkron dengan alunan musik panggung.",
+    execution: "Menghasilkan berkas video animasi panggung utama yang ditayangkan terus-menerus selama parade dan malam puncak festival.",
+    outcome: "Panggung musik Jamnas IV IVI tampil spektakuler dan membakar antusiasme ribuan skuteris dari seluruh penjuru tanah air.",
+    gallery: [
+      "/portfolio/gallery/jamnas-iv-ivi-soppeng-2025--frame-02s.webp",
+      "/portfolio/gallery/jamnas-iv-ivi-soppeng-2025--frame-24s.webp",
+      "/portfolio/gallery/jamnas-iv-ivi-soppeng-2025--extra-01.webp"
+    ],
+    galleryCaptions: {
+      "/portfolio/gallery/jamnas-iv-ivi-soppeng-2025--frame-02s.webp": "Cuplikan Motion Graphic — Animasi Center Stage Backdrop",
+      "/portfolio/gallery/jamnas-iv-ivi-soppeng-2025--frame-24s.webp": "Cuplikan Motion Graphic — Sekuens Identitas Vespa Nusantara",
+      "/portfolio/gallery/jamnas-iv-ivi-soppeng-2025--extra-01.webp": "Desain Grafis Poster Resmi — Publikasi Jamnas IV IVI"
+    },
+    metrics: [
+      { label: "Peran MAROA", value: "Motion Graphic Videotron" },
+      { label: "Skala Event", value: "Nasional (Skuteris Se-Indonesia)" },
+      { label: "Tuan Rumah", value: "Kabupaten Soppeng" }
+    ],
+    isFeatured: false,
+    isPublished: true,
+    publishedAt: "2025-11-16",
+    seoTitle: "JAMNAS IV IVI Soppeng 2025 — Motion Graphic Panggung | MAROA",
+    seoDescription: "Produksi desain motion graphic panggung dan videotron Jambore Nasional IV Indonesia Vespa Idaman di Soppeng oleh MAROA.",
+  },
+  {
+    id: "hipmi-fest-pinrang-2025",
+    slug: "hipmi-fest-pinrang-2025",
+    title: "HIPMI FEST Pinrang 2025 — Pesta Kreativitas & Kolaborasi Pengusaha Muda",
+    category: "events",
+    summary: "Perancangan identitas visual promosi, materi grafis publikasi, dan komunikasi visual festival UMKM pengusaha muda BPC HIPMI Pinrang di Lapangan Bosowa.",
+    clientDisplayName: "BPC HIPMI Kabupaten Pinrang",
+    year: "2025",
+    heroImage: "/portfolio/covers/hipmi-fest-pinrang-2025--cover.webp",
+    thumbnail: "/portfolio/covers/hipmi-fest-pinrang-2025--cover.webp",
+    role: "Desain Identitas & Materi Visual Promosi",
+    sourceCredit: "BPC HIPMI Kabupaten Pinrang & Rilis Resmi",
+    sourceUrl: "https://rri.co.id/umkm/1250064/hipmi-fest-2025-dorong-umkm-pinrang-dan-kolaborasi",
+    rightsStatus: "Karya Desain Komunikasi Visual Orisinal MAROA",
+    services: [
+      "Event Branding Identity",
+      "Campaign Poster Design",
+      "Digital Promotion Media"
+    ],
+    challenge: "Membangun identitas visual yang mencerminkan ketangguhan wirausaha muda, semangat kolaborasi UMKM lokal, dan daya tarik bagi generasi milenial dan Gen Z.",
+    approach: "Memilih palet warna berkarakter modern dan tipografi kontemporer tebal yang aplikatif untuk media cetak baliho maupun konten media sosial.",
+    execution: "Membuat paket master artwork 16:9, materi feed media sosial, dan materi spanduk promosi titik keramaian kota Pinrang.",
+    outcome: "Materi visual yang atraktif berhasil meningkatkan atensi publik dan mendatangkan kunjungan warga pada gelaran festival.",
+    gallery: [
+      "/portfolio/covers/hipmi-fest-pinrang-2025--cover.webp"
+    ],
+    galleryCaptions: {
+      "/portfolio/covers/hipmi-fest-pinrang-2025--cover.webp": "Master Artwork Poster 16:9 — Identitas Visual HIPMI FEST Pinrang"
+    },
+    metrics: [
+      { label: "Peran MAROA", value: "Desain Identitas & Media Promosi" },
+      { label: "Lokasi Acara", value: "Lapangan Bosowa Pinrang" },
+      { label: "Fokus Acara", value: "UMKM & Kolaborasi Pengusaha Muda" }
+    ],
+    isFeatured: false,
+    isPublished: true,
+    publishedAt: "2025-02-23",
+    seoTitle: "HIPMI FEST Pinrang 2025 — Desain Visual & Identitas | MAROA",
+    seoDescription: "Perancangan identitas komunikasi visual dan poster promosi gelaran HIPMI FEST Pinrang 2025 oleh MAROA.",
+  },
+  {
+    id: "pinrang-yes-2025",
+    slug: "pinrang-yes-2025",
+    title: "PINRANG YES (Youthpreneur Expo Showcase) 2025 — Konsep & Proposal Acara",
+    category: "events",
+    summary: "Penyusunan dokumen master proposal konsep festival wirausaha muda, pemetaan zona stan pameran, dan kurasi program pertunjukan kepemudaan PINRANG YES.",
+    clientDisplayName: "Inisiatif Kolaboratif Kepemudaan Pinrang",
+    year: "2025",
+    heroImage: "/portfolio/covers/pinrang-yes-2025--cover-concept.webp",
+    thumbnail: "/portfolio/covers/pinrang-yes-2025--cover-concept.webp",
+    role: "Perancangan Konsep & Proposal Perencanaan Acara",
+    isConceptOnly: true,
+    sourceCredit: "Dokumen Master Proposal Perencanaan PT MAROA MEDIA MABBARAKKA",
+    sourceUrl: "https://www.sahabatnews.net/2025/05/pinrang-yes-2025-ketua-karang-taruna.html",
+    rightsStatus: "Dokumen Master Proposal & Hak Kekayaan Intelektual Konsep MAROA",
+    services: [
+      "Event Concept Architecture",
+      "Strategic Proposal Formulation",
+      "Zone Spatial Layout Planning",
+      "Youth Community Engagement Strategy"
+    ],
+    challenge: "Menyusun skema kegiatan pameran kewirausahaan pemuda yang komprehensif, terstruktur, dan memiliki kelayakan bisnis untuk menarik partisipasi mitra multisektor.",
+    approach: "Menyusun dokumen proposal strategis 11 halaman yang merinci arsitektur zona stan, panggung gelar wicara, panggung musik komunitas, dan proyeksi dampak ekonomi lokal.",
+    execution: "Menuntaskan dokumen presentasi konsep terpadu yang memadukan desain grafis editorial elegan, alur kegiatan tematik, dan proyeksi anggaran transparan.",
+    outcome: "Dokumen konsep proposal menjadi fondasi acuan perencanaan kegiatan pemuda dan apresiasi dari pemangku kepentingan daerah.",
+    gallery: [
+      "/portfolio/gallery/pinrang-yes-2025--proposal-page-05.webp",
+      "/portfolio/gallery/pinrang-yes-2025--proposal-page-07.webp",
+      "/portfolio/gallery/pinrang-yes-2025--proposal-page-10.webp"
+    ],
+    galleryCaptions: {
+      "/portfolio/gallery/pinrang-yes-2025--proposal-page-05.webp": "Dokumen Desain Proposal — Pemetaan Zona Stan & Layout Area",
+      "/portfolio/gallery/pinrang-yes-2025--proposal-page-07.webp": "Dokumen Desain Proposal — Model Kolaborasi Ekosistem Wirausaha",
+      "/portfolio/gallery/pinrang-yes-2025--proposal-page-10.webp": "Dokumen Desain Proposal — Struktur Rangkaian Acara Tematik"
+    },
+    metrics: [
+      { label: "Peran MAROA", value: "Konsep & Master Proposal" },
+      { label: "Status Bukti", value: "Dokumen Desain Konsep Sah" },
+      { label: "Cakupan Proposal", value: "11 Halaman Kajian Terpadu" }
+    ],
+    isFeatured: false,
+    isPublished: true,
+    publishedAt: "2025-05-27",
+    seoTitle: "PINRANG YES 2025 — Perancangan Konsep & Proposal Event | MAROA",
+    seoDescription: "Penyusunan dokumen master proposal konsep festival wirausaha muda PINRANG YES 2025 oleh tim strategic MAROA.",
+  },
+  {
+    id: "majene-run-2026",
+    slug: "majene-run-2026",
+    title: "Majene Run 2026 — Desain Poster Kampanye Visual Olahraga Pesisir",
+    category: "multimedia",
+    summary: "Perancangan poster promosi resmi dan aset media grafis kampanye lomba lari pesisir pantai Majene Run 2026 di Kabupaten Majene, Sulawesi Barat.",
+    clientDisplayName: "Penyelenggara Majene Run 2026",
+    year: "2026",
+    heroImage: "/portfolio/covers/majene-run-2026--cover.webp",
+    thumbnail: "/portfolio/covers/majene-run-2026--cover.webp",
+    role: "Desain Poster Kampanye Visual",
+    sourceCredit: "Penyelenggara Resmi Majene Run 2026 & Arsip Desain MAROA",
+    sourceUrl: "https://majenerun.com/",
+    rightsStatus: "Karya Desain Poster Promosi Orisinal MAROA",
+    services: [
+      "Campaign Poster Design",
+      "Sport Event Key Visual",
+      "Digital Banner Media"
+    ],
+    challenge: "Menonjolkan daya tarik lanskap garis pantai Majene berpadu dengan atmosfer kompetisi lari jalan raya yang profesional dan dinamis.",
+    approach: "Mengombinasikan tipografi sport berkarakter tajam, gradasi warna maritim cerah, dan ilustrasi pelari yang merepresentasikan ketahanan fisik.",
+    execution: "Merilis poster master 16:9 non-crop resolusi tinggi untuk media cetak baliho, display digital, dan konten kampanye pendaftaran daring.",
+    outcome: "Desain poster menjadi elemen promosi kunci yang memikat antusiasme ribuan pelari dari berbagai daerah di pulau Sulawesi.",
+    gallery: [
+      "/portfolio/covers/majene-run-2026--cover.webp"
+    ],
+    galleryCaptions: {
+      "/portfolio/covers/majene-run-2026--cover.webp": "Master Artwork Poster 16:9 — Identitas Visual Majene Run 2026"
+    },
+    metrics: [
+      { label: "Peran MAROA", value: "Desain Poster Visual" },
+      { label: "Format Master", value: "16:9 Ultra-Sharp WebP" },
+      { label: "Lokasi Pelaksanaan", value: "Kabupaten Majene, Sulbar" }
+    ],
+    isFeatured: false,
+    isPublished: true,
+    publishedAt: "2026-08-09",
+    seoTitle: "Majene Run 2026 — Desain Poster Kampanye Visual | MAROA",
+    seoDescription: "Perancangan desain poster promosi dan identitas visual lomba lari Majene Run 2026 oleh MAROA.",
+  },
+  {
+    id: "kodim-1404-lepas-sambut-2025",
+    slug: "kodim-1404-lepas-sambut-2025",
+    title: "Lepas Sambut Dandim 1404/Pinrang 2025 — Tata Visual & Motion Graphic",
+    category: "multimedia",
+    summary: "Produksi motion graphic latar layar panggung kehormatan pada upacara Lepas Sambut Komandan Kodim 1404/Pinrang dari Letkol Inf Abdullah Mahua kepada Letkol Inf Erwin Swandiyana.",
+    clientDisplayName: "Komando Distrik Militer (Kodim) 1404/Pinrang",
+    year: "2025",
+    heroImage: "/portfolio/covers/kodim-1404-lepas-sambut-2025--cover.webp",
+    thumbnail: "/portfolio/covers/kodim-1404-lepas-sambut-2025--cover.webp",
+    role: "Desain Visual & Motion Graphic Lepas Sambut",
+    sourceCredit: "Dokumentasi Kodim 1404/Pinrang & Arsip Motion MAROA",
+    sourceUrl: "https://penasultra.id/suasana-haru-warnai-acara-lepas-sambut-dandim-1404-pinrang/",
+    rightsStatus: "Karya Motion Graphic Orisinal MAROA (Sumber: Background.mp4)",
+    services: [
+      "Ceremony Motion Graphic",
+      "LED Stage Background Animation",
+      "Military Protocol Visual Media"
+    ],
+    challenge: "Menghadirkan tata visual mimbar serah terima jabatan militer yang khidmat, presisi, berkarakter tegas, dan memancarkan rasa hormat pengabdian prajurit.",
+    approach: "Mengembangkan transisi motion grafis ornamen lambang kesatuan TNI AD, tipografi keprotokolan formal, dan efek pencahayaan emas-kehijauan yang agung.",
+    execution: "Memproduksi video looping panggung beresolusi tinggi (Background.mp4) yang ditayangkan pada layar LED utama sepanjang seremoni pisah sambut.",
+    outcome: "Acara pisah sambut berlangsung penuh haru dan wibawa, mendapat apresiasi dari jajaran Forkopimda dan para tamu kehormatan.",
+    gallery: [
+      "/portfolio/gallery/kodim-1404-lepas-sambut-2025--frame-03s.webp",
+      "/portfolio/gallery/kodim-1404-lepas-sambut-2025--frame-17s.webp"
+    ],
+    galleryCaptions: {
+      "/portfolio/gallery/kodim-1404-lepas-sambut-2025--frame-03s.webp": "Cuplikan Motion Graphic — Pembuka Penghormatan Komandan Kodim 1404",
+      "/portfolio/gallery/kodim-1404-lepas-sambut-2025--frame-17s.webp": "Cuplikan Motion Graphic — Visual Latar Mimbar Panggung Resmi"
+    },
+    metrics: [
+      { label: "Peran MAROA", value: "Motion Graphic LED" },
+      { label: "Sumber Berkas", value: "Background.mp4 (Tervalidasi Kodim)" },
+      { label: "Waktu Acara", value: "29 November 2025" }
+    ],
+    isFeatured: false,
+    isPublished: true,
+    publishedAt: "2025-11-29",
+    seoTitle: "Lepas Sambut Dandim 1404/Pinrang — Motion Graphic Panggung | MAROA",
+    seoDescription: "Produksi motion graphic latar videotron upacara Lepas Sambut Dandim 1404/Pinrang oleh studio multimedia MAROA.",
+  },
+  {
+    id: "adhyaksa-trail-run-in-beach-2025",
+    slug: "adhyaksa-trail-run-in-beach-2025",
+    title: "Adhyaksa Trail Run in Beach Pinrang 2025",
+    category: "multimedia",
+    summary: "Dokumentasi proyek panggung dan visual perhelatan Adhyaksa Trail Run in Beach di Pantai Harapan Ammani Kabupaten Pinrang (Menunggu Verifikasi Media Lengkap).",
+    clientDisplayName: "Kejaksaan Negeri Pinrang & Komunitas Trail Run",
+    year: "2025",
+    heroImage: "/portfolio/covers/adhyaksa-pending.webp",
+    thumbnail: "/portfolio/covers/adhyaksa-pending.webp",
+    role: "Motion Graphic dan LED Videotron (Menunggu Verifikasi)",
+    mediaPending: true,
+    sourceCredit: "Kejaksaan Negeri Pinrang & Berita Terverifikasi",
+    sourceUrl: "https://sindomakassar.com/read/sulsel/19091/bupati-pinrang-sebut-adhyaksa-trail-run-in-beach-perpaduan-olahraga-dan-promosi-wisata-1752998831",
+    rightsStatus: "Status Media Pending — Menunggu Penyerahan Berkas Asli MAROA",
+    services: [
+      "Stage Motion Graphic",
+      "Videotron Visual"
+    ],
+    challenge: "Menunggu kelengkapan aset visual orisinal MAROA guna memastikan kepatuhan pembuktian karya.",
+    approach: "Mempertahankan integritas arsip tanpa menyubstitusi aset dari proyek lain.",
+    execution: "Menahan status publikasi proyek dalam sistem draf hingga master video resmi diverifikasi.",
+    outcome: "Menjaga keaslian portofolio MAROA bebas dari klaim aset yang belum terverifikasi.",
+    gallery: [],
+    metrics: [
+      { label: "Status Publikasi", value: "Draf Tertahan (Media Pending)" },
+      { label: "Integritas Arsip", value: "Bebas Substitusi Palsu" }
+    ],
+    isFeatured: false,
+    isPublished: false,
+    publishedAt: "2025-07-20",
+    seoTitle: "Adhyaksa Trail Run in Beach 2025 | MAROA",
+    seoDescription: "Studi kasus Adhyaksa Trail Run in Beach Pinrang 2025.",
+  },
+  {
+    id: "brilian-culture-fest-pinrang-2026",
+    slug: "brilian-culture-fest-pinrang-2026",
+    title: "BRILiaN Culture Fest 2026 — Movie Character Night (Visualisasi Konsep & Motion 3D)",
+    category: "integrated",
+    summary: "Pengembangan visualisasi konsep 3D tata panggung, tata cahaya tematik tokoh film, dan sekuens animasi motion graphic untuk malam apresiasi budaya insan perbankan.",
+    clientDisplayName: "Bank Rakyat Indonesia (BRI) Branch Office Pinrang",
+    year: "2026",
+    heroImage: "/portfolio/covers/brilian-culture-fest-pinrang-2026--cover.webp",
+    thumbnail: "/portfolio/covers/brilian-culture-fest-pinrang-2026--cover.webp",
+    role: "Desain Visual Panggung & Visualisasi Konsep 3D",
+    isConceptOnly: true,
+    sourceCredit: "BRI Branch Office Pinrang & Studio Kreatif MAROA",
+    rightsStatus: "Karya Desain 3D Render & Animasi Orisinal MAROA",
+    services: [
+      "3D Stage Concept Visualization",
+      "Thematic Atmosphere Rendering",
+      "Opening Motion Graphics",
+      "Dynamic Stage Loop Animation"
+    ],
+    challenge: "Mentransformasikan tema 'Movie Character Night' ke dalam visualisasi ruang panggung megah yang futuristik, teatrikal, dan memacu kebanggaan budaya insan BRILiaN.",
+    approach: "Membuat pemodelan 3D arsitektur panggung dengan pencahayaan dramatis serta animasi motion graphic pembuka bertema sinematik layar lebar.",
+    execution: "Merender 3 sudut pandang visual konsep panggung dan memproduksi rangkaian looping motion gerak beresolusi 16:9.",
+    outcome: "Visualisasi rancangan 3D memberikan gambaran panggung yang impresif dan memukau bagi manajemen institusi.",
+    gallery: [
+      "/portfolio/gallery/brilian-culture-fest-pinrang-2026--extra-01.webp",
+      "/portfolio/gallery/brilian-culture-fest-pinrang-2026--extra-02.webp",
+      "/portfolio/gallery/brilian-culture-fest-pinrang-2026--extra-03.webp",
+      "/portfolio/gallery/brilian-culture-fest-pinrang-2026--motion-frame-03s.webp",
+      "/portfolio/gallery/brilian-culture-fest-pinrang-2026--motion-frame-15s.webp",
+      "/portfolio/gallery/brilian-culture-fest-pinrang-2026--motion-frame-29s.webp"
+    ],
+    galleryCaptions: {
+      "/portfolio/gallery/brilian-culture-fest-pinrang-2026--extra-01.webp": "Visualisasi Konsep 3D — Sudut Pandang Center Stage Panggung Utama",
+      "/portfolio/gallery/brilian-culture-fest-pinrang-2026--extra-02.webp": "Visualisasi Konsep 3D — Tata Pencahayaan & Dekorasi Tematik Film",
+      "/portfolio/gallery/brilian-culture-fest-pinrang-2026--extra-03.webp": "Visualisasi Konsep 3D — Perspektif Ruang Tamu & Area Apresiasi",
+      "/portfolio/gallery/brilian-culture-fest-pinrang-2026--motion-frame-03s.webp": "Cuplikan Motion Graphic — Pembuka Acara Movie Character Night",
+      "/portfolio/gallery/brilian-culture-fest-pinrang-2026--motion-frame-15s.webp": "Cuplikan Motion Graphic — Efek Partikel & Tipografi Sinematik",
+      "/portfolio/gallery/brilian-culture-fest-pinrang-2026--motion-frame-29s.webp": "Cuplikan Motion Graphic — Visual Dinamis Layar LED Panggung"
+    },
+    metrics: [
+      { label: "Peran MAROA", value: "Desain Konsep 3D & Motion" },
+      { label: "Klasifikasi Bukti", value: "Visualisasi 3D Render & Motion" },
+      { label: "Format Master", value: "Render 16:9 & Motion HD" }
+    ],
+    isFeatured: true,
+    isPublished: true,
+    publishedAt: "2026-08-15",
+    seoTitle: "BRILiaN Culture Fest 2026 — Konsep 3D & Motion Visual | MAROA",
+    seoDescription: "Visualisasi konsep 3D tata panggung dan desain motion graphic BRILiaN Culture Fest 2026 Movie Character Night oleh MAROA.",
+  },
+  {
+    id: "hut-ri-80-pinrang-2025",
+    slug: "hut-ri-80-pinrang-2025",
+    title: "Semarak HUT RI ke-80 Kabupaten Pinrang 2025 — Perancangan Layout & Visualisasi 3D Venue",
+    category: "integrated",
+    summary: "Perancangan tata letak venue terpadu, pemodelan 3D panggung seremoni kemerdekaan, simulasi animasi walkthrough lokasi, dan kurasi struktur rundown kegiatan HUT RI ke-80.",
+    clientDisplayName: "Pemerintah Kabupaten Pinrang & Panitia HUT RI ke-80",
+    year: "2025",
+    heroImage: "/portfolio/covers/hut-ri-80-pinrang-2025--cover.webp",
+    thumbnail: "/portfolio/covers/hut-ri-80-pinrang-2025--cover.webp",
+    role: "Perancangan Konsep Layout & Visualisasi 3D Panggung/Venue",
+    isConceptOnly: true,
+    sourceCredit: "Pemerintah Kabupaten Pinrang & Studio Perancangan MAROA",
+    sourceUrl: "https://sbl.pinrangkab.go.id/2025/08/10/bupati-pinrang-apresiasi-antusiasme-peserta-lomba-gerak-jalan-hut-ri-ke-80/",
+    rightsStatus: "Karya Desain Perencanaan Venue & Animasi 3D Orisinal MAROA",
+    services: [
+      "Venue Spatial Layout Masterplan",
+      "3D Ceremony Stage Modeling",
+      "3D Animated Venue Walkthrough",
+      "Event Rundown Blueprinting"
+    ],
+    challenge: "Merancang tata ruang lapangan terbuka peringatan kemerdekaan berskala ribuan warga yang mencakup zona upacara resmi, tenda kehormatan, serta zona pameran dan stan UMKM.",
+    approach: "Membuat pemodelan 3D spasial akurat yang memvisualisasikan alur mobilitas massa, titik panggung utama, instalasi tenda bazar rakyat, serta simulasi video drone visual.",
+    execution: "Membuat 4 paket lembar layout arsitektural 3D dan video animasi walkthrough 3D venue (Venue HUT RI-80.mp4) berdurasi penuh.",
+    outcome: "Masterplan visualisasi 3D menjadi rujukan komprehensif bagi panitia pemerintah daerah dalam menata pelaksanaan perayaan HUT RI ke-80 di Pinrang.",
+    gallery: [
+      "/portfolio/gallery/hut-ri-80-pinrang-2025--extra-01.webp",
+      "/portfolio/gallery/hut-ri-80-pinrang-2025--extra-02.webp",
+      "/portfolio/gallery/hut-ri-80-pinrang-2025--extra-03.webp",
+      "/portfolio/gallery/hut-ri-80-pinrang-2025--extra-04.webp",
+      "/portfolio/gallery/hut-ri-80-pinrang-2025--motion-frame-03s.webp",
+      "/portfolio/gallery/hut-ri-80-pinrang-2025--motion-frame-24s.webp",
+      "/portfolio/gallery/hut-ri-80-pinrang-2025--motion-frame-51s.webp"
+    ],
+    galleryCaptions: {
+      "/portfolio/gallery/hut-ri-80-pinrang-2025--extra-01.webp": "Visualisasi Konsep 3D — Masterplan Denah & Zonasi Venue Terpadu",
+      "/portfolio/gallery/hut-ri-80-pinrang-2025--extra-02.webp": "Visualisasi Konsep 3D — Rencana Panggung Utama Upacara Kemerdekaan",
+      "/portfolio/gallery/hut-ri-80-pinrang-2025--extra-03.webp": "Visualisasi Konsep 3D — Area Tenda Bazar UMKM & Gerak Jalan Warga",
+      "/portfolio/gallery/hut-ri-80-pinrang-2025--extra-04.webp": "Dokumen Perancangan — Bagan Alur Rundown Acara Peringatan",
+      "/portfolio/gallery/hut-ri-80-pinrang-2025--motion-frame-03s.webp": "Cuplikan Animasi 3D Walkthrough Venue — Sudut Masuk Utama (03s)",
+      "/portfolio/gallery/hut-ri-80-pinrang-2025--motion-frame-24s.webp": "Cuplikan Animasi 3D Walkthrough Venue — Panorama Lapangan (24s)",
+      "/portfolio/gallery/hut-ri-80-pinrang-2025--motion-frame-51s.webp": "Cuplikan Animasi 3D Walkthrough Venue — Kompleks Panggung & Tenda (51s)"
+    },
+    metrics: [
+      { label: "Peran MAROA", value: "Layout & Visualisasi 3D" },
+      { label: "Klasifikasi Bukti", value: "Masterplan 3D & Walkthrough Video" },
+      { label: "Skala Peringatan", value: "Tingkat Kabupaten Pinrang" }
+    ],
+    isFeatured: true,
+    isPublished: true,
+    publishedAt: "2025-08-17",
+    seoTitle: "HUT RI ke-80 Pinrang — Visualisasi 3D Venue & Layout | MAROA",
+    seoDescription: "Perancangan konsep tata letak 3D venue dan animasi panggung peringatan HUT RI ke-80 Kabupaten Pinrang oleh MAROA.",
+  }
 
 ];
 

@@ -453,27 +453,42 @@ export default async function ProjectDetailPage({ params }: ProjectDetailProps) 
       {project.gallery && project.gallery.length > 0 && (
         <section className="w-full py-14 bg-maroa-gray-100/40 border-t border-b border-maroa-gray-200">
           <div className="container-maroa">
-            <div className="max-w-2xl mb-8">
+            <div className="max-w-3xl mb-8">
               <span className="text-xs font-semibold uppercase tracking-widest text-maroa-red">
-                Dokumentasi
+                {project.isConceptOnly ? "Materi Perancangan" : "Dokumentasi"}
               </span>
               <h2 className="text-xl sm:text-2xl font-bold text-maroa-black mt-1">
-                Galeri Visual Eksekusi
+                {project.isConceptOnly ? "Galeri Visualisasi Konsep & Rancangan" : "Galeri Visual Eksekusi"}
               </h2>
+              {project.isConceptOnly && (
+                <p className="text-xs text-maroa-gray-600 mt-2 italic">
+                  * Catatan Transparansi: Seluruh materi di bawah ini merupakan visualisasi konsep, pemetaan 3D (render), atau dokumen proposal perencanaan MAROA.
+                </p>
+              )}
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {project.gallery.map((img, i) => (
-                <div key={i} className="relative aspect-[16/10] rounded-maroa-md overflow-hidden border border-maroa-gray-300 bg-maroa-charcoal">
-                  <Image
-                    src={img}
-                    alt={`${project.title} - Visual ${i + 1}`}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
-              ))}
+              {project.gallery.map((img, i) => {
+                const caption = project.galleryCaptions?.[img];
+                return (
+                  <div key={i} className="flex flex-col gap-2">
+                    <div className="relative aspect-[16/10] rounded-maroa-md overflow-hidden border border-maroa-gray-300 bg-[#0e0f12]">
+                      <Image
+                        src={img}
+                        alt={caption || `${project.title} - Visual ${i + 1}`}
+                        fill
+                        className="object-contain sm:object-cover"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                    </div>
+                    {caption && (
+                      <span className="text-[11px] font-medium text-maroa-gray-600 px-1 leading-snug">
+                        {caption}
+                      </span>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>

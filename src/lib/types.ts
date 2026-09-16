@@ -44,12 +44,17 @@ export interface Project {
   gallery: string[];
   metrics?: ProjectMetric[];
   role?: string;
+  verifiedRole?: string;
+  isConceptOnly?: boolean;
+  mediaPending?: boolean;
+  mediaClassification?: string;
   sourceCredit?: string;
   sourceUrl?: string;
   deliverables?: string[];
   rightsStatus?: string;
   githubUrl?: string;
   demoUrl?: string;
+  galleryCaptions?: { [key: string]: string };
   isFeatured: boolean;
   isPublished: boolean;
   publishedAt: string;
