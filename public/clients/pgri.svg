@@ -1,12 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="none">
-  <g transform="translate(6, 4)">
-    <circle cx="21" cy="21" r="19" fill="#b91c1c" stroke="#f59e0b" stroke-width="1.5"/>
-    <circle cx="21" cy="21" r="14" fill="#ffffff"/>
-    <path d="M21 10 L24 19 L18 19 Z" fill="#b91c1c"/>
-    <path d="M21 8 Q24 5 22 2 Q18 5 21 8 Z" fill="#f59e0b"/>
-    <rect x="19" y="19" width="4" height="11" fill="#1e293b"/>
-    <path d="M14 30 L28 30 L26 33 L16 33 Z" fill="#b91c1c"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Lambang Resmi PGRI - Rasio 1:1 murni -->
+  <g transform="translate(10, 10)">
+    <!-- Cakra Lingkaran Surya Emas -->
+    <circle cx="40" cy="40" r="36" fill="#fef3c7" stroke="#b45309" stroke-width="2.5"/>
+    <circle cx="40" cy="40" r="28" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+    <!-- Obor Pendidikan Api Merah Tegak -->
+    <path d="M40 16 C34 26 46 30 40 38 C44 32 38 28 40 16 Z" fill="#dc2626"/>
+    <polygon points="36,38 44,38 42,48 38,48" fill="#b45309"/>
+    <line x1="40" y1="48" x2="40" y2="64" stroke="#78350f" stroke-width="4" stroke-linecap="round"/>
+    <!-- Buku Terbuka Putih -->
+    <path d="M26 48 C34 46 38 52 40 54 C42 52 46 46 54 48 L54 60 C46 58 42 62 40 64 C38 62 34 58 26 60 Z" fill="#ffffff" stroke="#1e3a8a" stroke-width="1.5"/>
   </g>
-  <text x="52" y="24" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="900" font-size="16" fill="#1f2937" letter-spacing="1">PGRI</text>
-  <text x="52" y="38" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="600" font-size="9" fill="#4b5563" letter-spacing="0.3">PERSATUAN GURU REPUBLIK INDONESIA</text>
 </svg>

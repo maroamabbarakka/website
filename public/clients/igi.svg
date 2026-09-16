@@ -1,9 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="none">
-  <g transform="translate(6, 6)">
-    <circle cx="19" cy="19" r="17" fill="#0284c7" stroke="#38bdf8" stroke-width="1.5"/>
-    <path d="M10 24 C10 15 16 10 24 10 C21 15 17 20 14 24 Z" fill="#ffffff"/>
-    <circle cx="23" cy="15" r="3.5" fill="#fbbf24"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Lambang Resmi Ikatan Guru Indonesia (IGI) - Rasio 1:1 murni -->
+  <g transform="translate(10, 10)">
+    <circle cx="40" cy="40" r="36" fill="#0284c7" opacity="0.08"/>
+    <!-- Sayap Burung Pena Biru IGI -->
+    <path d="M16 54 C24 32 44 22 66 18 C52 30 46 44 44 58 C34 56 24 58 16 54 Z" fill="#0284c7"/>
+    <!-- Mata Pena Emas / Oranye Berkobar -->
+    <polygon points="44,58 54,42 66,48 56,64" fill="#f97316"/>
+    <circle cx="56" cy="30" r="4.5" fill="#f97316"/>
+    <path d="M28 58 C38 66 54 66 64 58" stroke="#0284c7" stroke-width="3" stroke-linecap="round" fill="none"/>
   </g>
-  <text x="50" y="24" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="900" font-size="17" fill="#0284c7" letter-spacing="1">IGI</text>
-  <text x="50" y="38" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="600" font-size="9" fill="#4b5563" letter-spacing="0.3">IKATAN GURU INDONESIA</text>
 </svg>

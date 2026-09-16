@@ -107,16 +107,16 @@ export function ClientLogoCarouselSection() {
             {officialLogos.map((item, idx) => (
               <div
                 key={`track1-${item.name}-${idx}`}
-                className="flex items-center justify-center h-10 sm:h-11 shrink-0 cursor-default group"
+                className="flex items-center justify-center shrink-0 cursor-default group p-1"
                 title={`${item.name} · ${item.category}`}
               >
-                <div className="relative h-8 sm:h-9 w-auto min-w-[140px] max-w-[200px] flex items-center justify-center grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300">
+                <div className="relative h-11 w-11 sm:h-12 sm:w-12 md:h-14 md:w-14 flex items-center justify-center grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
                   <Image
                     src={item.logoUrl}
                     alt={item.name}
-                    height={36}
-                    width={180}
-                    className="h-7 sm:h-8 w-auto object-contain object-center"
+                    height={56}
+                    width={56}
+                    className="h-full w-full object-contain object-center drop-shadow-sm"
                     priority={idx < 6}
                   />
                 </div>
@@ -129,16 +129,16 @@ export function ClientLogoCarouselSection() {
             {officialLogos.map((item, idx) => (
               <div
                 key={`track2-${item.name}-${idx}`}
-                className="flex items-center justify-center h-10 sm:h-11 shrink-0 cursor-default group"
+                className="flex items-center justify-center shrink-0 cursor-default group p-1"
                 title={`${item.name} · ${item.category}`}
               >
-                <div className="relative h-8 sm:h-9 w-auto min-w-[140px] max-w-[200px] flex items-center justify-center grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300">
+                <div className="relative h-11 w-11 sm:h-12 sm:w-12 md:h-14 md:w-14 flex items-center justify-center grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
                   <Image
                     src={item.logoUrl}
                     alt={item.name}
-                    height={36}
-                    width={180}
-                    className="h-7 sm:h-8 w-auto object-contain object-center"
+                    height={56}
+                    width={56}
+                    className="h-full w-full object-contain object-center drop-shadow-sm"
                   />
                 </div>
               </div>

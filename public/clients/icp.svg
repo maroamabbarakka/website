@@ -1,10 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 50" fill="none">
-  <g transform="translate(6, 4)">
-    <circle cx="21" cy="21" r="19" fill="#15803d" stroke="#eab308" stroke-width="1.5"/>
-    <circle cx="21" cy="21" r="15" fill="#14532d"/>
-    <path d="M12 21 C12 26 17 30 23 30 C27 30 30 26 30 23 C26 25 22 25 19 22 C16 19 16 16 17 12 C13 14 12 17 12 21 Z" fill="#fde047"/>
-    <polygon points="21,12 23,16 27,16 24,18 25,22 21,20 17,22 18,18 15,16 19,16" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Lambang Resmi Institut Cokroaminoto Pinrang (ICP) - Rasio 1:1 murni -->
+  <g transform="translate(10, 10)">
+    <!-- Lingkaran Luar Hijau Tua & List Emas -->
+    <circle cx="40" cy="40" r="36" fill="#14532d" stroke="#f59e0b" stroke-width="2.5"/>
+    <circle cx="40" cy="40" r="28" fill="#166534" stroke="#ffffff" stroke-width="1.2"/>
+    <!-- Bulan Sabit Emas -->
+    <path d="M40 22 C48 22 54 28 54 36 C54 44 48 50 40 50 C44 46 46 41 46 36 C46 31 44 26 40 22 Z" fill="#fbbf24"/>
+    <!-- Bintang Emas Lima Sudut -->
+    <polygon points="46,28 48,32 52,32 49,35 50,39 46,37 42,39 43,35 40,32 44,32" fill="#fbbf24"/>
+    <!-- Pena dan Buku Terbuka Putih -->
+    <path d="M26 48 C34 46 38 51 40 52 C42 51 46 46 54 48 L54 59 C46 57 42 61 40 62 C38 61 34 57 26 59 Z" fill="#ffffff" stroke="#f59e0b" stroke-width="1.2"/>
   </g>
-  <text x="54" y="24" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="900" font-size="15" fill="#15803d" letter-spacing="0.5">INSTITUT ICP</text>
-  <text x="54" y="38" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="600" font-size="9" fill="#4b5563" letter-spacing="0.3">INSTITUT COKROAMINOTO PINRANG</text>
 </svg>

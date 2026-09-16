@@ -112,7 +112,7 @@
   }
 
   .animate-marquee-scroll {
-    animation: maroaMarqueeScroll 35s linear infinite !important;
+    animation: maroaMarqueeScroll 52s linear infinite !important;
     will-change: transform;
   }
 

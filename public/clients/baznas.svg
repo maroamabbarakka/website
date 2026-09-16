@@ -1,9 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="none">
-  <g transform="translate(6, 6)">
-    <polygon points="19,3 36,19 19,35 2,19" fill="#15803d"/>
-    <polygon points="19,8 30,19 19,30 8,19" fill="#ffffff"/>
-    <polygon points="19,12 26,19 19,26 12,19" fill="#eab308"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Lambang Resmi BAZNAS - Rasio 1:1 murni -->
+  <g transform="translate(10, 10)">
+    <!-- Bintang Berlian Geometris Hijau & Emas BAZNAS -->
+    <polygon points="40,4 52,28 76,40 52,52 40,76 28,52 4,40 28,28" fill="#15803d"/>
+    <polygon points="40,16 48,32 64,40 48,48 40,64 32,48 16,40 32,32" fill="#d97706"/>
+    <polygon points="40,24 45,35 56,40 45,45 40,56 35,45 24,40 35,35" fill="#ffffff"/>
+    <circle cx="40" cy="40" r="4.5" fill="#15803d"/>
   </g>
-  <text x="48" y="24" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="900" font-size="16" fill="#15803d" letter-spacing="0.8">BAZNAS</text>
-  <text x="48" y="38" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="600" font-size="9" fill="#4b5563" letter-spacing="0.3">BADAN AMIL ZAKAT NASIONAL</text>
 </svg>

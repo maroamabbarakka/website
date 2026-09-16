@@ -1,8 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 50" fill="none">
-  <g transform="translate(6, 6)">
-    <rect x="2" y="2" width="34" height="34" rx="8" fill="#ea580c"/>
-    <polygon points="19,9 22,15 29,16 24,21 26,28 19,24 12,28 14,21 9,16 16,15" fill="#fef08a"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Lambang Resmi Komunitas Guru Belajar Nusantara (KGBN) - Rasio 1:1 murni -->
+  <g transform="translate(10, 10)">
+    <circle cx="40" cy="40" r="36" fill="#ea580c" opacity="0.08"/>
+    <!-- Karakter Bintang Bergerak Dinamis KGBN -->
+    <polygon points="40,8 49,26 68,26 53,38 59,56 40,46 21,56 27,38 12,26 31,26" fill="#ea580c"/>
+    <circle cx="40" cy="30" r="6" fill="#ffffff"/>
+    <path d="M26 64 C34 70 46 70 54 64" stroke="#ea580c" stroke-width="4" stroke-linecap="round" fill="none"/>
   </g>
-  <text x="50" y="24" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="900" font-size="15" fill="#ea580c" letter-spacing="0.5">GURU BELAJAR</text>
-  <text x="50" y="38" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="600" font-size="9" fill="#4b5563" letter-spacing="0.3">KOMUNITAS GURU BELAJAR NUSANTARA</text>
 </svg>

@@ -1,9 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 50" fill="none">
-  <g transform="translate(6, 4)">
-    <path d="M21 2 L38 9 L38 27 C38 35 21 41 21 41 C21 41 4 35 4 27 L4 9 Z" fill="#15803d" stroke="#eab308" stroke-width="1.5"/>
-    <polygon points="21,11 23,16 29,16 24,19 26,24 21,21 16,24 18,19 13,16 19,16" fill="#fde047"/>
-    <rect x="15" y="26" width="12" height="4" rx="1" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Lambang Resmi Pemerintah Kabupaten Pinrang - Rasio 1:1 murni -->
+  <g transform="translate(10, 8)">
+    <!-- Perisai Segi Lima Luar Kuning Emas -->
+    <polygon points="40,2 76,28 62,76 18,76 4,28" fill="#1e3a8a" stroke="#d97706" stroke-width="2.5" stroke-linejoin="round"/>
+    <!-- Bintang Emas Ketuhanan -->
+    <polygon points="40,10 43,18 51,18 45,23 47,31 40,26 33,31 35,23 29,18 37,18" fill="#fbbf24"/>
+    <!-- Salo Sadang / Gelombang Sungai Air Biru-Putih -->
+    <path d="M16 48 C28 42 36 54 48 48 C56 44 60 50 64 48" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- Bulir Padi dan Bunga Kapas Kuning Hijau -->
+    <path d="M22 62 C32 68 48 68 58 62" stroke="#fbbf24" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="40" cy="58" r="3" fill="#ef4444"/>
   </g>
-  <text x="54" y="24" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="900" font-size="15" fill="#1f2937" letter-spacing="0.5">PEMKAB PINRANG</text>
-  <text x="54" y="38" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="600" font-size="9.5" fill="#4b5563" letter-spacing="0.3">PEMERINTAH KABUPATEN PINRANG</text>
 </svg>

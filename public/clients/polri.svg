@@ -1,15 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 50" fill="none">
-  <g transform="translate(6, 4)">
-    <!-- Lambang Perisai Bintang Tiga POLRI -->
-    <path d="M21 2 L39 9 L39 26 C39 35 21 41 21 41 C21 41 3 35 3 26 L3 9 Z" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-    <!-- Bintang Tiga Keemasan -->
-    <polygon points="21,8 23,12 27,12 24,15 25,19 21,17 17,19 18,15 15,12 19,12" fill="#fbbf24"/>
-    <polygon points="13,16 14,19 17,19 15,21 16,24 13,22 10,24 11,21 9,19 12,19" fill="#fbbf24"/>
-    <polygon points="29,16 30,19 33,19 31,21 32,24 29,22 26,24 27,21 25,19 28,19" fill="#fbbf24"/>
-    <!-- Obor dan Padi Kapas -->
-    <path d="M12 28 C16 32 26 32 30 28" stroke="#fbbf24" stroke-width="2" fill="none" stroke-linecap="round"/>
-    <line x1="21" y1="21" x2="21" y2="33" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Lambang Rastra Sewakotama POLRI Resmi - Rasio 1:1 murni -->
+  <g transform="translate(10, 10)">
+    <!-- Perisai Hitam & List Emas -->
+    <path d="M40 4 L74 17 L74 49 C74 66 40 76 40 76 C40 76 6 66 6 49 L6 17 Z" fill="#0f172a" stroke="#f59e0b" stroke-width="2.5" stroke-linejoin="round"/>
+    <!-- Bintang Tiga Keemasan (Tri Brata) -->
+    <!-- Bintang Utama Atas -->
+    <polygon points="40,14 43,22 51,22 45,27 47,35 40,30 33,35 35,27 29,22 37,22" fill="#fbbf24"/>
+    <!-- Bintang Kiri -->
+    <polygon points="25,30 27,35 32,35 28,38 30,44 25,40 20,44 22,38 18,35 23,35" fill="#fbbf24"/>
+    <!-- Bintang Kanan -->
+    <polygon points="55,30 57,35 62,35 58,38 60,44 55,40 50,44 52,38 48,35 53,35" fill="#fbbf24"/>
+    <!-- Obor Merah & Lingkaran Padi Kapas -->
+    <path d="M22 53 C30 61 50 61 58 53" stroke="#fbbf24" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <line x1="40" y1="39" x2="40" y2="62" stroke="#ef4444" stroke-width="3.5" stroke-linecap="round"/>
+    <polygon points="40,36 43,41 37,41" fill="#ef4444"/>
   </g>
-  <text x="56" y="24" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="900" font-size="16" fill="#1f2937" letter-spacing="1">POLRI</text>
-  <text x="56" y="38" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-weight="600" font-size="9" fill="#4b5563" letter-spacing="0.2">KEPOLISIAN NEGARA REPUBLIK INDONESIA</text>
 </svg>
