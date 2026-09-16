@@ -1,18 +1,22 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Project } from "@/lib/types";
 import { Badge } from "@/components/ui/Badge";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 export interface PortfolioGridProps {
   projects: Project[];
 }
 
+const ITEMS_PER_PAGE = 9;
+
 export function PortfolioGrid({ projects }: PortfolioGridProps) {
   const [activeFilter, setActiveFilter] = useState<string>("all");
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const filters = [
     { key: "all", label: "All Projects" },
@@ -26,6 +30,30 @@ export function PortfolioGrid({ projects }: PortfolioGridProps) {
     activeFilter === "all"
       ? projects
       : projects.filter((p) => p.category === activeFilter);
+
+  const totalPages = Math.max(1, Math.ceil(filteredProjects.length / ITEMS_PER_PAGE));
+  
+  // Amankan jika currentPage melampaui totalPages saat ganti filter
+  const validCurrentPage = Math.min(currentPage, totalPages);
+  const startIndex = (validCurrentPage - 1) * ITEMS_PER_PAGE;
+  const paginatedProjects = filteredProjects.slice(
+    startIndex,
+    startIndex + ITEMS_PER_PAGE
+  );
+
+  const handleFilterChange = (key: string) => {
+    setActiveFilter(key);
+    setCurrentPage(1);
+  };
+
+  const handlePageChange = (newPage: number) => {
+    if (newPage < 1 || newPage > totalPages) return;
+    setCurrentPage(newPage);
+    if (containerRef.current) {
+      const topOffset = containerRef.current.getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({ top: topOffset, behavior: "smooth" });
+    }
+  };
 
   const getCategoryLabel = (cat: string) => {
     switch (cat) {
@@ -43,41 +71,58 @@ export function PortfolioGrid({ projects }: PortfolioGridProps) {
   };
 
   return (
-    <div className="w-full">
-      {/* Filter Bar */}
-      <div
-        role="tablist"
-        aria-label="Filter Kategori Portofolio"
-        className="flex flex-wrap items-center gap-2 mb-10 pb-4 border-b border-maroa-gray-200"
-      >
-        {filters.map((f) => {
-          const isSelected = activeFilter === f.key;
-          return (
-            <button
-              key={f.key}
-              role="tab"
-              aria-selected={isSelected}
-              onClick={() => setActiveFilter(f.key)}
-              className={`px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 ${
-                isSelected
-                  ? "bg-maroa-black text-maroa-white shadow-sm"
-                  : "bg-maroa-gray-100 text-maroa-charcoal hover:bg-maroa-gray-300/60"
-              }`}
-            >
-              {f.label}
-            </button>
-          );
-        })}
+    <div ref={containerRef} className="w-full">
+      {/* Filter Bar & Status Count */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-maroa-gray-200">
+        <div
+          role="tablist"
+          aria-label="Filter Kategori Portofolio"
+          className="flex flex-wrap items-center gap-2"
+        >
+          {filters.map((f) => {
+            const isSelected = activeFilter === f.key;
+            return (
+              <button
+                key={f.key}
+                role="tab"
+                aria-selected={isSelected}
+                onClick={() => handleFilterChange(f.key)}
+                className={`px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 ${
+                  isSelected
+                    ? "bg-maroa-black text-maroa-white shadow-sm"
+                    : "bg-maroa-gray-100 text-maroa-charcoal hover:bg-maroa-gray-300/60"
+                }`}
+              >
+                {f.label}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Ringkasan Jumlah Proyek */}
+        <div className="text-xs text-maroa-gray-500 font-medium">
+          Menampilkan{" "}
+          <span className="text-maroa-black font-bold">
+            {filteredProjects.length === 0 ? 0 : startIndex + 1}
+            {" - "}
+            {Math.min(startIndex + ITEMS_PER_PAGE, filteredProjects.length)}
+          </span>{" "}
+          dari{" "}
+          <span className="text-maroa-black font-bold">
+            {filteredProjects.length}
+          </span>{" "}
+          proyek
+        </div>
       </div>
 
       {/* Grid Proyek */}
-      {filteredProjects.length === 0 ? (
-        <div className="text-center py-16 text-maroa-gray-500 text-sm">
+      {paginatedProjects.length === 0 ? (
+        <div className="text-center py-20 text-maroa-gray-500 text-sm bg-maroa-gray-100/50 rounded-maroa-md border border-maroa-gray-200">
           Tidak ada proyek yang sesuai dengan kategori ini.
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
+          {paginatedProjects.map((project) => (
             <Link
               key={project.id}
               href={`/work/${project.slug}`}
@@ -153,6 +198,63 @@ export function PortfolioGrid({ projects }: PortfolioGridProps) {
             </Link>
           ))}
         </div>
+      )}
+
+      {/* Pagination Controls */}
+      {totalPages > 1 && (
+        <nav
+          aria-label="Navigasi Halaman Portofolio"
+          className="mt-14 pt-8 border-t border-maroa-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          {/* Tombol Sebelumnya */}
+          <button
+            onClick={() => handlePageChange(validCurrentPage - 1)}
+            disabled={validCurrentPage === 1}
+            className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-semibold transition-all duration-200 border ${
+              validCurrentPage === 1
+                ? "border-maroa-gray-200 text-maroa-gray-400 bg-maroa-gray-100/50 cursor-not-allowed"
+                : "border-maroa-gray-300 text-maroa-charcoal bg-white hover:bg-maroa-gray-100 hover:text-maroa-black shadow-xs cursor-pointer"
+            }`}
+          >
+            <ChevronLeft className="w-4 h-4" />
+            <span>Sebelumnya</span>
+          </button>
+
+          {/* Deretan Nomor Halaman */}
+          <div className="flex items-center gap-1.5">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => {
+              const isActive = pageNum === validCurrentPage;
+              return (
+                <button
+                  key={pageNum}
+                  onClick={() => handlePageChange(pageNum)}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`w-9 h-9 rounded-lg text-xs font-semibold transition-all duration-200 flex items-center justify-center ${
+                    isActive
+                      ? "bg-maroa-black text-maroa-white shadow-md scale-105"
+                      : "text-maroa-charcoal bg-white border border-maroa-gray-200 hover:bg-maroa-gray-100 hover:border-maroa-gray-300"
+                  }`}
+                >
+                  {pageNum}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Tombol Berikutnya */}
+          <button
+            onClick={() => handlePageChange(validCurrentPage + 1)}
+            disabled={validCurrentPage === totalPages}
+            className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-semibold transition-all duration-200 border ${
+              validCurrentPage === totalPages
+                ? "border-maroa-gray-200 text-maroa-gray-400 bg-maroa-gray-100/50 cursor-not-allowed"
+                : "border-maroa-gray-300 text-maroa-charcoal bg-white hover:bg-maroa-gray-100 hover:text-maroa-black shadow-xs cursor-pointer"
+            }`}
+          >
+            <span>Berikutnya</span>
+            <ChevronRight className="w-4 h-4" />
+          </button>
+        </nav>
       )}
     </div>
   );
