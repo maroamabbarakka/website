@@ -51,8 +51,8 @@ export default async function ProjectDetailPage({ params }: ProjectDetailProps) 
     "@graph": [
       {
         "@type": "CreativeWork",
-        "@id": `https://maroamedia.web.app/work/${project.slug}#creativework`,
-        "url": `https://maroamedia.web.app/work/${project.slug}`,
+        "@id": `https://maroamedia.web.app/work/${project.slug}/#creativework`,
+        "url": `https://maroamedia.web.app/work/${project.slug}/`,
         "name": project.title,
         "headline": project.summary,
         "description": project.seoDescription || project.summary,
@@ -62,7 +62,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailProps) 
         "creator": {
           "@type": "Corporation",
           "name": "PT MAROA MEDIA MABBARAKKA",
-          "url": "https://maroamedia.web.app"
+          "url": "https://maroamedia.web.app/"
         },
         "provider": {
           "@type": "Corporation",
@@ -71,7 +71,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailProps) 
         "publisher": {
           "@type": "Corporation",
           "name": "PT MAROA MEDIA MABBARAKKA",
-          "url": "https://maroamedia.web.app"
+          "url": "https://maroamedia.web.app/"
         },
         "sponsor": {
           "@type": "Organization",
@@ -87,25 +87,25 @@ export default async function ProjectDetailPage({ params }: ProjectDetailProps) 
       },
       {
         "@type": "BreadcrumbList",
-        "@id": `https://maroamedia.web.app/work/${project.slug}#breadcrumb`,
+        "@id": `https://maroamedia.web.app/work/${project.slug}/#breadcrumb`,
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "name": "Beranda",
-            "item": "https://maroamedia.web.app"
+            "item": "https://maroamedia.web.app/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Karya",
-            "item": "https://maroamedia.web.app/work"
+            "item": "https://maroamedia.web.app/work/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": project.title,
-            "item": `https://maroamedia.web.app/work/${project.slug}`
+            "item": `https://maroamedia.web.app/work/${project.slug}/`
           }
         ]
       }

@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   publisher: "PT MAROA MEDIA MABBARAKKA",
   category: "Creative Technology & Event Production",
   alternates: {
-    canonical: "https://maroamedia.web.app",
+    canonical: "https://maroamedia.web.app/",
   },
   formatDetection: {
     email: false,

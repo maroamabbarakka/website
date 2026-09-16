@@ -45,10 +45,10 @@ export default async function InsightDetailPage({ params }: InsightDetailProps) 
     "@graph": [
       {
         "@type": "Article",
-        "@id": `https://maroamedia.web.app/insights/${insight.slug}#article`,
+        "@id": `https://maroamedia.web.app/insights/${insight.slug}/#article`,
         "isPartOf": {
           "@type": "WebPage",
-          "@id": `https://maroamedia.web.app/insights/${insight.slug}`
+          "@id": `https://maroamedia.web.app/insights/${insight.slug}/`
         },
         "headline": insight.title,
         "description": insight.seoDescription || insight.excerpt,
@@ -63,36 +63,36 @@ export default async function InsightDetailPage({ params }: InsightDetailProps) 
         "publisher": {
           "@type": "Corporation",
           "name": "PT MAROA MEDIA MABBARAKKA",
-          "url": "https://maroamedia.web.app",
+          "url": "https://maroamedia.web.app/",
           "logo": {
             "@type": "ImageObject",
             "url": "https://maroamedia.web.app/assets/maroa-logo.png"
           }
         },
-        "mainEntityOfPage": `https://maroamedia.web.app/insights/${insight.slug}`,
+        "mainEntityOfPage": `https://maroamedia.web.app/insights/${insight.slug}/`,
         "keywords": insight.tags.join(", ")
       },
       {
         "@type": "BreadcrumbList",
-        "@id": `https://maroamedia.web.app/insights/${insight.slug}#breadcrumb`,
+        "@id": `https://maroamedia.web.app/insights/${insight.slug}/#breadcrumb`,
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "name": "Beranda",
-            "item": "https://maroamedia.web.app"
+            "item": "https://maroamedia.web.app/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Wawasan",
-            "item": "https://maroamedia.web.app/insights"
+            "item": "https://maroamedia.web.app/insights/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": insight.title,
-            "item": `https://maroamedia.web.app/insights/${insight.slug}`
+            "item": `https://maroamedia.web.app/insights/${insight.slug}/`
           }
         ]
       }
