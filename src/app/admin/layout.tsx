@@ -24,8 +24,9 @@ function AdminLayoutContent({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
 
-  // Jika sedang di halaman login, tampilkan langsung
-  if (pathname === "/admin/login") {
+  // Jika sedang di halaman login, tampilkan langsung (toleran terhadap trailing slash di Firebase Hosting)
+  const isLoginPage = pathname?.replace(/\/$/, "") === "/admin/login";
+  if (isLoginPage) {
     return <>{children}</>;
   }
 
