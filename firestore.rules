@@ -26,6 +26,10 @@ service cloud.firestore {
       return activeAdmin() && adminDoc().data.role == 'superadmin';
     }
 
+    function isOwnerEmail() {
+      return signedIn() && request.auth.token.email == "maroamabbarakka@gmail.com";
+    }
+
     // Site Settings: Publik membaca profil publik perusahaan, hanya superadmin/editor yang dapat mengedit
     match /siteSettings/{id} {
       allow read: if true;
@@ -79,10 +83,10 @@ service cloud.firestore {
         && (!('createdAt' in request.resource.data) || request.resource.data.createdAt is string);
     }
 
-    // Admin Users: Hanya superadmin atau diri sendiri yang membaca data profil admin sendiri
+    // Admin Users: Superadmin mengelola semua akun; Pemilik sah dapat membaca dan memprovisi profil superadmin sendiri
     match /adminUsers/{uid} {
-      allow read: if signedIn() && (request.auth.uid == uid || isSuperadmin());
-      allow write: if isSuperadmin();
+      allow read: if signedIn() && (request.auth.uid == uid || isSuperadmin() || isOwnerEmail());
+      allow write: if isSuperadmin() || (isOwnerEmail() && request.auth.uid == uid);
     }
 
     // Audit Logs: Hanya superadmin yang dapat membaca, hanya server / superadmin yang mencatat

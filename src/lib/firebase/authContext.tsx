@@ -41,6 +41,25 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
               // Akun admin dinonaktifkan
               setAdminProfile(null);
             }
+          } else if (currentUser.email === "maroamabbarakka@gmail.com") {
+            // Bootstrap otomatis profil Superadmin untuk akun resmi pemilik MAROA
+            const defaultOwnerProfile: AdminUser = {
+              uid: currentUser.uid,
+              email: "maroamabbarakka@gmail.com",
+              displayName: "Superadmin MAROA",
+              role: "superadmin",
+              active: true,
+              createdAt: new Date().toISOString(),
+              updatedAt: new Date().toISOString(),
+            };
+            try {
+              const { setDoc } = await import("firebase/firestore");
+              await setDoc(doc(db, "adminUsers", currentUser.uid), defaultOwnerProfile);
+              setAdminProfile(defaultOwnerProfile);
+            } catch (initErr) {
+              console.warn("Gagal menyimpan dokumen adminUsers owner:", initErr);
+              setAdminProfile(defaultOwnerProfile);
+            }
           } else {
             // Fail-closed: Akun terotentikasi belum didaftarkan di adminUsers
             setAdminProfile(null);
