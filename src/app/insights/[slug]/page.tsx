@@ -40,8 +40,73 @@ export default async function InsightDetailPage({ params }: InsightDetailProps) 
     notFound();
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": `https://maroamedia.web.app/insights/${insight.slug}#article`,
+        "isPartOf": {
+          "@type": "WebPage",
+          "@id": `https://maroamedia.web.app/insights/${insight.slug}`
+        },
+        "headline": insight.title,
+        "description": insight.seoDescription || insight.excerpt,
+        "image": insight.coverImage.startsWith("http") ? insight.coverImage : `https://maroamedia.web.app${insight.coverImage}`,
+        "datePublished": insight.publishedAt,
+        "dateModified": insight.publishedAt,
+        "inLanguage": "id-ID",
+        "author": {
+          "@type": "Person",
+          "name": insight.authorDisplayName
+        },
+        "publisher": {
+          "@type": "Corporation",
+          "name": "PT MAROA MEDIA MABBARAKKA",
+          "url": "https://maroamedia.web.app",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://maroamedia.web.app/assets/maroa-logo.png"
+          }
+        },
+        "mainEntityOfPage": `https://maroamedia.web.app/insights/${insight.slug}`,
+        "keywords": insight.tags.join(", ")
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `https://maroamedia.web.app/insights/${insight.slug}#breadcrumb`,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Beranda",
+            "item": "https://maroamedia.web.app"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Wawasan",
+            "item": "https://maroamedia.web.app/insights"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": insight.title,
+            "item": `https://maroamedia.web.app/insights/${insight.slug}`
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <article className="w-full bg-maroa-white py-16 lg:py-20">
+      {/* Schema.org Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <div className="container-maroa max-w-3xl">
         <Link
           href="/insights"

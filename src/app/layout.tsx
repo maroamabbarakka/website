@@ -14,28 +14,38 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://maroa.co.id"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://maroamedia.web.app"),
   title: {
-    default: "MAROA — Creative Technology & Experience Company",
-    template: "%s | MAROA",
+    default: "MAROA — Creative Technology & Experience Company | PT MAROA MEDIA MABBARAKKA",
+    template: "%s | PT MAROA MEDIA MABBARAKKA",
   },
   description:
-    "PT MAROA MEDIA MABBARAKKA mengintegrasikan penyelenggaraan event profesional, produksi studio multimedia, dan pengembangan solusi teknologi web korporat.",
+    "PT MAROA MEDIA MABBARAKKA adalah perusahaan teknologi kreatif dan experience terintegrasi di Pinrang, Sulawesi Selatan. Spesialis manajemen event kolosal, produksi studio multimedia & videotron, serta rekayasa sistem aplikasi web korporat.",
   keywords: [
-    "MAROA",
     "PT MAROA MEDIA MABBARAKKA",
-    "Events & Experiences",
-    "Multimedia & Studio",
-    "Digital & Web Applications",
-    "Event Management Pinrang",
-    "Event Management Sulawesi Selatan",
+    "MAROA",
+    "MAROA Project",
+    "Event Organizer Pinrang",
+    "Event Organizer Sulawesi Selatan",
+    "Event Management Sulsel",
+    "Produksi Konten Multimedia",
+    "Stage Videotron Multimedia",
+    "Video Mapping Sulawesi",
+    "Jasa Pembuatan Website Korporat",
+    "Pengembangan Aplikasi Web Pinrang",
+    "Live Streaming Multicamera",
+    "Studio Podcast Pinrang",
     "Creative Technology Company Indonesia",
-    "Web Development",
-    "Live Streaming Studio",
+    "exótico Café",
+    "Digital Registration QR System",
   ],
-  authors: [{ name: "PT MAROA MEDIA MABBARAKKA" }],
+  authors: [{ name: "PT MAROA MEDIA MABBARAKKA", url: "https://maroamedia.web.app" }],
   creator: "PT MAROA MEDIA MABBARAKKA",
   publisher: "PT MAROA MEDIA MABBARAKKA",
+  category: "Creative Technology & Event Production",
+  alternates: {
+    canonical: "https://maroamedia.web.app",
+  },
   formatDetection: {
     email: false,
     address: false,
@@ -44,9 +54,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "MAROA — Creative Technology & Experience Company",
     description:
-      "Mengintegrasikan event, multimedia, dan teknologi digital untuk menghadirkan pengalaman berdampak nyata.",
-    url: "https://maroa.co.id",
-    siteName: "MAROA",
+      "Mengintegrasikan event, multimedia panggung & studio, serta rekayasa aplikasi web untuk menciptakan dampak nyata bagi audiens dan institusi.",
+    url: "https://maroamedia.web.app",
+    siteName: "PT MAROA MEDIA MABBARAKKA",
     locale: "id_ID",
     type: "website",
     images: [
@@ -54,7 +64,7 @@ export const metadata: Metadata = {
         url: "/logos/maroa-main-signal.png",
         width: 1200,
         height: 630,
-        alt: "MAROA — Creative Technology & Experience Company",
+        alt: "PT MAROA MEDIA MABBARAKKA — Creative Technology & Experience Company",
       },
     ],
   },
@@ -62,13 +72,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "MAROA — Creative Technology & Experience Company",
     description:
-      "Penyelenggaraan event, produksi konten multimedia, dan pengembangan sistem aplikasi web.",
+      "Penyelenggaraan event terpadu, produksi konten multimedia & videotron, dan sistem aplikasi web korporat.",
     images: ["/logos/maroa-main-signal.png"],
   },
   icons: {
     icon: "/logos/maroa-app-icon.png",
     apple: "/logos/maroa-monogram.png",
   },
+  manifest: "/site.webmanifest",
   robots: {
     index: true,
     follow: true,

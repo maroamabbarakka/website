@@ -1,0 +1,26 @@
+{
+  "name": "MAROA — PT MAROA MEDIA MABBARAKKA",
+  "short_name": "MAROA",
+  "description": "Enterprise Multimedia Production, Event Technology, dan Digital Architecture terdepan di Sulawesi Selatan, Indonesia.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F1012",
+  "theme_color": "#E50914",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/assets/maroa-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/maroa-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

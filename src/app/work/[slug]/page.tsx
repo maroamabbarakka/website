@@ -46,8 +46,80 @@ export default async function ProjectDetailPage({ params }: ProjectDetailProps) 
   const currentIndex = initialProjects.findIndex((p) => p.slug === slug);
   const nextProject = initialProjects[(currentIndex + 1) % initialProjects.length];
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        "@id": `https://maroamedia.web.app/work/${project.slug}#creativework`,
+        "url": `https://maroamedia.web.app/work/${project.slug}`,
+        "name": project.title,
+        "headline": project.summary,
+        "description": project.seoDescription || project.summary,
+        "image": project.heroImage.startsWith("http") ? project.heroImage : `https://maroamedia.web.app${project.heroImage}`,
+        "dateCreated": `${project.year}-01-01`,
+        "inLanguage": "id-ID",
+        "creator": {
+          "@type": "Corporation",
+          "name": "PT MAROA MEDIA MABBARAKKA",
+          "url": "https://maroamedia.web.app"
+        },
+        "provider": {
+          "@type": "Corporation",
+          "name": "PT MAROA MEDIA MABBARAKKA"
+        },
+        "publisher": {
+          "@type": "Corporation",
+          "name": "PT MAROA MEDIA MABBARAKKA",
+          "url": "https://maroamedia.web.app"
+        },
+        "sponsor": {
+          "@type": "Organization",
+          "name": project.clientDisplayName
+        },
+        "keywords": [
+          project.category,
+          ...project.services,
+          "Portfolio MAROA",
+          "Pinrang",
+          "Sulawesi Selatan"
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `https://maroamedia.web.app/work/${project.slug}#breadcrumb`,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Beranda",
+            "item": "https://maroamedia.web.app"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Karya",
+            "item": "https://maroamedia.web.app/work"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": project.title,
+            "item": `https://maroamedia.web.app/work/${project.slug}`
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="w-full bg-maroa-white">
+      {/* Schema.org Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Header Breadcrumb & Back */}
       <section className="w-full pt-10 pb-6 border-b border-maroa-gray-100 bg-maroa-white">
         <div className="container-maroa">

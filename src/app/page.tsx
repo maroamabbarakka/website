@@ -21,26 +21,54 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
-        "@id": "https://maroa.co.id/#organization",
-        name: initialSiteSettings.companyName,
-        alternateName: initialSiteSettings.brandName,
-        url: "https://maroa.co.id",
-        logo: "https://maroa.co.id/logos/maroa-main-signal.png",
-        contactPoint: {
-          "@type": "ContactPoint",
-          email: initialSiteSettings.primaryEmail,
-          contactType: "customer service",
+        "@type": ["Corporation", "ProfessionalService"],
+        "@id": "https://maroamedia.web.app/#organization",
+        name: "PT MAROA MEDIA MABBARAKKA",
+        legalName: "PT MAROA MEDIA MABBARAKKA",
+        alternateName: "MAROA",
+        url: "https://maroamedia.web.app",
+        logo: "https://maroamedia.web.app/logos/maroa-main-signal.png",
+        image: "https://maroamedia.web.app/logos/maroa-main-signal.png",
+        description:
+          "Perusahaan teknologi kreatif dan pengalaman terintegrasi di Pinrang, Sulawesi Selatan. Menyelenggarakan event kolosal profesional, produksi multimedia studio & videotron panggung, serta rekayasa aplikasi web korporat.",
+        telephone: "+6281343511099",
+        email: "maroamabbarakka@gmail.com",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Pinrang",
+          addressRegion: "Sulawesi Selatan",
+          addressCountry: "ID",
         },
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            telephone: "+6281343511099",
+            contactType: "customer service",
+            availableLanguage: ["Indonesian", "English"],
+          },
+        ],
+        sameAs: [
+          "https://www.instagram.com/maroaproject/",
+          "https://github.com/maroamabbarakka/website",
+          "https://elayanan.ahu.go.id/perseroan-perseorangan/sertifikat/Perubahan Data/MAROA MEDIA MABBARAKKA",
+          "https://ui-login.oss.go.id/verify/VB8EJgFmCzVea1E3VDZTOVQwBzRUZwVhAGFaYgFhB2IDNVJtUjANNVZmB2FSMg==",
+        ],
+        areaServed: [
+          "Kabupaten Pinrang",
+          "Sulawesi Selatan",
+          "Sulawesi Barat",
+          "Indonesia",
+        ],
       },
       {
         "@type": "WebSite",
-        "@id": "https://maroa.co.id/#website",
-        url: "https://maroa.co.id",
-        name: "MAROA",
+        "@id": "https://maroamedia.web.app/#website",
+        url: "https://maroamedia.web.app",
+        name: "MAROA — Creative Technology & Experience Company",
         publisher: {
-          "@id": "https://maroa.co.id/#organization",
+          "@id": "https://maroamedia.web.app/#organization",
         },
+        inLanguage: "id-ID",
       },
     ],
   };
