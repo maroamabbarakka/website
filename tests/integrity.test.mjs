@@ -102,4 +102,19 @@ describe("System Integrity & Asset Availability Tests", () => {
       assert.equal(fs.existsSync(fullPath), true, `Aset resmi ${asset} wajib tersedia.`);
     }
   });
+
+  test("Draft isolation must be enforced for work and insights routes", () => {
+    const workDetailPage = fs.readFileSync(path.join(rootDir, "src", "app", "work", "[slug]", "page.tsx"), "utf-8");
+    assert.ok(workDetailPage.includes("initialProjects.filter((p) => p.isPublished)"), "work slug generateStaticParams harus menyaring hanya proyek terbit (isPublished)");
+    assert.ok(workDetailPage.includes("p.isPublished"), "work slug page harus memvalidasi isPublished sebelum merender detail");
+
+    const insightsDetailPage = fs.readFileSync(path.join(rootDir, "src", "app", "insights", "[slug]", "page.tsx"), "utf-8");
+    assert.ok(insightsDetailPage.includes('filter((i) => i.status === "published")'), "insights slug generateStaticParams harus menyaring hanya artikel terbit (published)");
+    assert.ok(insightsDetailPage.includes('i.status === "published"'), "insights slug page harus memvalidasi status published");
+
+    const sitemapFile = fs.readFileSync(path.join(rootDir, "src", "app", "sitemap.ts"), "utf-8");
+    assert.ok(sitemapFile.includes("initialProjects\n    .filter((p) => p.isPublished)") || sitemapFile.includes("filter((p) => p.isPublished)"), "sitemap harus memfilter proyek published");
+    assert.ok(sitemapFile.includes('filter((i) => i.status === "published")'), "sitemap harus memfilter wawasan published");
+  });
 });
+

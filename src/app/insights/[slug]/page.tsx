@@ -11,15 +11,17 @@ interface InsightDetailProps {
 }
 
 export async function generateStaticParams() {
-  return initialInsights.map((i) => ({
-    slug: i.slug,
-  }));
+  return initialInsights
+    .filter((i) => i.status === "published")
+    .map((i) => ({
+      slug: i.slug,
+    }));
 }
 
 export async function generateMetadata({ params }: InsightDetailProps) {
   const { slug } = await params;
-  const insight = initialInsights.find((i) => i.slug === slug);
-  if (!insight) return { title: "Insight Not Found" };
+  const insight = initialInsights.find((i) => i.slug === slug && i.status === "published");
+  if (!insight) return { title: "Wawasan Tidak Ditemukan — MAROA" };
 
   return {
     title: insight.seoTitle || `${insight.title} — Wawasan MAROA`,
@@ -34,7 +36,7 @@ export async function generateMetadata({ params }: InsightDetailProps) {
 
 export default async function InsightDetailPage({ params }: InsightDetailProps) {
   const { slug } = await params;
-  const insight = initialInsights.find((i) => i.slug === slug);
+  const insight = initialInsights.find((i) => i.slug === slug && i.status === "published");
 
   if (!insight) {
     notFound();
@@ -66,7 +68,7 @@ export default async function InsightDetailPage({ params }: InsightDetailProps) 
           "url": "https://maroamedia.web.app/",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://maroamedia.web.app/assets/maroa-logo.png"
+            "url": "https://maroamedia.web.app/brand/LOGO_MAROA_PLAY_ORIGINAL.png"
           }
         },
         "mainEntityOfPage": `https://maroamedia.web.app/insights/${insight.slug}/`,
