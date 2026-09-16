@@ -177,9 +177,9 @@ npm run lint
 - **Hosting URL Publik:** [https://maroamedia.web.app](https://maroamedia.web.app) (dan `https://maroamedia.firebaseapp.com`)
 - **Firebase Console:** [https://console.firebase.google.com/project/maroamedia/overview](https://console.firebase.google.com/project/maroamedia/overview)
 - **Komponen Terdeploy:**
-  - **Firebase Hosting:** 129 berkas statis teroptimasi diekspor dari direktori `out/` dengan security headers lengkap (`X-Frame-Options`, `X-Content-Type-Options`, `HSTS`, `Permissions-Policy`).
+  - **Firebase Hosting:** 442 berkas statis teroptimasi diekspor dari direktori `out/` dengan security headers lengkap (`X-Frame-Options`, `X-Content-Type-Options`, `HSTS`, `Permissions-Policy`).
   - **Cloud Firestore Rules:** Aturan keamanan `deny-by-default` dengan pembatasan hak akses berbasis peran (RBAC) dan proteksi kotak masuk `leads`.
-  - **Firestore Indexes:** Composite indexes untuk query koleksi `projects` dan `leads`.
+  - **Firestore Indexes:** Composite indexes untuk query koleksi `projects` dan `leads` berhasil aktif di tingkat server Google Cloud.
 - **Status Aksesibilitas Live:** Diverifikasi aktif dengan respon HTTP 200 OK dan judul *MAROA — Creative Technology & Experience Company*.
 
 ---
@@ -196,15 +196,15 @@ Pengujian struktur tata letak (responsive layout) diverifikasi bebas *horizontal
 - **1920×1080 px (Desktop Layar Lebar):** Keseimbangan whitespace terjaga tanpa distorsi gambar.
 
 ### B. Hasil Audit Performa & Core Web Vitals
-- **Kompilasi Turbopack:** Berhasil mengekspor 29 halaman dalam 8,7 detik.
+- **Kompilasi Turbopack:** Berhasil mengekspor 107 rute statis dalam ~5.6 detik.
 - **Largest Contentful Paint (LCP):** Waktu respon halaman lokal tercatat < 1,2 detik dengan prioritas gambar hero dan optimasi font lokal.
 - **Cumulative Layout Shift (CLS):** 0.00 (Seluruh elemen gambar memiliki rasio aspek terkontrol `aspect-[16/10]` dan `aspect-[4/3]`).
 - **Interaction to Next Paint (INP):** Respons interaksi instan tanpa bundle pustaka animasi berat yang tidak perlu.
 
 ### C. Validasi Linting, Typecheck & Automated Test Suite
-- **Automated Test Suite (`npm test`):** 11 tes unit dan integritas lulus 100% (validasi skema Zod form lead, deteksi honeypot anti-spam, heuristik durasi submit, ketersediaan 6 logo resmi & 5 mockup responsif, security headers `firebase.json`, dan aturan isolasi `firestore.rules`).
+- **Automated Test Suite (`npm test`):** 13 tes unit dan integritas lulus 100% (validasi skema Zod form lead, deteksi honeypot anti-spam, heuristik durasi submit, ketersediaan 6 logo resmi, mockup responsif, aset brand resmi MAROA Play, video showreel konsep, security headers `firebase.json`, aturan isolasi `firestore.rules`, serta isolasi draf pada rute work, insights, dan pilar expertise).
 - **ESLint (`npm run lint`):** `✔ No ESLint warnings or errors`.
 - **TypeScript (`npm run typecheck`):** `tsc --noEmit` berhasil dengan kode keluar 0 (Zero Type Errors).
-- **Static Export Generation:** 42 rute halaman statis terkompilasi dan diekspor sempurna tanpa ada rute broken.
+- **Static Export Generation:** 107 rute halaman statis terkompilasi dan diekspor sempurna tanpa ada rute broken.
 ---
 *Laporan ini disusun secara komprehensif sebagai bukti penyelesaian pekerjaan dan siap diajukan untuk tinjauan resmi manajemen PT MAROA MEDIA MABBARAKKA.*
