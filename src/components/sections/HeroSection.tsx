@@ -43,11 +43,11 @@ export function HeroSection() {
     <section className="relative w-full min-h-[92vh] lg:min-h-screen flex flex-col justify-between overflow-hidden bg-[#080808] text-white">
       {/* 1. Latar Belakang Panggung Sinematik (Video Ambient + Stage Poster) */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        {/* Poster Panggung Faktual Resolusi Tinggi Sebagai Fondasi */}
+        {/* Poster Panggung Spektakuler Resolusi Tinggi Sebagai Fondasi */}
         <div
           className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 scale-105 filter brightness-90"
           style={{
-            backgroundImage: "url('/portfolio/covers/grand-doorprize-stage-system-cover-1600x900.webp')",
+            backgroundImage: "url('/images/hero/maroa_hero_grand_stage.webp')",
           }}
           aria-hidden="true"
         />
@@ -56,7 +56,7 @@ export function HeroSection() {
         <video
           ref={videoRef}
           src="/video/MAROA_BRAND_MOTION_CONCEPT.mp4"
-          poster="/portfolio/covers/grand-doorprize-stage-system-cover-1600x900.webp"
+          poster="/images/hero/maroa_hero_grand_stage.webp"
           autoPlay
           muted
           loop
