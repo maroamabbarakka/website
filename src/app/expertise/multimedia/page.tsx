@@ -176,7 +176,7 @@ export default function MultimediaPage() {
           </p>
           <div className="pt-2">
             <Button href="/contact?service=multimedia" variant="primary" size="md" withArrow>
-              Start a Project
+              Mulai Proyek
             </Button>
           </div>
         </div>

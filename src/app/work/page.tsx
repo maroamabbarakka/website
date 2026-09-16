@@ -55,7 +55,7 @@ export default function WorkPage() {
           </p>
           <div className="pt-2">
             <Button href="/contact" variant="primary" size="md" withArrow>
-              Start a Project
+              Mulai Proyek
             </Button>
           </div>
         </div>

@@ -53,7 +53,7 @@ export default function TermsPage() {
           <section className="space-y-3">
             <h2 className="text-xl font-bold text-maroa-black">3. Penggunaan Formulir & Pengajuan Proyek</h2>
             <p>
-              Pengunjung diperkenankan menggunakan formulir &ldquo;Start a Project&rdquo; atau formulir kontak untuk tujuan yang sah, yakni mengajukan pertanyaan, permintaan penawaran harga (RFP/quotation), atau inisiasi kerja sama proyek resmi. Pengguna dilarang keras:
+              Pengunjung diperkenankan menggunakan formulir &ldquo;Mulai Proyek&rdquo; atau formulir kontak untuk tujuan yang sah, yakni mengajukan pertanyaan, permintaan penawaran harga (RFP/quotation), atau inisiasi kerja sama proyek resmi. Pengguna dilarang keras:
             </p>
             <ul className="list-disc pl-5 space-y-1 text-sm">
               <li>Mengirimkan informasi palsu, menyesatkan, atau identitas fiktif.</li>

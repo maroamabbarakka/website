@@ -158,7 +158,7 @@ export default function EventsPage() {
           </p>
           <div className="pt-2">
             <Button href="/contact?service=events" variant="primary" size="md" withArrow>
-              Start a Project
+              Mulai Proyek
             </Button>
           </div>
         </div>

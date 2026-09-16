@@ -2,7 +2,7 @@ import React from "react";
 import { ContactFormSection } from "@/components/sections/ContactFormSection";
 
 export const metadata = {
-  title: "Contact Us & Start a Project — PT MAROA MEDIA MABBARAKKA",
+  title: "Kontak & Mulai Proyek — PT MAROA MEDIA MABBARAKKA",
   description:
     "Hubungi PT MAROA MEDIA MABBARAKKA untuk konsultasi penyelenggaraan event, produksi multimedia studio, dan pengembangan aplikasi web korporat.",
 };

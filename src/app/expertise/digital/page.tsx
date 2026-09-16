@@ -159,7 +159,7 @@ export default function DigitalPage() {
           </p>
           <div className="pt-2">
             <Button href="/contact?service=digital" variant="primary" size="md" withArrow>
-              Start a Project
+              Mulai Proyek
             </Button>
           </div>
         </div>
