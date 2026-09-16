@@ -469,18 +469,34 @@ export const initialProjects: Project[] = [
     summary: "Aplikasi animasi pengundian door-prize panggung real-time beresolusi tinggi dengan algoritma angka acak kriptografis transparan untuk event akbar dan siaran langsung.",
     clientDisplayName: "Penyelenggara Event & Media Partner",
     year: "2025 - 2026",
-    heroImage: "/portfolio/undian-desktop.webp",
-    thumbnail: "/portfolio/undian-desktop.webp",
+    heroImage: "/portfolio/covers/grand-doorprize-stage-system-cover-1600x900.webp",
+    thumbnail: "/portfolio/covers/grand-doorprize-stage-system-cover-1600x900.webp",
     mobileImage: "/portfolio/undian-mobile.webp",
-    services: ["Stage Visual Software", "Cryptographic Randomizer", "Ultra-Wide Screen Optimization", "Live Event Engineering"],
+    role: "Aplikasi Undian Kriptografis Layar Lebar",
+    sourceCredit: "Arsip Teknologi Panggung & Rekayasa Perangkat Lunak MAROA",
+    rightsStatus: "Karya Sistem & Visual Panggung Orisinal MAROA",
+    services: [
+      "Stage Visual Software",
+      "Cryptographic Randomizer",
+      "Ultra-Wide Screen Optimization",
+      "Live Event Engineering"
+    ],
     challenge: "Menyelenggarakan sesi penarikan door-prize berhadiah mobil, motor, dan ratusan hadiah elektronik pada event berskala ribuan peserta yang menuntut keadilan mutlak, transparansi tanpa kecurigaan manipulasi, serta visualisasi panggung yang dramatis dan mendebarkan.",
     approach: "Mengembangkan aplikasi web stage-ready dengan engine randomizer angka acak berbasis kriptografi yang menghasilkan animasi putaran angka berkecepatan tinggi dengan efek pendaran cahaya (glow effect) yang memukau di layar videotron LED panggung utama.",
     execution: "Membangun panel manajemen hadiah berjenjang (Grand Prize Mobil, Motor, Elektronik); sistem import basis data nomor kupon/peserta; panel kontrol tombol operator (Mulai Undian, Kunci Pemenang); filter pencegahan dobel menang; serta modul export rekapitulasi Berita Acara resmi.",
     outcome: "Menghidupkan atmosfer kemeriahan puncak event, memikat ribuan tatap mata penonton di depan panggung tanpa keraguan kecurangan, dan mempermudah saksi notaris serta kepolisian menandatangani keabsahan undian.",
     gallery: [
+      "/portfolio/covers/grand-doorprize-stage-system-cover-1600x900.webp",
+      "/portfolio/gallery/grand-doorprize-stage-system-1600x900.webp",
       "/portfolio/undian-desktop.webp",
       "/portfolio/undian-mobile.webp"
     ],
+    galleryCaptions: {
+      "/portfolio/covers/grand-doorprize-stage-system-cover-1600x900.webp": "Visualisasi Panggung — Display Sistem Undian Layar Lengkung Videotron LED",
+      "/portfolio/gallery/grand-doorprize-stage-system-1600x900.webp": "Visual Panggung Resolusi Tinggi — Animasi Pengundian Grand Prize",
+      "/portfolio/undian-desktop.webp": "Antarmuka Dashboard Operator — Panel Kendali Pengundian Kriptografis",
+      "/portfolio/undian-mobile.webp": "Antarmuka Responsif Mobile — Verifikasi Nomor Kupon Pemenang"
+    },
     metrics: [
       { label: "Algoritma Acak", value: "100% Kripto Adil" },
       { label: "Output Tampilan", value: "Videotron Ultra-Wide LED" },
@@ -696,85 +712,197 @@ export const initialProjects: Project[] = [
   },
   {
     id: "perpustakaan-expo-pinrang",
-    slug: "perpustakaan-expo-festival-literasi-pinrang-event-organizer",
-    title: "Perpustakaan Expo & Festival Literasi Pinrang — Manajemen Penyelenggaraan Event Organizer (EO) & Ekosistem Edukasi Publik",
+    slug: "perpustakaan-expo-2023-kabupaten-pinrang",
+    title: "Perpustakaan Expo 2023 Kabupaten Pinrang — Pameran Literasi & Grand Final Duta Baca",
     category: "events",
-    summary: "Manajemen acara terpadu (Event Organizer) festival literasi daerah mencakup kurasi panggung outdoor, stan pameran interaktif sekolah, talkshow kepenulisan, dan aktivasi ekonomi kreatif di Lasinrang Park.",
+    summary: "Penyelenggaraan pameran perpustakaan terpadu, Grand Final Duta Baca Kabupaten Pinrang, cerdas cermat, stand pameran terbaik, dan pentas seni budaya di Halaman Kantor Dinas Perpustakaan dan Kearsipan.",
     clientDisplayName: "Dinas Perpustakaan dan Kearsipan Kabupaten Pinrang",
-    year: "2026",
-    heroImage: "/portfolio/events/perpustakaan-expo.jpg",
-    thumbnail: "/portfolio/events/perpustakaan-expo.jpg",
+    year: "2023",
+    heroImage: "/portfolio/covers/perpustakaan-expo-pinrang-2023-cover-1600x900.webp",
+    thumbnail: "/portfolio/covers/perpustakaan-expo-pinrang-2023-cover-1600x900.webp",
+    role: "Event Organizer, Tata Panggung Pameran & Stan Pustaka",
+    sourceCredit: "Dinas Perpustakaan dan Kearsipan Kabupaten Pinrang",
+    rightsStatus: "Dokumentasi Publikasi Resmi Pemerintah Daerah",
     services: [
       "Manajemen Event Organizer (EO) Terpadu",
-      "Spatial & Exhibition Booth Layout",
-      "Tata Panggung Utama Outdoor & Videotron",
-      "Kurasi Pengisi Acara & Rundown Multi-Hari",
-      "Dokumentasi & Live Media Production"
+      "Tata Panggung & Stand Pameran",
+      "Lomba Grand Final Duta Baca",
+      "Pentas Seni Budaya & Pameran UMKM"
     ],
-    challenge: "Mengubah persepsi konvensional tentang perpustakaan menjadi festival publik terbuka yang berjiwa muda, interaktif, dan inklusif di Lasinrang Park dengan puluhan tenant sekolah, penerbit, komunitas seni, dan UMKM dalam rangkaian kegiatan multi-hari menyambut HUT RI.",
-    approach: "Mengadopsi model festival kota modern dengan membagi ruang menjadi Literacy Main Stage, Modular Exhibition Booths, Interactive Creative Workshop Corner, dan Local Culinary Area yang tertata higienis dan nyaman.",
-    execution: "Mengelola perizinan dan tata kelola massa, konstruksi panggung beratap melengkung dengan layar LED videotron interaktif, tata pencahayaan hangat senja hingga malam, serta manajemen acara talkshow bedah buku dan lomba mendongeng anak.",
-    outcome: "Menarik ribuan pelajar, pegiat literasi, pendidik, dan masyarakat umum, meningkatkan keterlibatan publik terhadap fasilitas perpustakaan daerah, serta membuka ruang promosi yang sukses bagi UMKM lokal.",
+    challenge: "Menata pameran literasi multi-kegiatan di halaman kantor dinas dengan menyatukan lomba kecerdasan pelajar, pameran buku, seleksi duta baca daerah, dan panggung pertunjukan dalam satu kesatuan alur yang rapi.",
+    approach: "Merancang zonasi panggung utama semi-outdoor, stan modular pameran perpustakaan sekolah/kecamatan, dan area bazar UMKM dengan alur kunjungan terstruktur.",
+    execution: "Menyiapkan instalasi panggung penghargaan, sistem tata suara, backdrop panggung resmi, dan tata kelola rundown acara selama 6 hari pelaksanaan (14-19 November 2023).",
+    outcome: "Perpustakaan Expo 2023 sukses besar menggerakkan antusiasme pelajar dan masyarakat, serta melahirkan Duta Baca inspiratif bagi Kabupaten Pinrang.",
     gallery: [
-      "/portfolio/events/perpustakaan-expo.jpg",
-      "/portfolio/events/tpn-guru-belajar.png"
+      "/portfolio/covers/perpustakaan-expo-pinrang-2023-cover-1600x900.webp",
+      "/portfolio/gallery/perpustakaan-expo-pinrang-2023-poster-1600x900.webp"
     ],
+    galleryCaptions: {
+      "/portfolio/covers/perpustakaan-expo-pinrang-2023-cover-1600x900.webp": "Master Artwork Poster 16:9 — Perpustakaan Expo 2023 Kabupaten Pinrang",
+      "/portfolio/gallery/perpustakaan-expo-pinrang-2023-poster-1600x900.webp": "Poster Resmi Informasi Acara — Pameran Perpustakaan & Grand Final Duta Baca"
+    },
     metrics: [
-      { label: "Durasi Festival", value: "5 Hari Pelaksanaan" },
-      { label: "Lokasi", value: "Lasinrang Park Pinrang" },
-      { label: "Keterlibatan", value: "Sekolah, Komunitas & UMKM" }
+      { label: "Peran MAROA", value: "Event Organizer & Stage" },
+      { label: "Waktu Acara", value: "14 - 19 November 2023" },
+      { label: "Lokasi", value: "Halaman Dinas Perpustakaan" }
     ],
     features: [
       {
-        title: "Perencanaan & Eksekusi Lapangan Menyeluruh",
-        description: "Pengendalian alur acara terstruktur mulai dari opening ceremony resmi, rundown teknis pengisi panggung, hingga evaluasi harian tim EO.",
+        title: "Pameran Perpustakaan Sekolah & Kecamatan",
+        description: "Menghadirkan stan pameran inovasi layanan buku dan pojok baca dari berbagai lembaga pendidikan.",
       },
       {
-        title: "Konstruksi Panggung Utama Berlayar Videotron Lengkung",
-        description: "Panggung outdoor megah dengan videotron LED melengkung (curved display) menampilkan konten edukasi ramah anak.",
+        title: "Grand Final Pemilihan Duta Baca Pinrang",
+        description: "Panggung unjuk bakat, orasi literasi, dan penobatan Duta Baca Kabupaten Pinrang 2023.",
       },
       {
-        title: "Tata Kelola Stan Pameran Sekolah & Penerbit",
-        description: "Penyusunan stan pameran modular bertema kayu hangat dan pencahayaan estetik untuk menampilkan karya literasi unggulan siswa.",
+        title: "Pentas Seni Tradisional & Pameran UMKM",
+        description: "Aktivasi panggung pentas seni pelajar serta pemberdayaan produk kuliner UMKM lokal.",
+      }
+    ],
+    isFeatured: false,
+    isPublished: true,
+    publishedAt: "2023-11-19",
+    seoTitle: "Perpustakaan Expo 2023 Kabupaten Pinrang — Event Organizer | MAROA",
+    seoDescription: "Penyelenggaraan Perpustakaan Expo 2023 dan Grand Final Duta Baca Kabupaten Pinrang oleh MAROA.",
+  },
+  {
+    id: "festival-literasi-pinrang-2025",
+    slug: "festival-literasi-pinrang-2025-multiliterasi-inklusif",
+    title: "Festival Literasi Pinrang 2025 — Multiliterasi Inklusif & Panggung Edukasi Budaya",
+    category: "events",
+    summary: "Penyelenggaraan festival literasi daerah berskala besar bekerjasama dengan Perpustakaan Nasional RI bertema 'Multiliterasi Inklusif, Bergerak Bersama Membangun Pinrang Berbudaya'.",
+    clientDisplayName: "Dinas Perpustakaan dan Kearsipan Kab. Pinrang & Perpusnas RI",
+    year: "2025",
+    heroImage: "/portfolio/covers/festival-literasi-pinrang-2025-cover-1600x900.webp",
+    thumbnail: "/portfolio/covers/festival-literasi-pinrang-2025-cover-1600x900.webp",
+    role: "Manajemen Acara & Tata Multimedia Panggung",
+    sourceCredit: "Dinas Perpustakaan dan Kearsipan Kabupaten Pinrang & Perpusnas RI",
+    rightsStatus: "Dokumentasi & Desain Publikasi Resmi Acara",
+    services: [
+      "Event Management & Production",
+      "Stage Multimedia Screen",
+      "Perpusnas RI Collaboration",
+      "Cultural & Literacy Showcase"
+    ],
+    challenge: "Menghadirkan festival literasi komprehensif yang mengintegrasikan agenda nasional Perpustakaan Nasional RI dengan pelestarian budaya lokal Bumi Lasinrang.",
+    approach: "Memadukan visual panggung bertema arsitektur budaya Pinrang, instalasi perpustakaan keliling, dan seminar multiliterasi bagi lintas generasi.",
+    execution: "Menyiapkan panggung utama, multimedia display siaran langsung, sesi gelar wicara bersama Bunda Literasi, dan malam penganugerahan pegiat literasi daerah.",
+    outcome: "Memperkuat indeks pembangunan literasi masyarakat (IPLM) Kabupaten Pinrang dan mendapat apresiasi pimpinan Perpustakaan Nasional.",
+    gallery: [
+      "/portfolio/covers/festival-literasi-pinrang-2025-cover-1600x900.webp",
+      "/portfolio/gallery/festival-literasi-pinrang-2025-banner-1600x900.webp"
+    ],
+    galleryCaptions: {
+      "/portfolio/covers/festival-literasi-pinrang-2025-cover-1600x900.webp": "Master Visual 16:9 — Festival Literasi Pinrang 2025 Multiliterasi Inklusif",
+      "/portfolio/gallery/festival-literasi-pinrang-2025-banner-1600x900.webp": "Banner Resmi Penyelenggaraan — Kerjasama Dispusip Pinrang & Perpusnas RI"
+    },
+    metrics: [
+      { label: "Peran MAROA", value: "Event Management & Multimedia" },
+      { label: "Waktu Acara", value: "10 - 14 September 2025" },
+      { label: "Kemitraan", value: "Perpustakaan Nasional RI" }
+    ],
+    features: [
+      {
+        title: "Seminar Multiliterasi Inklusif Nasional",
+        description: "Diskusi panel bersama narasumber Perpustakaan Nasional RI dan tokoh literasi Sulawesi Selatan.",
       },
       {
-        title: "Manajemen Talkshow Inspiratif & Bedah Buku",
-        description: "Fasilitasi sesi diskusi bersama penulis nasional, tokoh literasi perempuan, dan praktisi pendidikan daerah.",
-      },
-      {
-        title: "Pemberdayaan Area Kuliner & UMKM Kreatif",
-        description: "Penataan stan makanan dan kerajinan khas Pinrang guna mendukung perputaran ekonomi kreatif selama festival berlangsung.",
-      },
+        title: "Panggung Apresiasi Pegiat Literasi",
+        description: "Penghargaan bagi pengelola pojok baca desa, taman bacaan masyarakat, dan pegiat literasi disabilitas.",
+      }
     ],
     isFeatured: true,
     isPublished: true,
-    publishedAt: "2026-08-11",
-    seoTitle: "Perpustakaan Expo & Festival Literasi Pinrang — Event Organizer | MAROA",
-    seoDescription: "Penyelenggaraan terpadu Event Organizer Perpustakaan Expo dan Festival Literasi Kabupaten Pinrang oleh MAROA.",
+    publishedAt: "2025-09-14",
+    seoTitle: "Festival Literasi Pinrang 2025 — Multiliterasi Inklusif | MAROA",
+    seoDescription: "Penyelenggaraan Festival Literasi Pinrang 2025 kerjasama Perpustakaan Nasional RI oleh MAROA.",
+  },
+  {
+    id: "festival-literasi-pinrang-2026",
+    slug: "festival-literasi-pinrang-2026-lasinrang-merdeka-fest",
+    title: "Festival Literasi Pinrang 2026 — Lasinrang Merdeka Fest (HUT Ke-81 RI)",
+    category: "events",
+    summary: "Manajemen festival literasi ruang publik Lasinrang Merdeka Fest bertema 'Literasi Menggerakkan, Seni Menyatukan, UMKM Menguatkan' dalam rangka Pekan Festival HUT Ke-81 Kemerdekaan RI di Lasinrang Park.",
+    clientDisplayName: "Dinas Perpustakaan dan Kearsipan Kabupaten Pinrang",
+    year: "2026",
+    heroImage: "/portfolio/covers/festival-literasi-pinrang-2026-cover-1600x900.webp",
+    thumbnail: "/portfolio/covers/festival-literasi-pinrang-2026-cover-1600x900.webp",
+    role: "Event Organizer, Panggung Seni Videotron & Visual Branding",
+    sourceCredit: "Dinas Perpustakaan dan Kearsipan Kabupaten Pinrang",
+    rightsStatus: "Arsip Kreatif & Manajemen Acara MAROA",
+    services: [
+      "Event Organizer (EO) Terpadu",
+      "Stage Videotron & Lighting",
+      "Lasinrang Merdeka Fest Branding",
+      "UMKM & Creative Booth Activation"
+    ],
+    challenge: "Mentransformasikan ruang terbuka hijau Lasinrang Park menjadi episentrum festival kemerdekaan yang memadukan buku, pentas seni, dan bazaar UMKM kuliner kreatif secara berdaya saing tinggi.",
+    approach: "Merancang visual branding ikonik pejuang Lasinrang memegang buku diapit bendera pusaka, dipadu panggung konser seni terbuka dan tata cahaya malam hari.",
+    execution: "Menyelenggarakan rangkaian festival 5 hari (11-15 Agustus 2026), mengoperasikan videotron panggung seni budaya, dan memfasilitasi puluhan stan UMKM.",
+    outcome: "Menjadi magnet perayaan HUT RI ke-81 terfavorit di Kabupaten Pinrang dengan puluhan ribu kunjungan warga dari berbagai daerah.",
+    gallery: [
+      "/portfolio/covers/festival-literasi-pinrang-2026-cover-1600x900.webp",
+      "/portfolio/gallery/festival-literasi-pinrang-2026-banner-1600x900.webp"
+    ],
+    galleryCaptions: {
+      "/portfolio/covers/festival-literasi-pinrang-2026-cover-1600x900.webp": "Master Visual 16:9 — Lasinrang Merdeka Fest Festival Literasi 2026",
+      "/portfolio/gallery/festival-literasi-pinrang-2026-banner-1600x900.webp": "Identitas Resmi Acara — Lambang Lasinrang Merdeka Fest HUT Ke-81 RI"
+    },
+    metrics: [
+      { label: "Peran MAROA", value: "Event Organizer & Videotron" },
+      { label: "Waktu Acara", value: "11 - 15 Agustus 2026" },
+      { label: "Lokasi", value: "Lasinrang Park, Pinrang" }
+    ],
+    features: [
+      {
+        title: "Pentas Seni Terbuka Lasinrang Merdeka Fest",
+        description: "Panggung musik, tari kolosal kemerdekaan, dan teater literasi siswa di bawah langit malam kota.",
+      },
+      {
+        title: "Ekosistem Pemberdayaan UMKM Pinrang",
+        description: "Zonasi puluhan tenant kuliner dan cinderamata kreatif lokal yang tertata rapi dan ramai pengunjung.",
+      }
+    ],
+    isFeatured: true,
+    isPublished: true,
+    publishedAt: "2026-08-15",
+    seoTitle: "Festival Literasi Pinrang 2026 — Lasinrang Merdeka Fest | MAROA",
+    seoDescription: "Penyelenggaraan Lasinrang Merdeka Fest Festival Literasi Pinrang 2026 di Lasinrang Park oleh MAROA.",
   },
   {
     id: "fakkie-ramadhan-fest",
     slug: "fakkie-ramadhan-fest-multimedia-video-mapping",
-    title: "FAKKIE Ramadhan Fest — Produksi Konten Desain Multimedia Panggung & Video Mapping Arsitektural Religi",
+    title: "FAKKIE Ramadhan Fest 2026 — Desain Multimedia, Panggung Seni & Video Mapping Arsitektural",
     category: "multimedia",
-    summary: "Penerapan proyeksi video mapping 3D berarsitektur Islami dan konten multimedia panggung pada festival semarak Ramadan dan festival seni musik patrol kebanggaan masyarakat Tiroang.",
-    clientDisplayName: "Panitia FAKKIE Ramadhan Fest & Karang Taruna Kelurahan Fakkie",
+    summary: "Produksi materi komunikasi visual promosi opening ceremony, bintang tamu MC, serta proyeksi video mapping arsitektural 3D religi pada festival patrol sahur FAKKIE Ramadhan Fest by Eighty Seven.",
+    clientDisplayName: "Panitia FAKKIE Ramadhan Fest by Eighty Seven & Pemuda Alecalimpo",
     year: "2026",
-    heroImage: "/portfolio/events/fakkie-video-mapping.jpg",
-    thumbnail: "/portfolio/events/fakkie-video-mapping.jpg",
+    heroImage: "/portfolio/covers/fakkie-ramadhan-fest-2026-cover-1600x900.webp",
+    thumbnail: "/portfolio/covers/fakkie-ramadhan-fest-2026-cover-1600x900.webp",
+    role: "Desain Multimedia, Video Mapping 3D & Visual Panggung",
+    sourceCredit: "Panitia FAKKIE Ramadhan Fest by Eighty Seven & Studio MAROA",
+    rightsStatus: "Karya Desain Poster & Dokumentasi Video Mapping MAROA",
     services: [
       "Arsitektural Video Mapping 3D",
-      "Produksi Konten Multimedia Panggung",
-      "Synchronized Light & Sound System",
-      "Desain Visual Panggung Seni Musik Patrol"
+      "Opening Ceremony Key Visual Design",
+      "Guest Star MC Promo Assets",
+      "Synchronized Stage Light & Sound System"
     ],
-    challenge: "Membawa tradisi seni patrol sahur masyarakat Tiroang ke panggung pertunjukan modern yang spektakuler tanpa mengaburkan kesakralan, kekhusyukan, dan kehangatan nilai-nilai bulan suci Ramadan.",
-    approach: "Menerapkan teknologi proyeksi video mapping arsitektural 3D pada fasad panggung utama festival, memadukan ornamen kaligrafi geometri Islam modern, pendaran laser emas-toska, dan ketukan perkusi patrol khas Sulawesi Selatan.",
-    execution: "Melakukan pemetaan proyeksi permukaan 3D (surface mapping) pada panggung gerbang menara, memprogram animasi transisi cahaya yang tersinkronisasi dengan tabuhan perkusi kelompok patrol, serta memandu operator multimedia selama malam puncak perayaan.",
-    outcome: "Menjadi suguhan pertunjukan yang sangat viral dan spektakuler di media sosial lokal, dihadiri ribuan warga dari berbagai kecamatan, dan menorehkan standar baru pemanfaatan teknologi video mapping untuk event religi berbasis komunitas di Pinrang.",
+    challenge: "Menggabungkan tradisi seni musik patrol sahur masyarakat Tiroang dengan suguhan visual panggung modern yang megah, menampilkan bintang tamu MC kondang, serta atraksi video mapping arsitektural di depan Masjid Mustaqim.",
+    approach: "Merancang paket desain grafis promosi pembuka berwarna merah membara yang energetik, dipadu pemetaan proyeksi 3D (video mapping) pada fasad bangunan panggung pementasan.",
+    execution: "Membuat master poster 16:9 non-destruktif penayangan opening ceremony 26 Februari 2026 dan memproyeksikan video mapping 3D animasi kaligrafi yang tersinkronisasi dengan tabuhan perkusi patrol Bentrok Family.",
+    outcome: "Malam pembukaan festival dipadati ribuan warga, viral di media sosial, dan menorehkan standar baru pertunjukan religi berbasis komunitas di Sulawesi Selatan.",
     gallery: [
-      "/portfolio/events/fakkie-video-mapping.jpg"
+      "/portfolio/covers/fakkie-ramadhan-fest-2026-cover-1600x900.webp",
+      "/portfolio/gallery/fakkie-ramadhan-fest-live-video-mapping-1600x900.webp",
+      "/portfolio/gallery/fakkie-ramadhan-fest-2026-poster-1600x900.webp"
     ],
+    galleryCaptions: {
+      "/portfolio/covers/fakkie-ramadhan-fest-2026-cover-1600x900.webp": "Master Artwork Poster 16:9 — Opening Ceremony FAKKIE Ramadhan Fest 2026",
+      "/portfolio/gallery/fakkie-ramadhan-fest-live-video-mapping-1600x900.webp": "Dokumentasi Lapangan — Proyeksi Video Mapping Arsitektural 3D Religi di Panggung Utama",
+      "/portfolio/gallery/fakkie-ramadhan-fest-2026-poster-1600x900.webp": "Materi Publikasi Resmi — Bintang Tamu MC Syukri Gazali (Chuke) & Syaiful Muharram (Ambonai)"
+    },
     metrics: [
       { label: "Teknologi Visual", value: "3D Projection Mapping" },
       { label: "Peserta Lomba", value: "Puluhan Grup Patrol" },
@@ -926,30 +1054,38 @@ export const initialProjects: Project[] = [
   {
     id: "jabat-3-trail-adventure",
     slug: "jabat-3-jelajah-alam-batas-produksi-konten-desain-multimedia",
-    title: "Jelajah Alam Batas (JABAT 3) Pinrang–Enrekang — Produksi Konten Desain Multimedia & Stage Visual Extreme Sport",
+    title: "Reborn Trail Pinrang JABAT Part #3 — Motion Graphic & LED Videotron Extreme Sport",
     category: "multimedia",
-    summary: "Produksi konten visual panggung gerbang start-finish, motion graphics countdown ekstrem, dan multimedia malam apresiasi untuk ajang trail adventure akbar perbatasan Pinrang - Enrekang.",
-    clientDisplayName: "Panitia JABAT 3 & Komunitas Trail Adventure Indonesia",
+    summary: "Produksi motion graphic visual panggung, operasional layar LED videotron gerbang start-finish Stadion Bau Massepe, dan multimedia panggung malam apresiasi One Day Trail Adventure Jelajah Alam Batas (JABAT Part #3) Pinrang–Enrekang.",
+    clientDisplayName: "Panitia Reborn Trail Pinrang JABAT Part #3 & IMI Pengcab Pinrang",
     year: "2026",
-    heroImage: "/portfolio/events/tyro1-wgb.jpg",
-    thumbnail: "/portfolio/events/tyro1-wgb.jpg",
+    heroImage: "/portfolio/covers/jabat-3-trail-adventure-2026-cover-1600x900.webp",
+    thumbnail: "/portfolio/covers/jabat-3-trail-adventure-2026-cover-1600x900.webp",
+    role: "Motion Graphic dan LED Videotron",
+    sourceCredit: "Panitia Reborn Trail Pinrang JABAT Part #3 & IMI Pengcab Pinrang",
+    rightsStatus: "Karya Desain Motion & Dokumentasi Resmi JABAT 3",
     services: [
-      "Produksi Konten Desain Multimedia",
-      "Stage Visual Extreme Sport",
-      "Opening Countdown Motion Graphics",
-      "Visual Identity Gerbang Start & Finish"
+      "Motion Graphics Design",
+      "LED Videotron Stage Display",
+      "Extreme Sport Visual Production",
+      "Start-Finish Gate Multimedia"
     ],
-    challenge: "Menciptakan atmosfer panggung dan visual sirkuit yang memacu adrenalin bagi ribuan peserta offroad dari berbagai provinsi yang melintasi jalur ekstrem perbukitan batas Pinrang-Enrekang.",
-    approach: "Mengusung estetika visual bertema rugged adventure dan industrial grunge yang tangguh, memadukan elemen topografi pegunungan, semburan lumpur, dan visual maskot adventure berani.",
-    execution: "Memproduksi animasi hitung mundur pelepasan rider pada layar LED panggung gerbang start, visual live entertainment panggung malam apresiasi, serta branding visual trofi dan seragam kejuaraan.",
-    outcome: "Event JABAT 3 tampil sangat berkelas dan terorganisir rapi secara visual, mendapat sambutan luar biasa dari ribuan rider nasional dan apresiasi pemerintah daerah setempat.",
+    challenge: "Menghadirkan tata visual dinamis dan operasional layar videotron luar ruang berkontras tinggi di Stadion Bau Massepe yang mampu memandu pelepasan ribuan offroader serta menayangkan leaderboard hadiah 9 unit motor Honda Revo.",
+    approach: "Merancang rangkaian motion graphic berenergi tinggi bertema petualangan ekstrem dengan tipografi tegas, efek pendaran oranye-hitam khas Reborn Trail, dan visualisasi rute jalur perbatasan Pinrang-Enrekang.",
+    execution: "Mengoperasikan videotron panggung utama dan gerbang start line, memutar countdown animasi pelepasan kloter rider, serta memvisualisasikan penyerahan grand prize 9 unit motor Honda Revo dan uang tunai 5 rider finish tercepat.",
+    outcome: "Pelaksanaan One Day Trail Adventure JABAT Part #3 berlangsung semarak, tertib, dan megah, menuai apresiasi tinggi dari ribuan rider nusantara serta sponsor resmi daerah.",
     gallery: [
-      "/portfolio/events/tyro1-wgb.jpg"
+      "/portfolio/covers/jabat-3-trail-adventure-2026-cover-1600x900.webp",
+      "/portfolio/gallery/jabat-3-trail-adventure-2026-banner-1600x900.webp"
     ],
+    galleryCaptions: {
+      "/portfolio/covers/jabat-3-trail-adventure-2026-cover-1600x900.webp": "Master Banner Visual 16:9 — Reborn Trail Pinrang JABAT Part #3 (Pinrang-Enrekang)",
+      "/portfolio/gallery/jabat-3-trail-adventure-2026-banner-1600x900.webp": "Visual Resmi Informasi Lomba — Grand Prize 9 Unit Honda Revo & Hadiah Tunai"
+    },
     metrics: [
-      { label: "Peserta Rider", value: "Ribuan Offroader Nusantara" },
-      { label: "Jalur Lintasan", value: "Batas Pinrang - Enrekang" },
-      { label: "Panggung Utama", value: "LED Screen Extreme Stage" }
+      { label: "Peran MAROA", value: "Motion Graphic dan LED Videotron" },
+      { label: "Grand Prize", value: "9 Unit Honda Revo" },
+      { label: "Start - Finish", value: "Stadion Bau Massepe Pinrang" }
     ],
     features: [
       {
@@ -957,23 +1093,23 @@ export const initialProjects: Project[] = [
         description: "Animasi visual dinamis yang menggelegar di layar LED gerbang pelepasan untuk menyemangati setiap kloter rider yang melaju.",
       },
       {
-        title: "Stage Visual LED Malam Hiburan & Apresiasi",
+        title: "Stage Visual LED Videotron Malam Apresiasi",
         description: "Latar visual panggung konser musik dan malam ramah tamah para pembalap dengan efek visual modern bertenaga tinggi.",
       },
       {
-        title: "Visualisasi Peta Topografi Jalur Ekstrem",
-        description: "Peta rute jalur petualangan yang dikemas grafis informatif menampilkan tanjakan curam dan titik pos pertolongan.",
+        title: "Visualisasi Rute Jalur Perbatasan Pinrang - Enrekang",
+        description: "Peta grafis informatif menampilkan tanjakan ekstrem jalur petualangan dan titik pos pertolongan.",
       },
       {
-        title: "Sistem Penayangan Mitra Sponsor & Live Recap",
-        description: "Format rotasi logo sponsor resmi dan cuplikan langsung aksi para rider di medan lumpur yang ditayangkan ke layar panggung.",
+        title: "Penayangan Interaktif Hadiah 9 Unit Honda Revo",
+        description: "Format penayangan pemenang undian hadiah motor dan bonus rider tercepat pada layar panggung videotron.",
       },
     ],
-    isFeatured: false,
+    isFeatured: true,
     isPublished: true,
     publishedAt: "2026-04-25",
-    seoTitle: "JABAT 3 Jelajah Alam Batas — Desain Multimedia & Stage Visual | MAROA",
-    seoDescription: "Produksi konten desain multimedia dan visual panggung kejuaraan offroad trail adventure JABAT 3 Pinrang-Enrekang oleh MAROA.",
+    seoTitle: "Reborn Trail Pinrang JABAT Part #3 — Motion Graphic & LED Videotron | MAROA",
+    seoDescription: "Produksi motion graphic dan operasional LED videotron ajang trail adventure JABAT Part #3 Pinrang-Enrekang oleh MAROA.",
   },
   {
     id: "wisuda-icp-senat",
